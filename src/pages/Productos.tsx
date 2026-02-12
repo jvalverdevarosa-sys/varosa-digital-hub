@@ -238,7 +238,7 @@ const Productos = () => {
                         <span className="text-xs text-foreground/30 font-medium">Imagen próximamente</span>
                       </div>
                     )}
-                    <span className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-card/90 backdrop-blur-sm text-[10px] font-bold text-foreground/60 shadow-sm">{product.brand}</span>
+                    {/* Badge de marca removido por decisión de diseño */}
                   </div>
                   <CardContent className="p-5 space-y-3">
                     <h3 className="font-heading font-bold text-foreground text-lg leading-tight group-hover:text-primary transition-colors">{product.name}</h3>
