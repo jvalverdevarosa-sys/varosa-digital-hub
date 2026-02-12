@@ -116,7 +116,7 @@ const Index = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {productLines.map((product, index) => (
                 <ScrollReveal key={index} delay={index * 100}>
-                <Card className="border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_4px_20px_hsl(var(--accent)/0.12)] group bg-white dark:bg-card">
+                <Card className="border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_4px_20px_hsl(var(--accent)/0.12)] group bg-card">
                   <CardHeader>
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[hsl(var(--accent)/0.1)] to-[hsl(var(--primary)/0.06)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                       <product.icon className={`h-7 w-7 ${product.color}`} />
@@ -155,7 +155,7 @@ const Index = () => {
               {industries.map((industry, index) => (
                 <ScrollReveal key={index} delay={index * 150}>
                 <div 
-                  className="bg-white dark:bg-card p-8 rounded-2xl border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.1)] group"
+                  className="bg-card p-8 rounded-2xl border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.1)] group"
                 >
                   <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[hsl(var(--accent)/0.12)] to-[hsl(var(--primary)/0.06)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <industry.icon className="h-8 w-8 text-accent" />
@@ -221,7 +221,7 @@ const Index = () => {
                 }
               ].map((group, index) => (
                 <ScrollReveal key={index} delay={index * 120}>
-                <div className="bg-white dark:bg-card rounded-xl border border-[hsl(var(--primary)/0.1)] p-6 hover:border-[hsl(var(--accent)/0.4)] hover:shadow-[0_4px_20px_hsl(var(--accent)/0.1)] transition-all duration-300">
+                <div className="bg-card rounded-xl border border-[hsl(var(--primary)/0.1)] p-6 hover:border-[hsl(var(--accent)/0.4)] hover:shadow-[0_4px_20px_hsl(var(--accent)/0.1)] transition-all duration-300">
                   <div className="flex items-center gap-3 mb-4">
                     <span className={`text-2xl font-black font-heading text-${group.color}`}>{group.count}</span>
                     <span className="text-sm font-semibold text-foreground/70">{group.sector}</span>

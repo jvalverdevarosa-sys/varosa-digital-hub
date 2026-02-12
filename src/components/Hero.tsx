@@ -48,7 +48,7 @@ const Hero = () => {
           <div className="lg:col-span-3 space-y-7 animate-fade-in">
             {/* Badge */}
             <div className="inline-block">
-              <span className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-sm text-secondary font-semibold text-sm border border-[hsl(var(--accent)/0.25)] shadow-sm">
+              <span className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-card/80 backdrop-blur-sm text-secondary font-semibold text-sm border border-[hsl(var(--accent)/0.25)] shadow-sm">
                 <Droplets className="w-4 h-4 text-[hsl(var(--accent))]" />
                 Desde 2007 — Venecia de San Carlos
               </span>
@@ -83,7 +83,7 @@ const Hero = () => {
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </NavLink>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-2 border-[hsl(var(--accent)/0.35)] hover:border-[hsl(var(--accent))] hover:bg-[hsl(var(--accent)/0.06)] bg-white/60 text-secondary font-semibold rounded-lg px-8 py-6 text-base transition-all duration-300">
+              <Button asChild size="lg" variant="outline" className="border-2 border-[hsl(var(--accent)/0.35)] hover:border-[hsl(var(--accent))] hover:bg-[hsl(var(--accent)/0.06)] bg-card/60 text-secondary font-semibold rounded-lg px-8 py-6 text-base transition-all duration-300">
                 <a href="https://wa.me/50686703251?text=Hola%2C%20me%20interesa%20una%20cotización" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-4 w-4" />
                   WhatsApp
