@@ -59,7 +59,7 @@ const Nosotros = () => {
           
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
                 Sobre <span className="text-accent">VAROSA</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
@@ -105,7 +105,7 @@ const Nosotros = () => {
         <section className="py-20 bg-background border-y border-primary/8">
           <div className="container mx-auto px-6 lg:px-10">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Propósito, Visión y Valores</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Propósito, Visión y Valores</h2>
               <p className="text-lg md:text-xl text-foreground/75 max-w-2xl mx-auto leading-relaxed">
                 Los principios que guían cada decisión y acción en VAROSA
               </p>
@@ -131,7 +131,7 @@ const Nosotros = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 lg:px-10">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Nuestra Historia</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Nuestra Historia</h2>
               <p className="text-lg md:text-xl text-foreground/75 max-w-2xl mx-auto leading-relaxed">
                 18 años de crecimiento y compromiso con nuestros clientes
               </p>
@@ -167,7 +167,7 @@ const Nosotros = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-10 text-center">Nuestras Fortalezas</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white mb-10 text-center">Nuestras Fortalezas</h2>
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-3">

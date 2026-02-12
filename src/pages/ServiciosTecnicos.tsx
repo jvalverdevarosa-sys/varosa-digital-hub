@@ -80,7 +80,7 @@ const ServiciosTecnicos = () => {
           
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
                 Servicios <span className="text-highlight">Técnicos Especializados</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
@@ -94,7 +94,7 @@ const ServiciosTecnicos = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 lg:px-10">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Nuestros Servicios</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Nuestros Servicios</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Servicios que van más allá de la venta: acompañamos su operación con soluciones técnicas especializadas
               </p>
@@ -130,7 +130,7 @@ const ServiciosTecnicos = () => {
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-6 lg:px-10">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Galería de Instalaciones</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Galería de Instalaciones</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Proyectos realizados en diferentes industrias
               </p>
@@ -156,7 +156,7 @@ const ServiciosTecnicos = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 lg:px-10">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Recursos para Clientes</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Recursos para Clientes</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Material técnico y herramientas para optimizar sus procesos
               </p>
@@ -190,7 +190,7 @@ const ServiciosTecnicos = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white">
                 ¿Necesita acompañamiento técnico especializado?
               </h2>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">

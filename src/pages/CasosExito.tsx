@@ -82,7 +82,7 @@ const CasosExito = () => {
           
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
                 Casos de <span className="text-accent">Éxito</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
@@ -97,22 +97,22 @@ const CasosExito = () => {
         <section className="py-16 bg-primary text-primary-foreground relative overflow-hidden border-y border-primary/20">
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
               <div>
-                <div className="text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">500+</div>
-                <div className="text-sm md:text-base text-white/90">Clientes Activos</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">500+</div>
+                <div className="text-xs sm:text-sm md:text-base text-white/90">Clientes Activos</div>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">18+</div>
-                <div className="text-sm md:text-base text-white/90">Años de Experiencia</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">18+</div>
+                <div className="text-xs sm:text-sm md:text-base text-white/90">Años de Experiencia</div>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">95%</div>
-                <div className="text-sm md:text-base text-white/90">Satisfacción Cliente</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">95%</div>
+                <div className="text-xs sm:text-sm md:text-base text-white/90">Satisfacción Cliente</div>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">3,000+</div>
-                <div className="text-sm md:text-base text-white/90">Productos Disponibles</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">3,000+</div>
+                <div className="text-xs sm:text-sm md:text-base text-white/90">Productos Disponibles</div>
               </div>
             </div>
           </div>
@@ -181,7 +181,7 @@ const CasosExito = () => {
         <section className="py-20 bg-background border-y border-primary/8">
           <div className="container mx-auto px-6 lg:px-10">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Clientes que Confían en Nosotros</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Clientes que Confían en Nosotros</h2>
               <p className="text-lg text-foreground/75">
                 Empresas líderes en sus industrias eligen VAROSA
               </p>
@@ -207,7 +207,7 @@ const CasosExito = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white">
                 ¿Listo para ser nuestro próximo caso de éxito?
               </h2>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">

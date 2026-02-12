@@ -21,7 +21,7 @@ const Contacto = () => {
           
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
                 <span className="text-accent">Contáctenos</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
@@ -50,7 +50,7 @@ const Contacto = () => {
                       aria-label="Formulario de cotización VAROSA" 
                       frameBorder="0" 
                       allow="geolocation;" 
-                      style={{height: '500px', width: '100%', border: 'none'}} 
+                      className="w-full border-0 min-h-[400px] sm:min-h-[500px]"
                       src='https://forms.zohopublic.com/varosa1/form/FORMULARIOPGINAWEB/formperma/NwGu-0qmpwBNPJvOjXGJdaQsVOluFrz5_E81zWbbeX0'
                     />
                   </CardContent>
@@ -147,7 +147,7 @@ const Contacto = () => {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15718.5!2d-84.286!3d10.335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa052e21d57b36d%3A0x67b0f2c3cf5e6a1e!2sVenecia%2C%20San%20Carlos!5e0!3m2!1ses!2scr!4v1707000000000!5m2!1ses!2scr"
                 width="100%"
-                height="450"
+                className="h-[300px] sm:h-[400px] lg:h-[450px]"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"

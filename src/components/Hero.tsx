@@ -77,7 +77,7 @@ const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold rounded-lg px-8 py-6 text-base group transition-all duration-300 shadow-varosa hover:shadow-[0_8px_28px_hsl(var(--primary)/0.35)]">
+              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold rounded-lg px-6 sm:px-8 py-6 text-sm sm:text-base group transition-all duration-300 shadow-varosa hover:shadow-[0_8px_28px_hsl(var(--primary)/0.35)]">
                 <NavLink to="/contacto">
                   Solicitar Cotización
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -98,18 +98,18 @@ const Hero = () => {
             </div>
 
             {/* Stats bar */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[hsl(var(--primary)/0.1)]">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-8 border-t border-[hsl(var(--primary)/0.1)]">
               <div>
-                <div className="text-3xl lg:text-4xl font-black text-primary font-heading">500+</div>
-                <div className="text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wider">Clientes Activos</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-primary font-heading">500+</div>
+                <div className="text-[10px] sm:text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wider">Clientes Activos</div>
               </div>
               <div>
-                <div className="text-3xl lg:text-4xl font-black text-secondary font-heading">3,000+</div>
-                <div className="text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wider">Productos</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-secondary font-heading">3,000+</div>
+                <div className="text-[10px] sm:text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wider">Productos</div>
               </div>
               <div>
-                <div className="text-3xl lg:text-4xl font-black font-heading text-accent">18+</div>
-                <div className="text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wider">Años</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-accent">18+</div>
+                <div className="text-[10px] sm:text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wider">Años</div>
               </div>
             </div>
           </div>

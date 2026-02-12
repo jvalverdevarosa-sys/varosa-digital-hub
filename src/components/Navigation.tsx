@@ -28,10 +28,10 @@ const Navigation = () => {
 
       <nav className="sticky top-0 z-50 bg-background/98 backdrop-blur-sm border-b border-primary/8 shadow-[0_1px_4px_rgba(0,60,113,0.06)]" aria-label="Navegación principal">
         <div className="container mx-auto px-6 lg:px-10">
-          <div className="flex h-24 items-center justify-between">
+          <div className="flex h-20 sm:h-22 lg:h-24 items-center justify-between">
             {/* Logo */}
-            <NavLink to="/" className="flex items-center py-3 pl-6 pr-8">
-              <img src={varosaSogo} alt="VAROSA — Ir al inicio" className="h-[85px] w-auto" />
+            <NavLink to="/" className="flex items-center py-3 pl-4 sm:pl-6 pr-6 sm:pr-8">
+              <img src={varosaSogo} alt="VAROSA — Ir al inicio" className="h-[65px] sm:h-[75px] lg:h-[85px] w-auto" />
             </NavLink>
 
             {/* Desktop Navigation */}

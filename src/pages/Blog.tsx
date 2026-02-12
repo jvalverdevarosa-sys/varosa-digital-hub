@@ -79,7 +79,7 @@ const Blog = () => {
           
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
                 Blog y <span className="text-accent">Recursos</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
@@ -113,7 +113,7 @@ const Blog = () => {
         {/* Featured Articles */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 lg:px-10">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-10">Artículos Destacados</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-10">Artículos Destacados</h2>
             
             <div className="grid md:grid-cols-2 gap-8 mb-16">
               {articles.filter(article => article.featured).map((article, index) => (
@@ -153,7 +153,7 @@ const Blog = () => {
             </div>
 
             {/* All Articles */}
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-10">Todos los Artículos</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-10">Todos los Artículos</h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {articles.map((article, index) => (
@@ -197,7 +197,7 @@ const Blog = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-2xl mx-auto text-center space-y-6">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">Suscríbase a Nuestro Newsletter</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white">Suscríbase a Nuestro Newsletter</h2>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">
                 Reciba contenido exclusivo, guías técnicas y las últimas novedades 
                 de la industria directamente en su correo.

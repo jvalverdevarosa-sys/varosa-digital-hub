@@ -73,7 +73,7 @@ const Soluciones = () => {
           
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
                 Soluciones por <span className="text-accent">Industria</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
@@ -131,7 +131,7 @@ const Soluciones = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white">
                 ¿Necesita asesoría técnica especializada?
               </h2>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">

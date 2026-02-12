@@ -61,7 +61,7 @@ const Index = () => {
 
         {/* Brand Partners Strip */}
         <section className="py-8 bg-gradient-to-r from-[hsl(var(--primary)/0.03)] via-[hsl(var(--accent)/0.04)] to-[hsl(var(--primary)/0.03)] border-y border-[hsl(var(--primary)/0.08)]">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 lg:px-10">
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
               <span className="text-sm font-semibold text-foreground/40 uppercase tracking-wider">Socios comerciales:</span>
               {["Diversey", "TORK", "3M", "Kemical", "Solquisa", "El Castor", "HP", "Epson", "Faber Castell"].map((brand) => (
@@ -75,9 +75,9 @@ const Index = () => {
 
         {/* Product Lines Section */}
         <section className="py-20" style={{ background: 'linear-gradient(180deg, #f5f8fd 0%, #f9fbfe 50%, #ffffff 100%)' }}>
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 lg:px-10">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4 text-primary">Líneas de Productos</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary">Líneas de Productos</h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Socios comerciales: Diversey, TORK, 3M, Kemical, Solquisa, El Castor, HP, Epson, Faber Castell, Artline, Facela
               </p>
@@ -109,9 +109,9 @@ const Index = () => {
         <section className="py-20 relative overflow-hidden bg-white">
           <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent)/0.03)] via-transparent to-[hsl(var(--primary)/0.03)]" />
           
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4 text-primary">Industrias que Servimos</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary">Industrias que Servimos</h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Soluciones especializadas adaptadas a las necesidades únicas de cada sector
               </p>
@@ -147,9 +147,9 @@ const Index = () => {
         {/* CTA Section */}
         <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                 ¿Listo para impulsar la eficiencia de su operación?
               </h2>
               <p className="text-xl opacity-90">

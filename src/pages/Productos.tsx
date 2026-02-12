@@ -116,7 +116,7 @@ const Productos = () => {
           <div className="absolute top-[30%] right-[5%] w-[130px] h-[3px] bg-[hsl(var(--highlight))] transform -rotate-[55deg] opacity-15 rounded-full" />
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-5">
-              <h1 className="font-heading text-4xl md:text-5xl font-black text-primary">
+              <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-black text-primary">
                 Catálogo de <span className="text-accent">Productos</span>
               </h1>
               <p className="text-lg text-foreground/65 leading-relaxed">
