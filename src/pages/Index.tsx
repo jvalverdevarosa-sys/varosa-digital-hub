@@ -69,12 +69,31 @@ const Index = () => {
         <Hero />
 
         {/* Brand Partners Strip */}
-        <section className="py-6 bg-gradient-to-r from-[hsl(var(--primary)/0.03)] via-[hsl(var(--accent)/0.04)] to-[hsl(var(--primary)/0.03)] border-y border-[hsl(var(--primary)/0.08)]">
+        <section className="py-8 sm:py-10 bg-white border-y border-[hsl(var(--primary)/0.08)]">
           <div className="container mx-auto px-6 lg:px-10">
-            <div className="flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-10 gap-y-3">
-              {["Diversey", "TORK", "3M", "Kemical", "Solquisa", "El Castor", "HP", "Epson", "Faber Castell"].map((brand) => (
-                <span key={brand} className="text-sm font-bold text-foreground/50 hover:text-primary transition-colors cursor-default tracking-wide">
-                  {brand}
+            <p className="text-[11px] font-semibold text-foreground/35 uppercase tracking-[0.2em] text-center mb-5">Distribuidor autorizado</p>
+            <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-4">
+              {[
+                { name: "Diversey", size: "text-base sm:text-lg", weight: "font-extrabold" },
+                { name: "TORK", size: "text-base sm:text-lg", weight: "font-extrabold" },
+                { name: "3M", size: "text-lg sm:text-xl", weight: "font-black" },
+                { name: "Kemical", size: "text-base sm:text-lg", weight: "font-extrabold" },
+                { name: "Solquisa", size: "text-base sm:text-lg", weight: "font-extrabold" },
+                { name: "El Castor", size: "text-base sm:text-lg", weight: "font-extrabold" },
+                { name: "HP", size: "text-base sm:text-lg", weight: "font-black" },
+                { name: "Epson", size: "text-sm sm:text-base", weight: "font-bold" },
+                { name: "Faber Castell", size: "text-sm sm:text-base", weight: "font-bold" },
+              ].map((brand, index, arr) => (
+                <span key={brand.name} className="flex items-center gap-4 sm:gap-6 lg:gap-8">
+                  <span 
+                    className={`${brand.size} ${brand.weight} text-foreground/40 hover:text-primary tracking-wide transition-colors duration-300 cursor-default select-none`}
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    {brand.name}
+                  </span>
+                  {index < arr.length - 1 && (
+                    <span className="hidden sm:block w-1 h-1 rounded-full bg-foreground/15" aria-hidden="true" />
+                  )}
                 </span>
               ))}
             </div>
