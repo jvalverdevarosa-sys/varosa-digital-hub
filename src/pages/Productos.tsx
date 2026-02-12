@@ -32,6 +32,10 @@ import imgEscobas from "@/assets/products/escobas-recogedores.webp";
 import imgJaladores from "@/assets/products/jaladores-escurridores.webp";
 import imgMopas from "@/assets/products/mopas-trapeadores.webp";
 import imgFibras from "@/assets/products/fibras-esponjas-3m.webp";
+// Imágenes de productos — Oficina
+import imgPapeleria from "@/assets/products/papeleria-pritt.webp";
+import imgTintas from "@/assets/products/impresora-epson.webp";
+import imgOrganizacion from "@/assets/products/tijera-facela.webp";
 
 const categories = [
   {
@@ -94,10 +98,10 @@ const categories = [
     description: "Línea completa de artículos de oficina de marcas reconocidas. Desde papelería básica hasta suministros tecnológicos para mantener su operación funcionando.",
     brands: ["HP", "Epson", "Faber Castell", "Artline", "Facela"],
     products: [
-      { name: "Papelería General", description: "Papel bond, folders, sobres, libretas, agendas, post-it y artículos básicos de oficina.", brand: "Varios", applications: ["Oficinas", "Recepción", "Administración"] },
+      { name: "Papelería General", description: "Papel bond, folders, sobres, libretas, agendas, post-it y artículos básicos de oficina.", brand: "Varios", applications: ["Oficinas", "Recepción", "Administración"], image: imgPapeleria },
       { name: "Artículos de Escritura", description: "Bolígrafos, marcadores permanentes, resaltadores, lápices y portaminas de calidad profesional.", brand: "Faber Castell / Artline", applications: ["Oficinas", "Bodegas", "Producción"] },
-      { name: "Tintas y Tóners", description: "Cartuchos de tinta y tóner originales y compatibles para impresoras HP, Epson y otras marcas.", brand: "HP / Epson", applications: ["Oficinas", "Centros de impresión"] },
-      { name: "Organización y Archivo", description: "Archivadores, carpetas, cajas de archivo, separadores y sistemas de organización documental.", brand: "Facela / Varios", applications: ["Oficinas", "Archivo", "Contabilidad"] },
+      { name: "Tintas y Tóners", description: "Cartuchos de tinta y tóner originales y compatibles para impresoras HP, Epson y otras marcas.", brand: "HP / Epson", applications: ["Oficinas", "Centros de impresión"], image: imgTintas },
+      { name: "Organización y Archivo", description: "Archivadores, carpetas, cajas de archivo, separadores y sistemas de organización documental.", brand: "Facela / Varios", applications: ["Oficinas", "Archivo", "Contabilidad"], image: imgOrganizacion },
     ],
   },
 ];
