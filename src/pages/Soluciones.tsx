@@ -21,6 +21,31 @@ import {
   Users,
 } from "lucide-react";
 
+// Logos de clientes
+import logoHotelElEstablo from "@/assets/logos/clientes/hotel-el-establo.jpeg";
+import logoLaPazWaterfall from "@/assets/logos/clientes/la-paz-waterfall-gardens.jpeg";
+import logoArenalSprings from "@/assets/logos/clientes/arenal-springs.jpeg";
+import logoSantoPecado from "@/assets/logos/clientes/santo-pecado.jpeg";
+import logoTicofrut from "@/assets/logos/clientes/ticofrut.jpeg";
+import logoCoopelesca from "@/assets/logos/clientes/coopelesca.png";
+import logoIndustriasCharo from "@/assets/logos/clientes/industrias-charo.png";
+import logoPollosPako from "@/assets/logos/clientes/pollos-pako.png";
+import logoCarniceriasMatoro from "@/assets/logos/clientes/carnicerias-matoro.jpeg";
+import logoSweetWell from "@/assets/logos/clientes/sweet-well.png";
+
+const clientLogos: Record<string, string> = {
+  "Hotel El Establo": logoHotelElEstablo,
+  "La Paz Waterfall Gardens": logoLaPazWaterfall,
+  "Arenal Springs": logoArenalSprings,
+  "Santo Pecado": logoSantoPecado,
+  "Ticofrut": logoTicofrut,
+  "Coopelesca": logoCoopelesca,
+  "Industrias Charo": logoIndustriasCharo,
+  "Pollos Pako": logoPollosPako,
+  "Carnicerías Matoro": logoCarniceriasMatoro,
+  "Sweet Well": logoSweetWell,
+};
+
 const prioritySectors = [
   {
     icon: Factory,
@@ -265,8 +290,11 @@ const Soluciones = () => {
                               <Badge
                                 key={i}
                                 variant="secondary"
-                                className="bg-primary/5 text-foreground/70 border-primary/10 text-xs font-medium"
+                                className="bg-primary/5 text-foreground/70 border-primary/10 text-xs font-medium flex items-center gap-1.5 py-1 px-2"
                               >
+                                {clientLogos[c] && (
+                                  <img src={clientLogos[c]} alt="" className="h-4 w-4 object-contain rounded-sm" loading="lazy" />
+                                )}
                                 {c}
                               </Badge>
                             ))}
@@ -329,8 +357,11 @@ const Soluciones = () => {
                           <Badge
                             key={j}
                             variant="secondary"
-                            className="bg-primary/5 text-foreground/60 border-primary/10 text-xs"
+                            className="bg-primary/5 text-foreground/60 border-primary/10 text-xs flex items-center gap-1.5 py-1 px-2"
                           >
+                            {clientLogos[c] && (
+                              <img src={clientLogos[c]} alt="" className="h-4 w-4 object-contain rounded-sm" loading="lazy" />
+                            )}
                             {c}
                           </Badge>
                         ))}

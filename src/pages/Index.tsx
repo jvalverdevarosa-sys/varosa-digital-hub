@@ -9,6 +9,31 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { NavLink } from "@/components/NavLink";
 import { Droplets, Shield, Sparkles, Building2, Utensils, Factory, ArrowRight } from "lucide-react";
 
+// Logos de marcas
+import logo3m from "@/assets/logos/marcas/3m.png";
+import logoArtline from "@/assets/logos/marcas/artline.png";
+import logoDiversey from "@/assets/logos/marcas/diversey.png";
+import logoElCastor from "@/assets/logos/marcas/el-castor.png";
+import logoEpson from "@/assets/logos/marcas/epson.png";
+import logoFaberCastell from "@/assets/logos/marcas/faber-castell.png";
+import logoHp from "@/assets/logos/marcas/hp.png";
+import logoKemical from "@/assets/logos/marcas/kemical.png";
+import logoSolquisa from "@/assets/logos/marcas/solquisa.png";
+import logoTork from "@/assets/logos/marcas/tork.png";
+import logoFacela from "@/assets/logos/marcas/facela.jpeg";
+
+// Logos de clientes
+import logoHotelElEstablo from "@/assets/logos/clientes/hotel-el-establo.jpeg";
+import logoLaPazWaterfall from "@/assets/logos/clientes/la-paz-waterfall-gardens.jpeg";
+import logoArenalSprings from "@/assets/logos/clientes/arenal-springs.jpeg";
+import logoSantoPecado from "@/assets/logos/clientes/santo-pecado.jpeg";
+import logoTicofrut from "@/assets/logos/clientes/ticofrut.jpeg";
+import logoCoopelesca from "@/assets/logos/clientes/coopelesca.png";
+import logoIndustriasCharo from "@/assets/logos/clientes/industrias-charo.png";
+import logoPollosPako from "@/assets/logos/clientes/pollos-pako.png";
+import logoCarniceriasMatoro from "@/assets/logos/clientes/carnicerias-matoro.jpeg";
+import logoSweetWell from "@/assets/logos/clientes/sweet-well.png";
+
 const Index = () => {
   const productLines = [
     {
@@ -73,29 +98,27 @@ const Index = () => {
         <section className="py-8 sm:py-10 bg-background border-y border-[hsl(var(--primary)/0.08)]">
           <div className="container mx-auto px-6 lg:px-10">
             <p className="text-[11px] font-semibold text-foreground/35 uppercase tracking-[0.2em] text-center mb-5">Distribuidor autorizado</p>
-            <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-4">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-8 lg:gap-x-10 gap-y-4">
               {[
-                { name: "Diversey", size: "text-base sm:text-lg", weight: "font-extrabold" },
-                { name: "TORK", size: "text-base sm:text-lg", weight: "font-extrabold" },
-                { name: "3M", size: "text-lg sm:text-xl", weight: "font-black" },
-                { name: "Kemical", size: "text-base sm:text-lg", weight: "font-extrabold" },
-                { name: "Solquisa", size: "text-base sm:text-lg", weight: "font-extrabold" },
-                { name: "El Castor", size: "text-base sm:text-lg", weight: "font-extrabold" },
-                { name: "HP", size: "text-base sm:text-lg", weight: "font-black" },
-                { name: "Epson", size: "text-sm sm:text-base", weight: "font-bold" },
-                { name: "Faber Castell", size: "text-sm sm:text-base", weight: "font-bold" },
-              ].map((brand, index, arr) => (
-                <span key={brand.name} className="flex items-center gap-4 sm:gap-6 lg:gap-8">
-                  <span 
-                    className={`${brand.size} ${brand.weight} text-foreground/40 hover:text-primary tracking-wide transition-colors duration-300 cursor-default select-none`}
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
-                  >
-                    {brand.name}
-                  </span>
-                  {index < arr.length - 1 && (
-                    <span className="hidden sm:block w-1 h-1 rounded-full bg-foreground/15" aria-hidden="true" />
-                  )}
-                </span>
+                { name: "Diversey", logo: logoDiversey, height: "h-8 sm:h-10" },
+                { name: "TORK", logo: logoTork, height: "h-7 sm:h-9" },
+                { name: "3M", logo: logo3m, height: "h-8 sm:h-10" },
+                { name: "Kemical", logo: logoKemical, height: "h-6 sm:h-8" },
+                { name: "Solquisa", logo: logoSolquisa, height: "h-7 sm:h-9" },
+                { name: "El Castor", logo: logoElCastor, height: "h-7 sm:h-9" },
+                { name: "HP", logo: logoHp, height: "h-8 sm:h-10" },
+                { name: "Epson", logo: logoEpson, height: "h-7 sm:h-8" },
+                { name: "Faber Castell", logo: logoFaberCastell, height: "h-7 sm:h-8" },
+                { name: "Artline", logo: logoArtline, height: "h-7 sm:h-8" },
+                { name: "Facela", logo: logoFacela, height: "h-7 sm:h-9" },
+              ].map((brand) => (
+                <img
+                  key={brand.name}
+                  src={brand.logo}
+                  alt={`Logo ${brand.name}`}
+                  className={`${brand.height} w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 dark:brightness-0 dark:invert dark:opacity-50 dark:hover:opacity-80`}
+                  loading="lazy"
+                />
               ))}
             </div>
           </div>
@@ -193,6 +216,36 @@ const Index = () => {
             </div>
             </ScrollReveal>
 
+            {/* Client logos carousel */}
+            <ScrollReveal>
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-10 mb-12">
+              {[
+                { name: "Hotel El Establo", logo: logoHotelElEstablo },
+                { name: "La Paz Waterfall Gardens", logo: logoLaPazWaterfall },
+                { name: "Arenal Springs", logo: logoArenalSprings },
+                { name: "Santo Pecado", logo: logoSantoPecado },
+                { name: "Ticofrut", logo: logoTicofrut },
+                { name: "Coopelesca", logo: logoCoopelesca },
+                { name: "Industrias Charo", logo: logoIndustriasCharo },
+                { name: "Pollos Pako", logo: logoPollosPako },
+                { name: "Carnicerías Matoro", logo: logoCarniceriasMatoro },
+                { name: "Sweet Well", logo: logoSweetWell },
+              ].map((client) => (
+                <div key={client.name} className="flex flex-col items-center gap-2">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-card border border-[hsl(var(--primary)/0.1)] flex items-center justify-center p-2 hover:border-[hsl(var(--accent)/0.4)] hover:shadow-[0_4px_15px_hsl(var(--accent)/0.1)] transition-all duration-300">
+                    <img
+                      src={client.logo}
+                      alt={`Logo ${client.name}`}
+                      className="w-full h-full object-contain rounded"
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="text-[10px] sm:text-xs text-foreground/50 text-center max-w-[80px] leading-tight">{client.name}</span>
+                </div>
+              ))}
+            </div>
+            </ScrollReveal>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
               {[
                 {
@@ -215,8 +268,8 @@ const Index = () => {
                 },
                 {
                   sector: "Retail y Comercio",
-                  count: "2+",
-                  clients: ["Economás", "Carnicerías Matoro"],
+                  count: "3+",
+                  clients: ["Economás", "Carnicerías Matoro", "Sweet Well"],
                   color: "highlight"
                 }
               ].map((group, index) => (

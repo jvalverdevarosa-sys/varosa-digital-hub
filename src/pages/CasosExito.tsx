@@ -18,6 +18,31 @@ import {
   MapPin,
 } from "lucide-react";
 
+// Logos de clientes
+import logoHotelElEstablo from "@/assets/logos/clientes/hotel-el-establo.jpeg";
+import logoLaPazWaterfall from "@/assets/logos/clientes/la-paz-waterfall-gardens.jpeg";
+import logoArenalSprings from "@/assets/logos/clientes/arenal-springs.jpeg";
+import logoSantoPecado from "@/assets/logos/clientes/santo-pecado.jpeg";
+import logoTicofrut from "@/assets/logos/clientes/ticofrut.jpeg";
+import logoCoopelesca from "@/assets/logos/clientes/coopelesca.png";
+import logoIndustriasCharo from "@/assets/logos/clientes/industrias-charo.png";
+import logoPollosPako from "@/assets/logos/clientes/pollos-pako.png";
+import logoCarniceriasMatoro from "@/assets/logos/clientes/carnicerias-matoro.jpeg";
+import logoSweetWell from "@/assets/logos/clientes/sweet-well.png";
+
+const clientLogos: Record<string, string> = {
+  "Hotel El Establo": logoHotelElEstablo,
+  "La Paz Waterfall Gardens": logoLaPazWaterfall,
+  "Arenal Springs": logoArenalSprings,
+  "Santo Pecado": logoSantoPecado,
+  "Ticofrut": logoTicofrut,
+  "Coopelesca": logoCoopelesca,
+  "Industrias Charo": logoIndustriasCharo,
+  "Pollos Pako": logoPollosPako,
+  "Carnicerías Matoro": logoCarniceriasMatoro,
+  "Sweet Well": logoSweetWell,
+};
+
 const cases = [
   {
     sector: "HORECA y Turismo",
@@ -129,7 +154,7 @@ const cases = [
     testimonial:
       "VAROSA nos atiende con visitas regulares y siempre tiene disponibilidad. No tenemos que preocuparnos por quedarnos sin insumos.",
     testimonialAuthor: "Administración — Sector Comercio, Zona Norte",
-    clients: ["Economás", "Carnicerías Matoro"],
+    clients: ["Economás", "Carnicerías Matoro", "Sweet Well"],
     region: "Zona Norte",
   },
 ];
@@ -162,6 +187,7 @@ const allClients = [
   "Lácteos Ceci",
   "Economás",
   "Matoro",
+  "Sweet Well",
 ];
 
 const CasosExito = () => {
@@ -298,8 +324,11 @@ const CasosExito = () => {
                                 <Badge
                                   key={i}
                                   variant="secondary"
-                                  className="bg-primary/5 text-foreground/70 border-primary/10 text-xs font-medium"
+                                  className="bg-primary/5 text-foreground/70 border-primary/10 text-xs font-medium flex items-center gap-1.5 py-1 px-2"
                                 >
+                                  {clientLogos[client] && (
+                                    <img src={clientLogos[client]} alt="" className="h-4 w-4 object-contain rounded-sm" loading="lazy" />
+                                  )}
                                   {client}
                                 </Badge>
                               ))}
@@ -372,18 +401,24 @@ const CasosExito = () => {
               </p>
             </div>
             </ScrollReveal>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {allClients.map((client, index) => (
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+              {allClients.map((client, index) => {
+                const logo = clientLogos[client] || clientLogos[client === "El Establo" ? "Hotel El Establo" : ""] || clientLogos[client === "Matoro" ? "Carnicerías Matoro" : ""];
+                return (
                 <ScrollReveal key={index} delay={index * 40}>
                 <div
-                  className="flex items-center justify-center p-5 bg-card rounded-lg border border-primary/10 hover:border-accent hover:shadow-accent transition-all duration-300"
+                  className="flex flex-col items-center justify-center p-4 bg-card rounded-lg border border-primary/10 hover:border-accent hover:shadow-accent transition-all duration-300 min-h-[90px]"
                 >
-                  <span className="text-sm font-medium text-center text-foreground/70">
+                  {logo ? (
+                    <img src={logo} alt={`Logo ${client}`} className="h-10 w-auto object-contain mb-1.5 rounded" loading="lazy" />
+                  ) : null}
+                  <span className="text-xs font-medium text-center text-foreground/70 leading-tight">
                     {client}
                   </span>
                 </div>
                 </ScrollReveal>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
