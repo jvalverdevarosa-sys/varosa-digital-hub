@@ -11,27 +11,27 @@ import {
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
-// Imágenes de productos (Dispensadores TORK)
+// Imágenes de productos — Químicos
+import imgDesengrasante from "@/assets/products/desengrasante-diversey.webp";
+import imgDesinfectante from "@/assets/products/desinfectante-diversey.webp";
+import imgDetergenteLavanderia from "@/assets/products/detergente-lavanderia-diversey.webp";
+import imgLimpiadorPisos from "@/assets/products/limpiador-pisos.webp";
+import imgProductosLacteo from "@/assets/products/productos-lacteo-solquisa.webp";
+import imgJabonSanitizante from "@/assets/products/jabon-sanitizante-diversey.webp";
+// Imágenes de productos — Higiene y Papel
 import imgDispToallas from "@/assets/products/dispensador-toallas-tork.webp";
 import imgDispPapel from "@/assets/products/dispensador-papel-higienico-tork.webp";
 import imgDispJabon from "@/assets/products/dispensador-jabon-tork.webp";
-import imgDispServilletas from "@/assets/products/dispensador-servilletas-tork.webp";
-import imgDispDiversey from "@/assets/products/dispensador-jabon-diversey.webp";
-import imgDispSensor from "@/assets/products/dispensador-sensor-tork.webp";
-// Imágenes de productos (Químicos)
-import imgDesengrasante from "@/assets/products/desengrasante-suma-diversey.webp";
-import imgDesinfectante from "@/assets/products/desinfectante-alpha-diversey.webp";
-import imgDetergente from "@/assets/products/detergente-clax-diversey.webp";
-import imgLimpiadorPisos from "@/assets/products/limpiador-pisos.webp";
-import imgQuimicoLacteo from "@/assets/products/quimico-lacteo-kemical.webp";
-import imgJabonManos from "@/assets/products/jabon-manos-diversey.webp";
-// Imágenes de productos (Herramientas)
-import imgCepillo from "@/assets/products/cepillo-mano.webp";
-import imgEscoba from "@/assets/products/escoba-industrial.webp";
-import imgJalador from "@/assets/products/jalador-pisos.webp";
-import imgMopa from "@/assets/products/mopa-industrial.webp";
-// Imágenes de productos (Lechería)
-import imgFibra from "@/assets/products/fibra-verde.webp";
+import imgPapelHigienico from "@/assets/products/papel-higienico-tork.webp";
+import imgToallasPapel from "@/assets/products/toallas-papel-tork.webp";
+import imgServilletas from "@/assets/products/servilletas-tork.webp";
+// Imágenes de productos — Herramientas
+import imgCepillosCodificados from "@/assets/products/cepillos-codificados.webp";
+import imgCepillosIndustriales from "@/assets/products/cepillos-industriales.webp";
+import imgEscobas from "@/assets/products/escobas-recogedores.webp";
+import imgJaladores from "@/assets/products/jaladores-escurridores.webp";
+import imgMopas from "@/assets/products/mopas-trapeadores.webp";
+import imgFibras from "@/assets/products/fibras-esponjas-3m.webp";
 
 const categories = [
   {
@@ -45,10 +45,10 @@ const categories = [
     products: [
       { name: "Desengrasantes Industriales", description: "Fórmulas concentradas para remoción de grasa en cocinas, plantas de proceso y equipos industriales.", brand: "Diversey / Kemical", applications: ["Cocinas industriales", "Plantas de proceso", "Equipos"], image: imgDesengrasante },
       { name: "Desinfectantes y Sanitizantes", description: "Productos virucidas y bactericidas certificados para superficies de contacto con alimentos y áreas críticas.", brand: "Diversey / Solquisa", applications: ["Superficies alimentarias", "Áreas de salud", "Sanitarios"], image: imgDesinfectante },
-      { name: "Detergentes para Lavandería Industrial", description: "Detergentes, suavizantes y blanqueadores para lavandería de alto volumen en hoteles y hospitales.", brand: "Diversey", applications: ["Hoteles", "Hospitales", "Lavandería industrial"], image: imgDetergente },
+      { name: "Detergentes para Lavandería Industrial", description: "Detergentes, suavizantes y blanqueadores para lavandería de alto volumen en hoteles y hospitales.", brand: "Diversey", applications: ["Hoteles", "Hospitales", "Lavandería industrial"], image: imgDetergenteLavanderia },
       { name: "Limpiadores de Pisos", description: "Soluciones para todo tipo de superficies: cerámica, porcelanato, concreto, vinilo y pisos especializados.", brand: "Diversey / Kemical", applications: ["Pisos industriales", "Áreas comunes", "Comercios"], image: imgLimpiadorPisos },
-      { name: "Productos para Sector Lácteo", description: "Químicos especializados para limpieza CIP, desinfección de equipos de ordeño y tanques de enfriamiento.", brand: "Kemical / Solquisa", applications: ["Lecherías", "Plantas de lácteos", "Equipos de ordeño"], image: imgQuimicoLacteo },
-      { name: "Jabones y Sanitizantes de Manos", description: "Jabones líquidos, espuma y gel antibacterial para dispensadores automáticos y manuales.", brand: "Diversey", applications: ["Baños públicos", "Cocinas", "Áreas de proceso"], image: imgJabonManos },
+      { name: "Productos para Sector Lácteo", description: "Químicos especializados para limpieza CIP, desinfección de equipos de ordeño y tanques de enfriamiento.", brand: "Kemical / Solquisa", applications: ["Lecherías", "Plantas de lácteos", "Equipos de ordeño"], image: imgProductosLacteo },
+      { name: "Jabones y Sanitizantes de Manos", description: "Jabones líquidos, espuma y gel antibacterial para dispensadores automáticos y manuales.", brand: "Diversey", applications: ["Baños públicos", "Cocinas", "Áreas de proceso"], image: imgJabonSanitizante },
     ],
   },
   {
@@ -63,9 +63,9 @@ const categories = [
       { name: "Dispensadores de Toallas de Mano", description: "Sistemas TORK Matic, Xpress y Universal. Dispensado controlado que reduce consumo hasta un 40%.", brand: "TORK", applications: ["Baños públicos", "Cocinas", "Áreas de proceso"], image: imgDispToallas },
       { name: "Dispensadores de Papel Higiénico", description: "Sistemas TORK SmartOne, Jumbo y Convencional. Diseño higiénico con dispensado hoja por hoja.", brand: "TORK", applications: ["Baños de alto tráfico", "Oficinas", "Comercios"], image: imgDispPapel },
       { name: "Dispensadores de Jabón", description: "Sistemas TORK para jabón líquido, espuma y spray. Compatible con productos Diversey.", brand: "TORK / Diversey", applications: ["Baños", "Cocinas industriales", "Áreas de salud"], image: imgDispJabon },
-      { name: "Papel Higiénico Profesional", description: "Rollos jumbo, doble hoja y hojas intercaladas para todo tipo de instalación.", brand: "TORK", applications: ["Alto tráfico", "Oficinas", "HORECA"] },
-      { name: "Toallas de Papel", description: "Toallas de mano en rollo y dobladas. Absorción superior para secado rápido y eficiente.", brand: "TORK", applications: ["Baños", "Cocinas", "Áreas de proceso"] },
-      { name: "Servilletas y Manteles", description: "Servilletas de papel de alta calidad para restaurantes, hoteles y servicios de catering.", brand: "TORK", applications: ["Restaurantes", "Hoteles", "Eventos"], image: imgDispServilletas },
+      { name: "Papel Higiénico Profesional", description: "Rollos jumbo, doble hoja y hojas intercaladas para todo tipo de instalación.", brand: "TORK", applications: ["Alto tráfico", "Oficinas", "HORECA"], image: imgPapelHigienico },
+      { name: "Toallas de Papel", description: "Toallas de mano en rollo y dobladas. Absorción superior para secado rápido y eficiente.", brand: "TORK", applications: ["Baños", "Cocinas", "Áreas de proceso"], image: imgToallasPapel },
+      { name: "Servilletas y Manteles", description: "Servilletas de papel de alta calidad para restaurantes, hoteles y servicios de catering.", brand: "TORK", applications: ["Restaurantes", "Hoteles", "Eventos"], image: imgServilletas },
     ],
   },
   {
@@ -77,12 +77,12 @@ const categories = [
     description: "Herramientas profesionales con certificación FDA de El Castor. Sistema de código de colores para prevenir contaminación cruzada. Complementadas con accesorios 3M.",
     brands: ["El Castor", "3M"],
     products: [
-      { name: "Cepillos Codificados FDA", description: "Sistema de código de colores (azul, rojo, verde, amarillo, blanco) para separación de áreas y prevención de contaminación cruzada.", brand: "El Castor", applications: ["Industria alimentaria", "Plantas de proceso", "Lecherías"], image: imgCepillo },
-      { name: "Cepillos Industriales Especializados", description: "Cepillos de mango largo, para tanques, bandas transportadoras y limpieza de tuberías.", brand: "El Castor", applications: ["Manufactura", "Plantas de proceso", "Equipos"] },
-      { name: "Escobas y Recogedores", description: "Escobas de cerdas duras y suaves, recogedores industriales. Materiales resistentes para uso intensivo.", brand: "El Castor", applications: ["Limpieza general", "Bodegas", "Áreas exteriores"], image: imgEscoba },
-      { name: "Jaladores y Escurridores", description: "Jaladores de agua con hule natural, escurridores para áreas húmedas y pisos industriales.", brand: "El Castor", applications: ["Cocinas", "Áreas húmedas", "Plantas de proceso"], image: imgJalador },
-      { name: "Mopas y Trapeadores", description: "Sistemas de mopa húmeda y seca. Trapeadores industriales con cabezal intercambiable.", brand: "El Castor / 3M", applications: ["Pisos", "Oficinas", "Centros comerciales"], image: imgMopa },
-      { name: "Fibras y Esponjas 3M", description: "Fibras abrasivas, esponjas profesionales y discos para limpieza de superficies delicadas e industriales.", brand: "3M", applications: ["Cocinas", "Superficies delicadas", "Limpieza industrial"], image: imgFibra },
+      { name: "Cepillos Codificados FDA", description: "Sistema de código de colores (azul, rojo, verde, amarillo, blanco) para separación de áreas y prevención de contaminación cruzada.", brand: "El Castor", applications: ["Industria alimentaria", "Plantas de proceso", "Lecherías"], image: imgCepillosCodificados },
+      { name: "Cepillos Industriales Especializados", description: "Cepillos de mango largo, para tanques, bandas transportadoras y limpieza de tuberías.", brand: "El Castor", applications: ["Manufactura", "Plantas de proceso", "Equipos"], image: imgCepillosIndustriales },
+      { name: "Escobas y Recogedores", description: "Escobas de cerdas duras y suaves, recogedores industriales. Materiales resistentes para uso intensivo.", brand: "El Castor", applications: ["Limpieza general", "Bodegas", "Áreas exteriores"], image: imgEscobas },
+      { name: "Jaladores y Escurridores", description: "Jaladores de agua con hule natural, escurridores para áreas húmedas y pisos industriales.", brand: "El Castor", applications: ["Cocinas", "Áreas húmedas", "Plantas de proceso"], image: imgJaladores },
+      { name: "Mopas y Trapeadores", description: "Sistemas de mopa húmeda y seca. Trapeadores industriales con cabezal intercambiable.", brand: "El Castor / 3M", applications: ["Pisos", "Oficinas", "Centros comerciales"], image: imgMopas },
+      { name: "Fibras y Esponjas 3M", description: "Fibras abrasivas, esponjas profesionales y discos para limpieza de superficies delicadas e industriales.", brand: "3M", applications: ["Cocinas", "Superficies delicadas", "Limpieza industrial"], image: imgFibras },
     ],
   },
   {
