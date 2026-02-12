@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -241,8 +242,8 @@ const CasosExito = () => {
               {cases.map((c, index) => {
                 const Icon = c.icon;
                 return (
+                  <ScrollReveal key={index} delay={index * 150}>
                   <Card
-                    key={index}
                     className="border border-primary/10 hover:border-accent/40 transition-all duration-300 overflow-hidden bg-card"
                   >
                     {/* Sector header */}
@@ -351,6 +352,7 @@ const CasosExito = () => {
                       </CardContent>
                     </div>
                   </Card>
+                  </ScrollReveal>
                 );
               })}
             </div>
@@ -360,6 +362,7 @@ const CasosExito = () => {
         {/* All Clients */}
         <section className="py-20 bg-background border-y border-primary/8">
           <div className="container mx-auto px-6 lg:px-10">
+            <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
                 Clientes que Confían en Nosotros
@@ -368,16 +371,18 @@ const CasosExito = () => {
                 Empresas y operaciones de todas las industrias en Costa Rica
               </p>
             </div>
+            </ScrollReveal>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {allClients.map((client, index) => (
+                <ScrollReveal key={index} delay={index * 40}>
                 <div
-                  key={index}
                   className="flex items-center justify-center p-5 bg-card rounded-lg border border-primary/10 hover:border-accent hover:shadow-accent transition-all duration-300"
                 >
                   <span className="text-sm font-medium text-center text-foreground/70">
                     {client}
                   </span>
                 </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>

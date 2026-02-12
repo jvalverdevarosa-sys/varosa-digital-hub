@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -149,7 +150,8 @@ const Soluciones = () => {
                 { icon: Users, label: "Capacitación\nin situ" },
                 { icon: ShieldCheck, label: "Auditorías\nATP" },
               ].map((d, i) => (
-                <div key={i} className="flex flex-col items-center gap-2">
+                <ScrollReveal key={i} delay={i * 100}>
+                <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
                     <d.icon className="h-6 w-6 text-accent" aria-hidden="true" />
                   </div>
@@ -157,6 +159,7 @@ const Soluciones = () => {
                     {d.label}
                   </span>
                 </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -169,8 +172,8 @@ const Soluciones = () => {
               {prioritySectors.map((sector, index) => {
                 const Icon = sector.icon;
                 return (
+                  <ScrollReveal key={index} delay={index * 150}>
                   <Card
-                    key={index}
                     className="border border-primary/10 hover:border-accent/40 transition-all duration-300 overflow-hidden bg-card"
                   >
                     {/* Header */}
@@ -286,6 +289,7 @@ const Soluciones = () => {
                       </CardContent>
                     </div>
                   </Card>
+                  </ScrollReveal>
                 );
               })}
             </div>
@@ -302,8 +306,8 @@ const Soluciones = () => {
               {secondarySectors.map((s, i) => {
                 const Icon = s.icon;
                 return (
+                  <ScrollReveal key={i} delay={i * 150}>
                   <Card
-                    key={i}
                     className="border border-primary/10 hover:border-accent/40 transition-all duration-300 bg-card"
                   >
                     <CardHeader className="pb-3">
@@ -333,6 +337,7 @@ const Soluciones = () => {
                       </div>
                     </CardContent>
                   </Card>
+                  </ScrollReveal>
                 );
               })}
             </div>

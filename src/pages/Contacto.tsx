@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
@@ -40,6 +41,7 @@ const Contacto = () => {
             <div className="grid lg:grid-cols-3 gap-10">
               {/* Contact Form */}
               <div className="lg:col-span-2">
+                <ScrollReveal direction="left">
                 <Card className="border border-primary/10 shadow-varosa bg-card">
                   <CardHeader>
                     <CardTitle className="text-2xl font-heading text-foreground">Solicitar Cotización</CardTitle>
@@ -58,9 +60,11 @@ const Contacto = () => {
                     />
                   </CardContent>
                 </Card>
+                </ScrollReveal>
               </div>
 
               {/* Contact Info */}
+              <ScrollReveal direction="right" delay={200}>
               <div className="space-y-6">
                 <Card className="border-2 border-accent shadow-accent bg-card">
                   <CardContent className="p-6 space-y-6">
@@ -135,6 +139,7 @@ const Contacto = () => {
                   </CardContent>
                 </Card>
               </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -142,6 +147,7 @@ const Contacto = () => {
         {/* Map Section */}
         <section className="py-12 bg-background border-t border-primary/8">
           <div className="container mx-auto px-6 lg:px-10">
+            <ScrollReveal>
             <div className="text-center mb-6">
               <h2 className="text-2xl font-heading font-bold text-foreground">Nuestra Ubicación</h2>
               <p className="text-sm text-foreground/60 mt-2">Venecia de San Carlos, Alajuela, Costa Rica</p>
@@ -161,6 +167,7 @@ const Contacto = () => {
             <p className="text-xs text-foreground/40 mt-3 text-center">
               📍 Si necesita indicaciones exactas, contáctenos al 4002-9365 o por WhatsApp al +506 8670-3251
             </p>
+            </ScrollReveal>
           </div>
         </section>
       </main>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
@@ -160,6 +161,7 @@ const Productos = () => {
             </div>
 
             {/* Category Header */}
+            <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center mb-8">
               <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${bgLightMap[currentCategory.color]} mb-4`}>
                 <currentCategory.icon className={`h-8 w-8 ${textColorMap[currentCategory.color]}`} />
@@ -172,6 +174,7 @@ const Productos = () => {
                 ))}
               </div>
             </div>
+            </ScrollReveal>
 
             {/* Search */}
             <div className="max-w-md mx-auto mb-10">
@@ -191,7 +194,8 @@ const Productos = () => {
             {/* Products Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {filteredProducts.map((product, index) => (
-                <Card key={index} className="border border-[hsl(var(--primary)/0.08)] hover:border-accent/30 hover:shadow-lg transition-all duration-300 group bg-card overflow-hidden">
+                <ScrollReveal key={`${currentCategory.name}-${index}`} delay={index * 80}>
+                <Card className="border border-[hsl(var(--primary)/0.08)] hover:border-accent/30 hover:shadow-lg transition-all duration-300 group bg-card overflow-hidden">
                   {/* Image placeholder */}
                   <div className={`h-40 ${bgLightMap[currentCategory.color]} flex items-center justify-center relative overflow-hidden`}>
                     <div className="text-center">
@@ -216,6 +220,7 @@ const Productos = () => {
                     </Button>
                   </CardContent>
                 </Card>
+                </ScrollReveal>
               ))}
             </div>
 

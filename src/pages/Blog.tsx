@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -269,14 +270,15 @@ const Blog = () => {
                   Artículos Destacados
                 </h2>
                 <div className="grid md:grid-cols-2 gap-8 mb-16">
-                  {featured.map((article) => (
+                  {featured.map((article, index) => (
+                    <ScrollReveal key={article.slug} delay={index * 150}>
                     <ArticleCard
-                      key={article.slug}
                       article={article}
                       expanded={expandedSlug === article.slug}
                       onToggle={() => toggle(article.slug)}
                       variant="featured"
                     />
+                    </ScrollReveal>
                   ))}
                 </div>
               </>
@@ -293,14 +295,15 @@ const Blog = () => {
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {(activeCategory === "Todos" ? articles : filteredArticles).map(
-                  (article) => (
+                  (article, index) => (
+                    <ScrollReveal key={article.slug + "-grid"} delay={index * 80}>
                     <ArticleCard
-                      key={article.slug + "-grid"}
                       article={article}
                       expanded={expandedSlug === article.slug}
                       onToggle={() => toggle(article.slug)}
                       variant="grid"
                     />
+                    </ScrollReveal>
                   )
                 )}
               </div>
