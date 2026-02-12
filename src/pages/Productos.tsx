@@ -18,6 +18,18 @@ import imgDispJabon from "@/assets/products/dispensador-jabon-tork.webp";
 import imgDispServilletas from "@/assets/products/dispensador-servilletas-tork.webp";
 import imgDispDiversey from "@/assets/products/dispensador-jabon-diversey.webp";
 import imgDispSensor from "@/assets/products/dispensador-sensor-tork.webp";
+// Imágenes de productos (Químicos)
+import imgDesengrasante from "@/assets/products/desengrasante-suma-diversey.webp";
+import imgDesinfectante from "@/assets/products/desinfectante-alpha-diversey.webp";
+import imgDetergente from "@/assets/products/detergente-clax-diversey.webp";
+import imgLimpiadorPisos from "@/assets/products/limpiador-pisos.webp";
+import imgQuimicoLacteo from "@/assets/products/quimico-lacteo-kemical.webp";
+import imgJabonManos from "@/assets/products/jabon-manos-diversey.webp";
+// Imágenes de productos (Herramientas)
+import imgCepillo from "@/assets/products/cepillo-mano.webp";
+import imgEscoba from "@/assets/products/escoba-industrial.webp";
+import imgJalador from "@/assets/products/jalador-pisos.webp";
+import imgMopa from "@/assets/products/mopa-industrial.webp";
 
 const categories = [
   {
@@ -29,12 +41,12 @@ const categories = [
     description: "Soluciones químicas especializadas para limpieza profunda, desinfección y desengrase industrial. Productos certificados para industria alimentaria, HORECA y manufactura.",
     brands: ["Diversey", "Kemical", "Solquisa"],
     products: [
-      { name: "Desengrasantes Industriales", description: "Fórmulas concentradas para remoción de grasa en cocinas, plantas de proceso y equipos industriales.", brand: "Diversey / Kemical", applications: ["Cocinas industriales", "Plantas de proceso", "Equipos"] },
-      { name: "Desinfectantes y Sanitizantes", description: "Productos virucidas y bactericidas certificados para superficies de contacto con alimentos y áreas críticas.", brand: "Diversey / Solquisa", applications: ["Superficies alimentarias", "Áreas de salud", "Sanitarios"] },
-      { name: "Detergentes para Lavandería Industrial", description: "Detergentes, suavizantes y blanqueadores para lavandería de alto volumen en hoteles y hospitales.", brand: "Diversey", applications: ["Hoteles", "Hospitales", "Lavandería industrial"] },
-      { name: "Limpiadores de Pisos", description: "Soluciones para todo tipo de superficies: cerámica, porcelanato, concreto, vinilo y pisos especializados.", brand: "Diversey / Kemical", applications: ["Pisos industriales", "Áreas comunes", "Comercios"] },
-      { name: "Productos para Sector Lácteo", description: "Químicos especializados para limpieza CIP, desinfección de equipos de ordeño y tanques de enfriamiento.", brand: "Kemical / Solquisa", applications: ["Lecherías", "Plantas de lácteos", "Equipos de ordeño"] },
-      { name: "Jabones y Sanitizantes de Manos", description: "Jabones líquidos, espuma y gel antibacterial para dispensadores automáticos y manuales.", brand: "Diversey", applications: ["Baños públicos", "Cocinas", "Áreas de proceso"] },
+      { name: "Desengrasantes Industriales", description: "Fórmulas concentradas para remoción de grasa en cocinas, plantas de proceso y equipos industriales.", brand: "Diversey / Kemical", applications: ["Cocinas industriales", "Plantas de proceso", "Equipos"], image: imgDesengrasante },
+      { name: "Desinfectantes y Sanitizantes", description: "Productos virucidas y bactericidas certificados para superficies de contacto con alimentos y áreas críticas.", brand: "Diversey / Solquisa", applications: ["Superficies alimentarias", "Áreas de salud", "Sanitarios"], image: imgDesinfectante },
+      { name: "Detergentes para Lavandería Industrial", description: "Detergentes, suavizantes y blanqueadores para lavandería de alto volumen en hoteles y hospitales.", brand: "Diversey", applications: ["Hoteles", "Hospitales", "Lavandería industrial"], image: imgDetergente },
+      { name: "Limpiadores de Pisos", description: "Soluciones para todo tipo de superficies: cerámica, porcelanato, concreto, vinilo y pisos especializados.", brand: "Diversey / Kemical", applications: ["Pisos industriales", "Áreas comunes", "Comercios"], image: imgLimpiadorPisos },
+      { name: "Productos para Sector Lácteo", description: "Químicos especializados para limpieza CIP, desinfección de equipos de ordeño y tanques de enfriamiento.", brand: "Kemical / Solquisa", applications: ["Lecherías", "Plantas de lácteos", "Equipos de ordeño"], image: imgQuimicoLacteo },
+      { name: "Jabones y Sanitizantes de Manos", description: "Jabones líquidos, espuma y gel antibacterial para dispensadores automáticos y manuales.", brand: "Diversey", applications: ["Baños públicos", "Cocinas", "Áreas de proceso"], image: imgJabonManos },
     ],
   },
   {
@@ -63,11 +75,11 @@ const categories = [
     description: "Herramientas profesionales con certificación FDA de El Castor. Sistema de código de colores para prevenir contaminación cruzada. Complementadas con accesorios 3M.",
     brands: ["El Castor", "3M"],
     products: [
-      { name: "Cepillos Codificados FDA", description: "Sistema de código de colores (azul, rojo, verde, amarillo, blanco) para separación de áreas y prevención de contaminación cruzada.", brand: "El Castor", applications: ["Industria alimentaria", "Plantas de proceso", "Lecherías"] },
+      { name: "Cepillos Codificados FDA", description: "Sistema de código de colores (azul, rojo, verde, amarillo, blanco) para separación de áreas y prevención de contaminación cruzada.", brand: "El Castor", applications: ["Industria alimentaria", "Plantas de proceso", "Lecherías"], image: imgCepillo },
       { name: "Cepillos Industriales Especializados", description: "Cepillos de mango largo, para tanques, bandas transportadoras y limpieza de tuberías.", brand: "El Castor", applications: ["Manufactura", "Plantas de proceso", "Equipos"] },
-      { name: "Escobas y Recogedores", description: "Escobas de cerdas duras y suaves, recogedores industriales. Materiales resistentes para uso intensivo.", brand: "El Castor", applications: ["Limpieza general", "Bodegas", "Áreas exteriores"] },
-      { name: "Jaladores y Escurridores", description: "Jaladores de agua con hule natural, escurridores para áreas húmedas y pisos industriales.", brand: "El Castor", applications: ["Cocinas", "Áreas húmedas", "Plantas de proceso"] },
-      { name: "Mopas y Trapeadores", description: "Sistemas de mopa húmeda y seca. Trapeadores industriales con cabezal intercambiable.", brand: "El Castor / 3M", applications: ["Pisos", "Oficinas", "Centros comerciales"] },
+      { name: "Escobas y Recogedores", description: "Escobas de cerdas duras y suaves, recogedores industriales. Materiales resistentes para uso intensivo.", brand: "El Castor", applications: ["Limpieza general", "Bodegas", "Áreas exteriores"], image: imgEscoba },
+      { name: "Jaladores y Escurridores", description: "Jaladores de agua con hule natural, escurridores para áreas húmedas y pisos industriales.", brand: "El Castor", applications: ["Cocinas", "Áreas húmedas", "Plantas de proceso"], image: imgJalador },
+      { name: "Mopas y Trapeadores", description: "Sistemas de mopa húmeda y seca. Trapeadores industriales con cabezal intercambiable.", brand: "El Castor / 3M", applications: ["Pisos", "Oficinas", "Centros comerciales"], image: imgMopa },
       { name: "Fibras y Esponjas 3M", description: "Fibras abrasivas, esponjas profesionales y discos para limpieza de superficies delicadas e industriales.", brand: "3M", applications: ["Cocinas", "Superficies delicadas", "Limpieza industrial"] },
     ],
   },
