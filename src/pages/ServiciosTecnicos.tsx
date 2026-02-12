@@ -59,7 +59,7 @@ const ServiciosTecnicos = () => {
       description: "Manuales de buenas prácticas de manufactura e higiene industrial"
     },
     {
-      icon: Download,
+      icon: CheckCircle2,
       title: "Protocolos de Auditoría",
       description: "Formatos y checklists para auditorías internas de limpieza"
     },

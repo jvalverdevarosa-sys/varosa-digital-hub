@@ -117,7 +117,7 @@ const Productos = () => {
       <Navigation />
       <main id="main-content" className="flex-1">
         {/* Hero */}
-        <section className="py-16 bg-white relative overflow-hidden">
+        <section className="py-16 bg-background relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent)/0.04)] via-transparent to-[hsl(var(--primary)/0.03)]" />
           <div className="absolute top-[20%] right-[8%] w-[200px] h-[3px] bg-[hsl(var(--highlight))] transform -rotate-[55deg] opacity-25 rounded-full" />
           <div className="absolute top-[30%] right-[5%] w-[130px] h-[3px] bg-[hsl(var(--highlight))] transform -rotate-[55deg] opacity-15 rounded-full" />
@@ -149,7 +149,7 @@ const Productos = () => {
                     className={`flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 border-2 ${
                       isActive
                         ? "bg-primary text-white border-primary shadow-varosa"
-                        : "bg-white text-foreground/70 border-[hsl(var(--primary)/0.1)] hover:border-primary/30 hover:text-primary"
+                        : "bg-card text-foreground/70 border-[hsl(var(--primary)/0.1)] hover:border-primary/30 hover:text-primary"
                     }`}
                   >
                     <Icon className="h-4 w-4" />
@@ -168,7 +168,7 @@ const Productos = () => {
               <p className="text-foreground/60 leading-relaxed mb-3">{currentCategory.description}</p>
               <div className="flex flex-wrap justify-center gap-2">
                 {currentCategory.brands.map((brand) => (
-                  <span key={brand} className="px-3 py-1 rounded-full bg-white border border-[hsl(var(--primary)/0.1)] text-xs font-semibold text-foreground/60">{brand}</span>
+                  <span key={brand} className="px-3 py-1 rounded-full bg-card border border-[hsl(var(--primary)/0.1)] text-xs font-semibold text-foreground/60">{brand}</span>
                 ))}
               </div>
             </div>
@@ -183,7 +183,7 @@ const Productos = () => {
                   placeholder="Buscar producto, marca o aplicación..."
                   value={searchTerm}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-white border-[hsl(var(--primary)/0.12)] focus:border-accent rounded-xl h-11"
+                  className="pl-10 bg-card border-[hsl(var(--primary)/0.12)] focus:border-accent rounded-xl h-11"
                 />
               </div>
             </div>
@@ -191,7 +191,7 @@ const Productos = () => {
             {/* Products Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {filteredProducts.map((product, index) => (
-                <Card key={index} className="border border-[hsl(var(--primary)/0.08)] hover:border-accent/30 hover:shadow-lg transition-all duration-300 group bg-white overflow-hidden">
+                <Card key={index} className="border border-[hsl(var(--primary)/0.08)] hover:border-accent/30 hover:shadow-lg transition-all duration-300 group bg-card overflow-hidden">
                   {/* Image placeholder */}
                   <div className={`h-40 ${bgLightMap[currentCategory.color]} flex items-center justify-center relative overflow-hidden`}>
                     <div className="text-center">
