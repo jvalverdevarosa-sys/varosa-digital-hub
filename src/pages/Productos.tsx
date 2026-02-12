@@ -11,6 +11,14 @@ import {
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
+// Imágenes de productos (Dispensadores TORK)
+import imgDispToallas from "@/assets/products/dispensador-toallas-tork.webp";
+import imgDispPapel from "@/assets/products/dispensador-papel-higienico-tork.webp";
+import imgDispJabon from "@/assets/products/dispensador-jabon-tork.webp";
+import imgDispServilletas from "@/assets/products/dispensador-servilletas-tork.webp";
+import imgDispDiversey from "@/assets/products/dispensador-jabon-diversey.webp";
+import imgDispSensor from "@/assets/products/dispensador-sensor-tork.webp";
+
 const categories = [
   {
     id: "quimicos",
@@ -38,12 +46,12 @@ const categories = [
     description: "Sistemas completos de higiene con dispensadores TORK de Essity, líder mundial en papel profesional. Soluciones que reducen consumo y mejoran la imagen de sus instalaciones.",
     brands: ["TORK (Essity)", "Diversey"],
     products: [
-      { name: "Dispensadores de Toallas de Mano", description: "Sistemas TORK Matic, Xpress y Universal. Dispensado controlado que reduce consumo hasta un 40%.", brand: "TORK", applications: ["Baños públicos", "Cocinas", "Áreas de proceso"] },
-      { name: "Dispensadores de Papel Higiénico", description: "Sistemas TORK SmartOne, Jumbo y Convencional. Diseño higiénico con dispensado hoja por hoja.", brand: "TORK", applications: ["Baños de alto tráfico", "Oficinas", "Comercios"] },
-      { name: "Dispensadores de Jabón", description: "Sistemas TORK para jabón líquido, espuma y spray. Compatible con productos Diversey.", brand: "TORK / Diversey", applications: ["Baños", "Cocinas industriales", "Áreas de salud"] },
+      { name: "Dispensadores de Toallas de Mano", description: "Sistemas TORK Matic, Xpress y Universal. Dispensado controlado que reduce consumo hasta un 40%.", brand: "TORK", applications: ["Baños públicos", "Cocinas", "Áreas de proceso"], image: imgDispToallas },
+      { name: "Dispensadores de Papel Higiénico", description: "Sistemas TORK SmartOne, Jumbo y Convencional. Diseño higiénico con dispensado hoja por hoja.", brand: "TORK", applications: ["Baños de alto tráfico", "Oficinas", "Comercios"], image: imgDispPapel },
+      { name: "Dispensadores de Jabón", description: "Sistemas TORK para jabón líquido, espuma y spray. Compatible con productos Diversey.", brand: "TORK / Diversey", applications: ["Baños", "Cocinas industriales", "Áreas de salud"], image: imgDispJabon },
       { name: "Papel Higiénico Profesional", description: "Rollos jumbo, doble hoja y hojas intercaladas para todo tipo de instalación.", brand: "TORK", applications: ["Alto tráfico", "Oficinas", "HORECA"] },
       { name: "Toallas de Papel", description: "Toallas de mano en rollo y dobladas. Absorción superior para secado rápido y eficiente.", brand: "TORK", applications: ["Baños", "Cocinas", "Áreas de proceso"] },
-      { name: "Servilletas y Manteles", description: "Servilletas de papel de alta calidad para restaurantes, hoteles y servicios de catering.", brand: "TORK", applications: ["Restaurantes", "Hoteles", "Eventos"] },
+      { name: "Servilletas y Manteles", description: "Servilletas de papel de alta calidad para restaurantes, hoteles y servicios de catering.", brand: "TORK", applications: ["Restaurantes", "Hoteles", "Eventos"], image: imgDispServilletas },
     ],
   },
   {
@@ -196,12 +204,21 @@ const Productos = () => {
               {filteredProducts.map((product, index) => (
                 <ScrollReveal key={`${currentCategory.name}-${index}`} delay={index * 80}>
                 <Card className="border border-[hsl(var(--primary)/0.08)] hover:border-accent/30 hover:shadow-lg transition-all duration-300 group bg-card overflow-hidden">
-                  {/* Image placeholder */}
-                  <div className={`h-40 ${bgLightMap[currentCategory.color]} flex items-center justify-center relative overflow-hidden`}>
-                    <div className="text-center">
-                      <Package className={`h-10 w-10 ${textColorMap[currentCategory.color]} opacity-40 mx-auto mb-2`} />
-                      <span className="text-xs text-foreground/30 font-medium">Imagen del producto</span>
-                    </div>
+                  {/* Product image or placeholder */}
+                  <div className={`h-44 ${bgLightMap[currentCategory.color]} flex items-center justify-center relative overflow-hidden`}>
+                    {product.image ? (
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="text-center">
+                        <Package className={`h-10 w-10 ${textColorMap[currentCategory.color]} opacity-40 mx-auto mb-2`} />
+                        <span className="text-xs text-foreground/30 font-medium">Imagen próximamente</span>
+                      </div>
+                    )}
                     <span className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-card/90 backdrop-blur-sm text-[10px] font-bold text-foreground/60 shadow-sm">{product.brand}</span>
                   </div>
                   <CardContent className="p-5 space-y-3">
