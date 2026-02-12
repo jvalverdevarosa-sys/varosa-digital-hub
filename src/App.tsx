@@ -1,7 +1,7 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import WhatsAppButton from "./components/WhatsAppButton";
 
@@ -25,10 +25,26 @@ const PageLoader = () => (
   </div>
 );
 
+// Envía page_view a GTM/GA4 en cada cambio de ruta (necesario para SPA con HashRouter)
+const GTMPageTracker = () => {
+  const location = useLocation();
+  useEffect(() => {
+    if (typeof window !== "undefined" && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: "page_view",
+        page_path: location.pathname,
+        page_title: document.title,
+      });
+    }
+  }, [location]);
+  return null;
+};
+
 const App = () => (
   <HelmetProvider>
     <TooltipProvider>
       <HashRouter>
+        <GTMPageTracker />
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />
