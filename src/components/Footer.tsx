@@ -61,6 +61,16 @@ const Footer = () => {
                   Nosotros
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/blog" className="text-sm opacity-90 hover:text-accent transition-colors">
+                  Blog y Recursos
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/contacto" className="text-sm opacity-90 hover:text-accent transition-colors">
+                  Contacto
+                </NavLink>
+              </li>
             </ul>
           </div>
 
