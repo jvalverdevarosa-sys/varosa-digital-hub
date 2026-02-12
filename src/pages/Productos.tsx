@@ -228,7 +228,7 @@ const Productos = () => {
                 <ScrollReveal key={`${currentCategory.name}-${index}`} delay={index * 80}>
                 <Card className="border border-[hsl(var(--primary)/0.08)] hover:border-accent/30 hover:shadow-lg transition-all duration-300 group bg-card overflow-hidden">
                   {/* Product image or placeholder */}
-                  <div className={`h-44 ${bgLightMap[currentCategory.color]} flex items-center justify-center relative overflow-hidden`}>
+                  <div className="h-44 bg-white flex items-center justify-center relative overflow-hidden rounded-t-lg">
                     {product.image ? (
                       <img 
                         src={product.image} 
