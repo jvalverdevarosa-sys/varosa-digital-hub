@@ -37,6 +37,8 @@ import imgPapeleria from "@/assets/products/papeleria-pritt.webp";
 import imgTintas from "@/assets/products/impresora-epson.webp";
 import imgOrganizacion from "@/assets/products/tijera-facela.webp";
 import imgEscritura from "@/assets/products/articulos-escritura.webp";
+import imgCalculadora from "@/assets/products/calculadora-casio.webp";
+import imgBaterias from "@/assets/products/baterias-philips.webp";
 
 const categories = [
   {
@@ -97,12 +99,14 @@ const categories = [
     icon: Building2,
     color: "highlight",
     description: "Línea completa de artículos de oficina de marcas reconocidas. Desde papelería básica hasta suministros tecnológicos para mantener su operación funcionando.",
-    brands: ["HP", "Epson", "Faber Castell", "Artline", "Facela"],
+    brands: ["HP", "Epson", "Faber Castell", "Artline", "Facela", "Casio", "Philips"],
     products: [
       { name: "Papelería General", description: "Papel bond, folders, sobres, libretas, agendas, post-it y artículos básicos de oficina.", brand: "Varios", applications: ["Oficinas", "Recepción", "Administración"], image: imgPapeleria },
       { name: "Artículos de Escritura", description: "Bolígrafos, marcadores permanentes, resaltadores, lápices y portaminas de calidad profesional.", brand: "Faber Castell / Artline", applications: ["Oficinas", "Bodegas", "Producción"], image: imgEscritura },
       { name: "Tintas y Tóners", description: "Cartuchos de tinta y tóner originales y compatibles para impresoras HP, Epson y otras marcas.", brand: "HP / Epson", applications: ["Oficinas", "Centros de impresión"], image: imgTintas },
       { name: "Organización y Archivo", description: "Archivadores, carpetas, cajas de archivo, separadores y sistemas de organización documental.", brand: "Facela / Varios", applications: ["Oficinas", "Archivo", "Contabilidad"], image: imgOrganizacion },
+      { name: "Calculadoras y Electrónica", description: "Calculadoras de escritorio y científicas, baterías alcalinas y accesorios electrónicos para oficina.", brand: "Casio / Philips", applications: ["Oficinas", "Contabilidad", "Administración"], image: imgCalculadora },
+      { name: "Baterías y Pilas", description: "Pilas alcalinas AA, AAA, C, D y 9V de alta duración para equipos de oficina, controles y dispositivos.", brand: "Philips", applications: ["Oficinas", "Equipos", "Dispositivos"], image: imgBaterias },
     ],
   },
 ];
