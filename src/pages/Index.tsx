@@ -60,12 +60,12 @@ const Index = () => {
         <Hero />
 
         {/* Brand Partners Strip */}
-        <section className="py-8 bg-muted/50 border-y border-primary/5">
+        <section className="py-8 bg-gradient-to-r from-[hsl(var(--primary)/0.03)] via-[hsl(var(--accent)/0.04)] to-[hsl(var(--primary)/0.03)] border-y border-[hsl(var(--primary)/0.08)]">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
               <span className="text-sm font-semibold text-foreground/40 uppercase tracking-wider">Socios comerciales:</span>
               {["Diversey", "TORK", "3M", "Kemical", "Solquisa", "El Castor", "HP", "Epson", "Faber Castell"].map((brand) => (
-                <span key={brand} className="text-sm font-bold text-foreground/50 hover:text-primary transition-colors cursor-default">
+                <span key={brand} className="text-sm font-bold text-foreground/55 hover:text-primary transition-colors cursor-default">
                   {brand}
                 </span>
               ))}
@@ -74,25 +74,27 @@ const Index = () => {
         </section>
 
         {/* Product Lines Section */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20" style={{ background: 'linear-gradient(180deg, #f5f8fd 0%, #f9fbfe 50%, #ffffff 100%)' }}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">Líneas de Productos</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="text-4xl font-bold mb-4 text-primary">Líneas de Productos</h2>
+              <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Socios comerciales: Diversey, TORK, 3M, Kemical, Solquisa, El Castor, HP, Epson, Faber Castell, Artline, Facela
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {productLines.map((product, index) => (
-                <Card key={index} className="border-2 hover:border-accent transition-all duration-300 hover:shadow-lg group">
+                <Card key={index} className="border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_4px_20px_hsl(var(--accent)/0.12)] group bg-white">
                   <CardHeader>
-                    <product.icon className={`h-12 w-12 mb-4 ${product.color} group-hover:scale-110 transition-transform`} />
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[hsl(var(--accent)/0.1)] to-[hsl(var(--primary)/0.06)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <product.icon className={`h-7 w-7 ${product.color}`} />
+                    </div>
                     <CardTitle className="text-lg">{product.title}</CardTitle>
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <NavLink to="/productos" className="text-accent hover:text-accent/80 font-medium inline-flex items-center gap-2 group">
+                    <NavLink to="/productos" className="text-accent hover:text-primary font-semibold inline-flex items-center gap-2 text-sm group">
                       Ver más
                       <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </NavLink>
@@ -104,13 +106,13 @@ const Index = () => {
         </section>
 
         {/* Industries Section */}
-        <section className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 diagonal-section" />
+        <section className="py-20 relative overflow-hidden bg-white">
+          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent)/0.03)] via-transparent to-[hsl(var(--primary)/0.03)]" />
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">Industrias que Servimos</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="text-4xl font-bold mb-4 text-primary">Industrias que Servimos</h2>
+              <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Soluciones especializadas adaptadas a las necesidades únicas de cada sector
               </p>
             </div>
@@ -119,12 +121,14 @@ const Index = () => {
               {industries.map((industry, index) => (
                 <div 
                   key={index} 
-                  className="bg-card p-8 rounded-2xl border-2 border-border hover:border-accent transition-all duration-300 hover:shadow-xl group"
+                  className="bg-white p-8 rounded-2xl border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.1)] group"
                 >
-                  <industry.icon className="h-16 w-16 text-accent mb-6 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-2xl font-bold mb-3">{industry.title}</h3>
-                  <p className="text-muted-foreground mb-4">{industry.description}</p>
-                  <NavLink to="/soluciones" className="text-accent hover:text-accent/80 font-medium inline-flex items-center gap-2">
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[hsl(var(--accent)/0.12)] to-[hsl(var(--primary)/0.06)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <industry.icon className="h-8 w-8 text-accent" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-foreground">{industry.title}</h3>
+                  <p className="text-foreground/60 mb-4">{industry.description}</p>
+                  <NavLink to="/soluciones" className="text-accent hover:text-primary font-semibold inline-flex items-center gap-2 text-sm">
                     Ver soluciones
                     <ArrowRight className="h-4 w-4" />
                   </NavLink>
@@ -133,7 +137,7 @@ const Index = () => {
             </div>
 
             <div className="text-center">
-              <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90">
+              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold shadow-varosa">
                 <NavLink to="/soluciones">Ver Todas las Industrias</NavLink>
               </Button>
             </div>
