@@ -7,7 +7,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
-import { Droplets, Shield, Sparkles, Building2, Utensils, Factory, ArrowRight } from "lucide-react";
+import { Droplets, Shield, Sparkles, Building2, Utensils, Factory, ArrowRight, ShoppingBag, ExternalLink } from "lucide-react";
 
 // Logos de marcas
 import logo3m from "@/assets/logos/marcas/3m.png";
@@ -161,6 +161,21 @@ const Index = () => {
                 </ScrollReveal>
               ))}
             </div>
+
+            <ScrollReveal>
+            <div className="text-center mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold shadow-varosa">
+                <NavLink to="/productos">Ver Catálogo por Categoría</NavLink>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-2 border-accent/30 hover:border-accent hover:bg-accent/5 text-accent font-bold transition-all duration-300">
+                <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer">
+                  <ShoppingBag className="mr-2 h-4 w-4" />
+                  Tienda Online
+                  <ExternalLink className="ml-2 h-3.5 w-3.5" />
+                </a>
+              </Button>
+            </div>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -321,6 +336,12 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold shadow-lg">
                   <NavLink to="/contacto">Solicitar Cotización</NavLink>
+                </Button>
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold shadow-lg">
+                  <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer">
+                    <ShoppingBag className="mr-2 h-4 w-4" />
+                    Tienda Online
+                  </a>
                 </Button>
                 <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold shadow-lg">
                   <a href="https://wa.me/50686703251?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20los%20productos%20y%20servicios%20de%20VAROSA" target="_blank" rel="noopener noreferrer">

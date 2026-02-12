@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { 
-  ArrowRight, MessageCircle, Search, Beaker, Shield, Sparkles, Building2, Package
+  ArrowRight, MessageCircle, Search, Beaker, Shield, Sparkles, Building2, Package, ExternalLink, ShoppingBag
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
@@ -161,6 +161,13 @@ const Productos = () => {
               <p className="text-lg text-foreground/65 leading-relaxed">
                 Más de 3,000 productos organizados por categoría de uso. Marcas líderes: Diversey, TORK, El Castor, 3M, Kemical, Solquisa y más.
               </p>
+              <Button asChild size="lg" className="bg-gradient-to-r from-accent to-[hsl(189,82%,39%)] hover:from-[hsl(189,82%,39%)] hover:to-accent text-white font-bold shadow-lg transition-all duration-300">
+                <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer">
+                  <ShoppingBag className="mr-2 h-5 w-5" />
+                  Ver Catálogo Completo en Tienda Online
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </section>
@@ -283,7 +290,11 @@ const Productos = () => {
               <p className="text-lg text-white/80 leading-relaxed">Manejamos más de 3,000 productos. Solicite nuestro catálogo completo o contáctenos para encontrar la solución exacta para su operación.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
                 <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold shadow-lg transition-all duration-300">
-                  <NavLink to="/contacto">Solicitar Catálogo Completo<ArrowRight className="ml-2 h-4 w-4" /></NavLink>
+                  <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer">
+                    <ShoppingBag className="mr-2 h-4 w-4" />
+                    Explorar Tienda Online
+                    <ExternalLink className="ml-2 h-3.5 w-3.5" />
+                  </a>
                 </Button>
                 <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold transition-all duration-300">
                   <a href="https://wa.me/50686703251?text=Hola%2C%20me%20interesa%20recibir%20el%20cat%C3%A1logo%20completo%20de%20productos" target="_blank" rel="noopener noreferrer">

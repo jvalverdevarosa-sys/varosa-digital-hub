@@ -1,5 +1,5 @@
 import { NavLink } from "./NavLink";
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, MessageCircle, ShoppingBag } from "lucide-react";
 import varosaSogo from "@/assets/varosa-logo.webp";
 
 const Footer = () => {
@@ -70,6 +70,12 @@ const Footer = () => {
                 <NavLink to="/contacto" className="text-sm opacity-90 hover:text-accent transition-colors">
                   Contacto
                 </NavLink>
+              </li>
+              <li>
+                <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer" className="text-sm opacity-90 hover:text-accent transition-colors inline-flex items-center gap-1.5">
+                  <ShoppingBag className="h-3.5 w-3.5" />
+                  Tienda Online
+                </a>
               </li>
             </ul>
           </div>
