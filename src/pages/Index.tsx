@@ -98,7 +98,7 @@ const Index = () => {
         <section className="py-8 sm:py-10 bg-background border-y border-[hsl(var(--primary)/0.08)]">
           <div className="container mx-auto px-6 lg:px-10">
             <p className="text-[11px] font-semibold text-foreground/35 uppercase tracking-[0.2em] text-center mb-5">Distribuidor autorizado</p>
-            <div className="flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-8 lg:gap-x-10 gap-y-4">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-3">
               {[
                 { name: "Diversey", logo: logoDiversey, height: "h-7 sm:h-8" },
                 { name: "TORK", logo: logoTork, height: "h-7 sm:h-8" },
@@ -112,17 +112,17 @@ const Index = () => {
                 { name: "Artline", logo: logoArtline, height: "h-6 sm:h-7" },
                 { name: "Facela", logo: logoFacela, height: "h-7 sm:h-8 rounded" },
               ].map((brand) => (
-                <img
+                <div
                   key={brand.name}
-                  src={brand.logo}
-                  alt={`Logo ${brand.name}`}
-                  className={`${brand.height} w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${
-                    brand.name === "Facela" 
-                      ? "dark:opacity-80 dark:hover:opacity-100" 
-                      : "dark:brightness-0 dark:invert dark:opacity-50 dark:hover:opacity-80"
-                  }`}
-                  loading="lazy"
-                />
+                  className="flex items-center justify-center px-3 py-2 rounded-lg dark:bg-white/10 dark:backdrop-blur-sm hover:opacity-100 transition-all duration-300"
+                >
+                  <img
+                    src={brand.logo}
+                    alt={`Logo ${brand.name}`}
+                    className={`${brand.height} w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 dark:opacity-90 dark:hover:opacity-100`}
+                    loading="lazy"
+                  />
+                </div>
               ))}
             </div>
           </div>
