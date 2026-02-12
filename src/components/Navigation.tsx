@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 import varosaSogo from "@/assets/varosa-logo.webp";
 
 const Navigation = () => {
@@ -49,8 +50,9 @@ const Navigation = () => {
               ))}
             </div>
 
-            {/* CTA Button Desktop */}
-            <div className="hidden lg:flex">
+            {/* CTA Button + Theme Toggle Desktop */}
+            <div className="hidden lg:flex items-center gap-3">
+              <ThemeToggle />
               <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold shadow-varosa hover:shadow-[0_6px_20px_hsl(var(--primary)/0.35)] rounded-md px-7 py-5 text-[15px] transition-all duration-300">
                 <NavLink to="/contacto">Solicitar Cotización</NavLink>
               </Button>
@@ -82,8 +84,9 @@ const Navigation = () => {
                   {item.label}
                 </NavLink>
               ))}
-              <div className="px-6 pt-3">
-                <Button asChild size="lg" className="w-full bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold shadow-varosa rounded-md py-6">
+              <div className="px-6 pt-3 flex items-center gap-3">
+                <ThemeToggle />
+                <Button asChild size="lg" className="flex-1 bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold shadow-varosa rounded-md py-6">
                   <NavLink to="/contacto" onClick={() => setIsOpen(false)}>
                     Solicitar Cotización
                   </NavLink>

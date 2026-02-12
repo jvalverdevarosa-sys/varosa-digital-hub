@@ -4,7 +4,7 @@ import { ArrowRight, Phone, MessageCircle, Truck, ShieldCheck, Beaker, Award, Dr
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden" style={{ background: 'linear-gradient(170deg, #f8fbff 0%, #eef6fc 35%, #f0f4fa 60%, #fafbfe 100%)' }}>
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-br from-background via-[hsl(var(--primary)/0.04)] to-[hsl(var(--accent)/0.03)]">
       {/* Background decorative elements - MORE VISIBLE */}
       <div className="absolute inset-0 z-0">
         {/* Large gradient wash on right side */}
@@ -118,7 +118,7 @@ const Hero = () => {
           <div className="lg:col-span-2 hidden lg:block">
             <div className="space-y-4">
               {/* Card 1: Marcas - blue tint */}
-              <div className="bg-white/90 backdrop-blur-sm border border-[hsl(var(--primary)/0.15)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--primary)/0.08)] hover:shadow-[0_4px_20px_hsl(var(--primary)/0.15)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 group">
+              <div className="bg-card/90 backdrop-blur-sm border border-[hsl(var(--primary)/0.15)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--primary)/0.08)] hover:shadow-[0_4px_20px_hsl(var(--primary)/0.15)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 group">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[hsl(var(--primary)/0.12)] to-[hsl(var(--secondary)/0.08)] flex items-center justify-center shrink-0 group-hover:from-[hsl(var(--primary)/0.18)] group-hover:to-[hsl(var(--secondary)/0.12)] transition-all">
                     <Beaker className="h-6 w-6 text-primary" aria-hidden="true" />
@@ -131,7 +131,7 @@ const Hero = () => {
               </div>
 
               {/* Card 2: Acompañamiento - cyan tint */}
-              <div className="bg-white/90 backdrop-blur-sm border border-[hsl(var(--accent)/0.2)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--accent)/0.06)] hover:shadow-[0_4px_20px_hsl(var(--accent)/0.15)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 group">
+              <div className="bg-card/90 backdrop-blur-sm border border-[hsl(var(--accent)/0.2)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--accent)/0.06)] hover:shadow-[0_4px_20px_hsl(var(--accent)/0.15)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 group">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[hsl(var(--accent)/0.15)] to-[hsl(var(--accent)/0.06)] flex items-center justify-center shrink-0 group-hover:from-[hsl(var(--accent)/0.22)] transition-all">
                     <ShieldCheck className="h-6 w-6 text-accent" aria-hidden="true" />
@@ -144,7 +144,7 @@ const Hero = () => {
               </div>
 
               {/* Card 3: Entregas - secondary blue tint */}
-              <div className="bg-white/90 backdrop-blur-sm border border-[hsl(var(--secondary)/0.15)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--secondary)/0.06)] hover:shadow-[0_4px_20px_hsl(var(--secondary)/0.15)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 group">
+              <div className="bg-card/90 backdrop-blur-sm border border-[hsl(var(--secondary)/0.15)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--secondary)/0.06)] hover:shadow-[0_4px_20px_hsl(var(--secondary)/0.15)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 group">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[hsl(var(--secondary)/0.12)] to-[hsl(var(--secondary)/0.05)] flex items-center justify-center shrink-0 group-hover:from-[hsl(var(--secondary)/0.18)] transition-all">
                     <Truck className="h-6 w-6 text-secondary" aria-hidden="true" />
@@ -157,7 +157,7 @@ const Hero = () => {
               </div>
 
               {/* Card 4: Ahorro - yellow accent */}
-              <div className="bg-white/90 backdrop-blur-sm border border-[hsl(var(--highlight)/0.25)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--highlight)/0.06)] hover:shadow-[0_4px_20px_hsl(var(--highlight)/0.15)] hover:border-[hsl(var(--highlight)/0.5)] transition-all duration-300 group">
+              <div className="bg-card/90 backdrop-blur-sm border border-[hsl(var(--highlight)/0.25)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--highlight)/0.06)] hover:shadow-[0_4px_20px_hsl(var(--highlight)/0.15)] hover:border-[hsl(var(--highlight)/0.5)] transition-all duration-300 group">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[hsl(var(--highlight)/0.16)] to-[hsl(var(--highlight)/0.06)] flex items-center justify-center shrink-0 group-hover:from-[hsl(var(--highlight)/0.24)] transition-all">
                     <Award className="h-6 w-6 text-highlight" aria-hidden="true" />

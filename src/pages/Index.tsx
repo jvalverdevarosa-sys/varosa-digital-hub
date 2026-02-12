@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import SEO from "@/components/SEO";
 import SchemaOrg from "@/components/SchemaOrg";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
@@ -69,7 +70,7 @@ const Index = () => {
         <Hero />
 
         {/* Brand Partners Strip */}
-        <section className="py-8 sm:py-10 bg-white border-y border-[hsl(var(--primary)/0.08)]">
+        <section className="py-8 sm:py-10 bg-background border-y border-[hsl(var(--primary)/0.08)]">
           <div className="container mx-auto px-6 lg:px-10">
             <p className="text-[11px] font-semibold text-foreground/35 uppercase tracking-[0.2em] text-center mb-5">Distribuidor autorizado</p>
             <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-4">
@@ -101,18 +102,21 @@ const Index = () => {
         </section>
 
         {/* Product Lines Section */}
-        <section className="py-20" style={{ background: 'linear-gradient(180deg, #f5f8fd 0%, #f9fbfe 50%, #ffffff 100%)' }}>
+        <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-6 lg:px-10">
+            <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary">Líneas de Productos</h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Soluciones especializadas para cada necesidad operativa de su negocio
               </p>
             </div>
+            </ScrollReveal>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {productLines.map((product, index) => (
-                <Card key={index} className="border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_4px_20px_hsl(var(--accent)/0.12)] group bg-white">
+                <ScrollReveal key={index} delay={index * 100}>
+                <Card className="border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_4px_20px_hsl(var(--accent)/0.12)] group bg-white dark:bg-card">
                   <CardHeader>
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[hsl(var(--accent)/0.1)] to-[hsl(var(--primary)/0.06)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                       <product.icon className={`h-7 w-7 ${product.color}`} />
@@ -127,28 +131,31 @@ const Index = () => {
                     </NavLink>
                   </CardContent>
                 </Card>
+                </ScrollReveal>
               ))}
             </div>
           </div>
         </section>
 
         {/* Industries Section */}
-        <section className="py-20 relative overflow-hidden bg-white">
+        <section className="py-20 relative overflow-hidden bg-background">
           <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent)/0.03)] via-transparent to-[hsl(var(--primary)/0.03)]" />
           
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
+            <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary">Industrias que Servimos</h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Soluciones especializadas adaptadas a las necesidades únicas de cada sector
               </p>
             </div>
+            </ScrollReveal>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {industries.map((industry, index) => (
+                <ScrollReveal key={index} delay={index * 150}>
                 <div 
-                  key={index} 
-                  className="bg-white p-8 rounded-2xl border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.1)] group"
+                  className="bg-white dark:bg-card p-8 rounded-2xl border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.1)] group"
                 >
                   <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[hsl(var(--accent)/0.12)] to-[hsl(var(--primary)/0.06)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <industry.icon className="h-8 w-8 text-accent" />
@@ -160,26 +167,31 @@ const Index = () => {
                     <ArrowRight className="h-4 w-4" />
                   </NavLink>
                 </div>
+                </ScrollReveal>
               ))}
             </div>
 
+            <ScrollReveal>
             <div className="text-center">
               <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold shadow-varosa">
                 <NavLink to="/soluciones">Ver Todas las Industrias</NavLink>
               </Button>
             </div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* Social Proof / Clients Section */}
-        <section className="py-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #f5f8fd 50%, #f0f4fa 100%)' }}>
+        <section className="py-20 bg-background border-t border-[hsl(var(--primary)/0.08)]">
           <div className="container mx-auto px-6 lg:px-10">
+            <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary">Confían en VAROSA</h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Más de 500 clientes activos en 4 regiones de Costa Rica
               </p>
             </div>
+            </ScrollReveal>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
               {[
@@ -208,7 +220,8 @@ const Index = () => {
                   color: "highlight"
                 }
               ].map((group, index) => (
-                <div key={index} className="bg-white rounded-xl border border-[hsl(var(--primary)/0.1)] p-6 hover:border-[hsl(var(--accent)/0.4)] hover:shadow-[0_4px_20px_hsl(var(--accent)/0.1)] transition-all duration-300">
+                <ScrollReveal key={index} delay={index * 120}>
+                <div className="bg-white dark:bg-card rounded-xl border border-[hsl(var(--primary)/0.1)] p-6 hover:border-[hsl(var(--accent)/0.4)] hover:shadow-[0_4px_20px_hsl(var(--accent)/0.1)] transition-all duration-300">
                   <div className="flex items-center gap-3 mb-4">
                     <span className={`text-2xl font-black font-heading text-${group.color}`}>{group.count}</span>
                     <span className="text-sm font-semibold text-foreground/70">{group.sector}</span>
@@ -219,9 +232,11 @@ const Index = () => {
                     ))}
                   </div>
                 </div>
+                </ScrollReveal>
               ))}
             </div>
 
+            <ScrollReveal>
             <div className="text-center">
               <Button asChild size="lg" variant="outline" className="border-2 border-primary/20 hover:border-primary text-primary hover:bg-primary/5 font-bold transition-all duration-300">
                 <NavLink to="/casos-exito">
@@ -230,6 +245,7 @@ const Index = () => {
                 </NavLink>
               </Button>
             </div>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -237,6 +253,7 @@ const Index = () => {
         <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
+            <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                 ¿Listo para impulsar la eficiencia de su operación?
@@ -255,6 +272,7 @@ const Index = () => {
                 </Button>
               </div>
             </div>
+            </ScrollReveal>
           </div>
         </section>
       </main>

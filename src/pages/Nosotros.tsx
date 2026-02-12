@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Card, CardContent } from "@/components/ui/card";
@@ -120,7 +121,8 @@ const Nosotros = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {values.map((value, index) => (
-                <Card key={index} className="border border-primary/10 hover:border-accent hover:shadow-accent transition-all duration-300 group bg-card">
+                <ScrollReveal key={index} delay={index * 100}>
+                <Card className="border border-primary/10 hover:border-accent hover:shadow-accent transition-all duration-300 group bg-card">
                   <CardContent className="p-6 text-center space-y-4">
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-accent/10 group-hover:bg-accent/20 group-hover:scale-110 transition-all">
                       <value.icon className="h-8 w-8 text-accent" />
@@ -129,6 +131,7 @@ const Nosotros = () => {
                     <p className="text-foreground/70 leading-relaxed">{value.description}</p>
                   </CardContent>
                 </Card>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -147,7 +150,8 @@ const Nosotros = () => {
             <div className="max-w-4xl mx-auto">
               <div className="space-y-6">
                 {timeline.map((item, index) => (
-                  <div key={index} className="flex gap-6 items-start group">
+                  <ScrollReveal key={index} delay={index * 150}>
+                  <div className="flex gap-6 items-start group">
                     <div className="flex flex-col items-center">
                   <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 group-hover:scale-110 transition-all border-2 border-accent/20">
                     <span className="text-highlight font-bold text-sm">{item.year}</span>
@@ -163,6 +167,7 @@ const Nosotros = () => {
                   </CardContent>
                 </Card>
                   </div>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>

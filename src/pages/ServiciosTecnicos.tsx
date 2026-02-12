@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
@@ -109,7 +110,8 @@ const ServiciosTecnicos = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="border border-primary/10 hover:border-accent hover:shadow-accent transition-all duration-300 group bg-card">
+                <ScrollReveal key={index} delay={index * 100}>
+                <Card className="border border-primary/10 hover:border-accent hover:shadow-accent transition-all duration-300 group bg-card">
                   <CardHeader className="pb-4">
                     <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-accent/10 mb-4 group-hover:scale-110 group-hover:bg-accent/20 transition-all">
                       <service.icon className="h-7 w-7 text-accent" />
@@ -128,6 +130,7 @@ const ServiciosTecnicos = () => {
                     </ul>
                   </CardContent>
                 </Card>
+                </ScrollReveal>
               ))}
             </div>
           </div>
