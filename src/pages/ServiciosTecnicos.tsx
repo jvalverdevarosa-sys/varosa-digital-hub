@@ -72,7 +72,7 @@ const ServiciosTecnicos = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Hero Section */}
         <section className="py-20 bg-background relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-highlight/8 via-accent/5 to-transparent diagonal-section opacity-60" />

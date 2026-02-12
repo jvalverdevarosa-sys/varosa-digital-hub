@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-5">
-            <img src={varosaSogo} alt="VAROSA" className="h-14 w-auto brightness-0 invert" />
+            <img src={varosaSogo} alt="VAROSA — Comercializadora VARO S.A." className="h-14 w-auto brightness-0 invert" />
             <p className="text-sm opacity-80 leading-relaxed">
               Soluciones que inspiran confianza, transforman y crean impacto.
             </p>
@@ -17,17 +17,17 @@ const Footer = () => {
               Productos especializados de limpieza, higiene y suministros para industria y HORECA en Costa Rica desde 2007.
             </p>
             <div className="flex gap-3">
-              <a href="https://www.facebook.com/varosacr" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-                <Facebook className="h-5 w-5" />
+              <a href="https://www.facebook.com/varosacr" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Facebook de VAROSA">
+                <Facebook className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="https://www.instagram.com/varosacr" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-                <Instagram className="h-5 w-5" />
+              <a href="https://www.instagram.com/varosacr" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Instagram de VAROSA">
+                <Instagram className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="https://www.linkedin.com/company/varosacr" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-                <Linkedin className="h-5 w-5" />
+              <a href="https://www.linkedin.com/company/varosacr" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="LinkedIn de VAROSA">
+                <Linkedin className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="https://wa.me/50686703251" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-                <MessageCircle className="h-5 w-5" />
+              <a href="https://wa.me/50686703251" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="WhatsApp de VAROSA">
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
               </a>
             </div>
           </div>

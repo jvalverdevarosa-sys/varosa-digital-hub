@@ -121,7 +121,7 @@ const Hero = () => {
               <div className="bg-white/90 backdrop-blur-sm border border-[hsl(var(--primary)/0.15)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--primary)/0.08)] hover:shadow-[0_4px_20px_hsl(var(--primary)/0.15)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 group">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[hsl(var(--primary)/0.12)] to-[hsl(var(--secondary)/0.08)] flex items-center justify-center shrink-0 group-hover:from-[hsl(var(--primary)/0.18)] group-hover:to-[hsl(var(--secondary)/0.12)] transition-all">
-                    <Beaker className="h-6 w-6 text-primary" />
+                    <Beaker className="h-6 w-6 text-primary" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-foreground text-base mb-1">Marcas Líderes</h3>
@@ -134,7 +134,7 @@ const Hero = () => {
               <div className="bg-white/90 backdrop-blur-sm border border-[hsl(var(--accent)/0.2)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--accent)/0.06)] hover:shadow-[0_4px_20px_hsl(var(--accent)/0.15)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 group">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[hsl(var(--accent)/0.15)] to-[hsl(var(--accent)/0.06)] flex items-center justify-center shrink-0 group-hover:from-[hsl(var(--accent)/0.22)] transition-all">
-                    <ShieldCheck className="h-6 w-6 text-accent" />
+                    <ShieldCheck className="h-6 w-6 text-accent" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-foreground text-base mb-1">Acompañamiento Técnico</h3>
@@ -147,7 +147,7 @@ const Hero = () => {
               <div className="bg-white/90 backdrop-blur-sm border border-[hsl(var(--secondary)/0.15)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--secondary)/0.06)] hover:shadow-[0_4px_20px_hsl(var(--secondary)/0.15)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 group">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[hsl(var(--secondary)/0.12)] to-[hsl(var(--secondary)/0.05)] flex items-center justify-center shrink-0 group-hover:from-[hsl(var(--secondary)/0.18)] transition-all">
-                    <Truck className="h-6 w-6 text-secondary" />
+                    <Truck className="h-6 w-6 text-secondary" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-foreground text-base mb-1">Entregas con Flota Propia</h3>
@@ -160,7 +160,7 @@ const Hero = () => {
               <div className="bg-white/90 backdrop-blur-sm border border-[hsl(var(--highlight)/0.25)] rounded-xl p-6 shadow-[0_2px_12px_hsl(var(--highlight)/0.06)] hover:shadow-[0_4px_20px_hsl(var(--highlight)/0.15)] hover:border-[hsl(var(--highlight)/0.5)] transition-all duration-300 group">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[hsl(var(--highlight)/0.16)] to-[hsl(var(--highlight)/0.06)] flex items-center justify-center shrink-0 group-hover:from-[hsl(var(--highlight)/0.24)] transition-all">
-                    <Award className="h-6 w-6 text-highlight" />
+                    <Award className="h-6 w-6 text-highlight" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-foreground text-base mb-1">Ahorro en Costo en Uso</h3>

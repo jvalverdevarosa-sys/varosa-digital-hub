@@ -71,7 +71,7 @@ const Blog = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Hero Section */}
         <section className="py-20 bg-background relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-highlight/8 via-accent/5 to-transparent diagonal-section opacity-60" />
@@ -203,9 +203,12 @@ const Blog = () => {
                 de la industria directamente en su correo.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto pt-4">
+                <label htmlFor="newsletter-email" className="sr-only">Correo electrónico para suscripción</label>
                 <input
+                  id="newsletter-email"
                   type="email"
                   placeholder="Su correo electrónico"
+                  autoComplete="email"
                   className="flex-1 px-4 py-3 rounded-lg text-foreground border border-primary/20 focus:outline-none focus:ring-2 focus:ring-highlight"
                 />
                 <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold shadow-varosa hover:shadow-[0_8px_28px_hsl(var(--primary)/0.35)] transition-all duration-300">

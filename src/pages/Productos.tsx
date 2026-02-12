@@ -108,7 +108,7 @@ const Productos = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Hero */}
         <section className="py-16 bg-white relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent)/0.04)] via-transparent to-[hsl(var(--primary)/0.03)]" />
@@ -138,6 +138,7 @@ const Productos = () => {
                   <button
                     key={cat.id}
                     onClick={() => { setActiveCategory(cat.id); setSearchTerm(""); }}
+                    aria-pressed={isActive}
                     className={`flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 border-2 ${
                       isActive
                         ? "bg-primary text-white border-primary shadow-varosa"
@@ -168,8 +169,10 @@ const Productos = () => {
             {/* Search */}
             <div className="max-w-md mx-auto mb-10">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/40" />
+                <label htmlFor="product-search" className="sr-only">Buscar producto, marca o aplicación</label>
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/40" aria-hidden="true" />
                 <Input
+                  id="product-search"
                   placeholder="Buscar producto, marca o aplicación..."
                   value={searchTerm}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
