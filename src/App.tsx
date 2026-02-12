@@ -1,27 +1,33 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
+import { lazy, Suspense } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Soluciones from "./pages/Soluciones";
-import Productos from "./pages/Productos";
-import CasosExito from "./pages/CasosExito";
-import Blog from "./pages/Blog";
-import Nosotros from "./pages/Nosotros";
-import Contacto from "./pages/Contacto";
-import ServiciosTecnicos from "./pages/ServiciosTecnicos";
-import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
 
-const queryClient = new QueryClient();
+// Lazy load — páginas se descargan solo cuando el usuario navega a ellas
+const Soluciones = lazy(() => import("./pages/Soluciones"));
+const Productos = lazy(() => import("./pages/Productos"));
+const CasosExito = lazy(() => import("./pages/CasosExito"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Nosotros = lazy(() => import("./pages/Nosotros"));
+const Contacto = lazy(() => import("./pages/Contacto"));
+const ServiciosTecnicos = lazy(() => import("./pages/ServiciosTecnicos"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+// Loading spinner con colores de marca
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="flex flex-col items-center gap-3">
+      <div className="w-10 h-10 border-[3px] border-primary/20 border-t-primary rounded-full animate-spin" />
+      <p className="text-sm text-muted-foreground font-body">Cargando...</p>
+    </div>
+  </div>
+);
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <HashRouter>
+  <TooltipProvider>
+    <HashRouter>
+      <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/soluciones" element={<Soluciones />} />
@@ -31,13 +37,12 @@ const App = () => (
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/servicios-tecnicos" element={<ServiciosTecnicos />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <WhatsAppButton />
-      </HashRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+      </Suspense>
+      <WhatsAppButton />
+    </HashRouter>
+  </TooltipProvider>
 );
 
 export default App;

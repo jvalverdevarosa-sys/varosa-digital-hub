@@ -74,21 +74,7 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  src: url('./assets/fonts/montserrat-extrabold.woff2') format('woff2');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('./assets/fonts/montserrat-black.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
+/* Montserrat ExtraBold (800) y Black (900) eliminados — no se usan en body text */
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.

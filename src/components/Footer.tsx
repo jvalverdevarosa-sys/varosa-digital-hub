@@ -1,6 +1,6 @@
 import { NavLink } from "./NavLink";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, MessageCircle } from "lucide-react";
-import varosaSogo from "@/assets/varosa-logo.png";
+import varosaSogo from "@/assets/varosa-logo.webp";
 
 const Footer = () => {
   return (

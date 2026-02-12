@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
-import varosaSogo from "@/assets/varosa-logo.png";
+import varosaSogo from "@/assets/varosa-logo.webp";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
