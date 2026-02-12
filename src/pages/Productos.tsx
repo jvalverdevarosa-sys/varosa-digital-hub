@@ -30,6 +30,8 @@ import imgCepillo from "@/assets/products/cepillo-mano.webp";
 import imgEscoba from "@/assets/products/escoba-industrial.webp";
 import imgJalador from "@/assets/products/jalador-pisos.webp";
 import imgMopa from "@/assets/products/mopa-industrial.webp";
+// Imágenes de productos (Lechería)
+import imgFibra from "@/assets/products/fibra-verde.webp";
 
 const categories = [
   {
@@ -80,7 +82,7 @@ const categories = [
       { name: "Escobas y Recogedores", description: "Escobas de cerdas duras y suaves, recogedores industriales. Materiales resistentes para uso intensivo.", brand: "El Castor", applications: ["Limpieza general", "Bodegas", "Áreas exteriores"], image: imgEscoba },
       { name: "Jaladores y Escurridores", description: "Jaladores de agua con hule natural, escurridores para áreas húmedas y pisos industriales.", brand: "El Castor", applications: ["Cocinas", "Áreas húmedas", "Plantas de proceso"], image: imgJalador },
       { name: "Mopas y Trapeadores", description: "Sistemas de mopa húmeda y seca. Trapeadores industriales con cabezal intercambiable.", brand: "El Castor / 3M", applications: ["Pisos", "Oficinas", "Centros comerciales"], image: imgMopa },
-      { name: "Fibras y Esponjas 3M", description: "Fibras abrasivas, esponjas profesionales y discos para limpieza de superficies delicadas e industriales.", brand: "3M", applications: ["Cocinas", "Superficies delicadas", "Limpieza industrial"] },
+      { name: "Fibras y Esponjas 3M", description: "Fibras abrasivas, esponjas profesionales y discos para limpieza de superficies delicadas e industriales.", brand: "3M", applications: ["Cocinas", "Superficies delicadas", "Limpieza industrial"], image: imgFibra },
     ],
   },
   {
