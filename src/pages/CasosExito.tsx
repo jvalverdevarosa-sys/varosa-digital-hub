@@ -1,204 +1,378 @@
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { NavLink } from "@/components/NavLink";
-import { Building2, TrendingUp, CheckCircle, Quote } from "lucide-react";
+import {
+  Building2,
+  Utensils,
+  Droplets,
+  ShoppingCart,
+  TrendingUp,
+  CheckCircle,
+  Quote,
+  MessageCircle,
+  MapPin,
+} from "lucide-react";
+
+const cases = [
+  {
+    sector: "HORECA y Turismo",
+    icon: Utensils,
+    description:
+      "Hoteles, restaurantes, parques eco-turísticos y operadores de turismo con altos estándares de limpieza e higiene para huéspedes nacionales e internacionales.",
+    challenge:
+      "Mantener estándares de higiene internacionales en áreas de alta rotación: habitaciones, cocinas, áreas comunes, baños públicos y senderos — con personal rotativo y temporadas altas exigentes.",
+    solution:
+      "Sistemas TORK de dispensado en baños públicos y cocinas, químicos Diversey para pisos y superficies, productos Solquisa para cocinas, herramientas El Castor y accesorios 3M. Capacitación in situ del personal y protocolos personalizados por área.",
+    results: [
+      "Estandarización de limpieza en todas las áreas operativas",
+      "Reducción de hasta 35% en consumo de papel con dispensadores TORK",
+      "Personal capacitado en protocolos de higiene y manejo de químicos",
+      "Reposición programada para evitar desabastecimiento en temporada alta",
+    ],
+    testimonial:
+      "Con VAROSA logramos estandarizar la limpieza en todas las áreas del hotel. La capacitación del personal y el acompañamiento técnico marcaron la diferencia.",
+    testimonialAuthor: "Gerencia de Operaciones — Sector Hotelero, Zona Norte",
+    clients: [
+      "Hotel El Establo",
+      "La Paz Waterfall Gardens",
+      "Arenal Springs",
+      "Magic Mountain",
+      "Mistico Park",
+      "Nammbú Beachfront Bungalows",
+      "Hotel Poco a Poco",
+      "Sibú Boutique Hotel",
+      "Selvatura Park",
+      "Monteverde Lodge",
+      "Santo Pecado",
+      "Freddo Fresas",
+    ],
+    region: "Arenal, Monteverde, Guanacaste y Zona Norte",
+  },
+  {
+    sector: "Industria Alimentaria",
+    icon: Building2,
+    description:
+      "Plantas procesadoras, empacadoras de frutas, avícolas, cooperativas agroindustriales y operaciones de manufactura de alimentos que requieren cumplimiento estricto de BPM.",
+    challenge:
+      "Cumplir auditorías internacionales de seguridad alimentaria, prevenir contaminación cruzada en líneas de producción, y mantener trazabilidad de procesos de limpieza y desinfección.",
+    solution:
+      "Químicos especializados Diversey y Kemical para CIP y desinfección de superficies. Cepillos El Castor con certificación FDA y sistema de código de colores. Validaciones ATP periódicas, auditorías técnicas y capacitaciones BPM en sitio.",
+    results: [
+      "Aprobación de auditorías internacionales de inocuidad",
+      "Implementación de código de colores FDA en toda la planta",
+      "Reducción medible de contaminación cruzada entre zonas",
+      "Trazabilidad de diluciones y procesos de limpieza documentados",
+    ],
+    testimonial:
+      "Las validaciones ATP y la capacitación en código de colores nos ayudaron a pasar la auditoría internacional sin observaciones en el área de limpieza.",
+    testimonialAuthor: "Aseguramiento de Calidad — Sector Alimentario",
+    clients: [
+      "Coopelesca",
+      "Ticofrut",
+      "Grupo VISA",
+      "Frutera La Paz",
+      "Fyffes",
+      "Industrias Charo",
+      "Coopebrisas",
+      "Pollos Pako",
+    ],
+    region: "Zona Norte, Caribe y Valle Central",
+  },
+  {
+    sector: "Lecherías y Lácteos",
+    icon: Droplets,
+    description:
+      "Fincas lecheras, plantas de enfriamiento, cooperativas lácteas y procesadoras de derivados que requieren control estricto de bacterias e inocuidad en todas las etapas.",
+    challenge:
+      "Controlar el conteo bacteriano en equipos de ordeño, tanques de enfriamiento y superficies de contacto. Mantener la calidad del producto final y cumplir regulaciones del sector lácteo costarricense.",
+    solution:
+      "Protocolo CIP completo con químicos Kemical y Solquisa. Cepillos especializados El Castor para lecherías. Toallas de secado de ubres. Validaciones ATP periódicas para verificar efectividad de limpieza en puntos críticos.",
+    results: [
+      "Reducción significativa del conteo bacteriano en tanques",
+      "Mayor vida útil del producto final (leche y derivados)",
+      "Protocolos CIP documentados y replicables por el personal",
+      "Cumplimiento de estándares del sector lácteo nacional",
+    ],
+    testimonial:
+      "Desde que implementamos el protocolo CIP con los productos de VAROSA, el conteo bacteriano bajó consistentemente y la calidad de la leche mejoró.",
+    testimonialAuthor: "Encargado de Planta — Sector Lácteo, San Carlos",
+    clients: [
+      "La Giralda",
+      "Rancho Tres Hermanos",
+      "Hacienda Pedregal",
+      "Hacienda La Paz",
+      "Coopelecheros",
+      "Lácteos H y R",
+      "Lácteos Ceci",
+    ],
+    region: "San Carlos, Zona Norte",
+  },
+  {
+    sector: "Retail y Comercio",
+    icon: ShoppingCart,
+    description:
+      "Supermercados, carnicerías especializadas y comercios con áreas de atención al público que necesitan limpieza constante y gestión eficiente de suministros.",
+    challenge:
+      "Mantener pisos, vitrinas y baños impecables en áreas de alto tráfico, con reposición oportuna de insumos y control de costos de inventario de limpieza.",
+    solution:
+      "Dispensadores TORK en baños de clientes, químicos para pisos y superficies, artículos de oficina, y programa de reposición con visitas periódicas del vendedor de ruta.",
+    results: [
+      "Espacios de atención siempre limpios e higiénicos",
+      "Reducción de costos con programa de reposición planificada",
+      "Mejor experiencia de compra para el cliente final",
+    ],
+    testimonial:
+      "VAROSA nos atiende con visitas regulares y siempre tiene disponibilidad. No tenemos que preocuparnos por quedarnos sin insumos.",
+    testimonialAuthor: "Administración — Sector Comercio, Zona Norte",
+    clients: ["Economás", "Carnicerías Matoro"],
+    region: "Zona Norte",
+  },
+];
+
+const allClients = [
+  "El Establo",
+  "La Paz Waterfall Gardens",
+  "Arenal Springs",
+  "Magic Mountain",
+  "Mistico Park",
+  "Nammbú",
+  "Hotel Poco a Poco",
+  "Sibú Hotel",
+  "Selvatura Park",
+  "Monteverde Lodge",
+  "Santo Pecado",
+  "Freddo Fresas",
+  "Coopelesca",
+  "Ticofrut",
+  "Grupo VISA",
+  "Frutera La Paz",
+  "Fyffes",
+  "Industrias Charo",
+  "Coopebrisas",
+  "Pollos Pako",
+  "La Giralda",
+  "Rancho Tres Hermanos",
+  "Coopelecheros",
+  "Lácteos H y R",
+  "Lácteos Ceci",
+  "Economás",
+  "Matoro",
+];
 
 const CasosExito = () => {
-  const cases = [
-    {
-      company: "HORECA",
-      industry: "Hoteles, Restaurantes y Catering",
-      challenge: "Mantenimiento de altos estándares de limpieza e higiene en áreas comunes, cocinas y habitaciones con alta rotación de huéspedes",
-      solution: "Implementación de químicos Diversey y Solquisa, Sistemas TORK de dispensadores con ahorro en consumo, herramientas El Castor y accesorios 3M. Capacitación del personal y protocolos personalizados.",
-      results: [
-        "Estandarización de procesos de limpieza",
-        "Reducción de costos operativos",
-        "Mejora en satisfacción de huéspedes"
-      ],
-      testimonial: "Operaciones más eficientes y cumplimiento de estándares internacionales",
-      clients: "Hotel El Establo, La Paz Waterfall Gardens, Arenal Springs, Magic Mountain, Santo Pecado, Raúl Castaño, Freddo Fresas"
-    },
-    {
-      company: "Industria Alimentaria",
-      industry: "Procesamiento y Manufactura de Alimentos",
-      challenge: "Cumplimiento estricto de normativas de seguridad alimentaria, validaciones constantes y prevención de contaminación cruzada",
-      solution: "Químicos especializados Diversey, Kemical y Solquisa. Herramientas grado alimentario El Castor (certificación FDA). Validaciones ATP, auditorías técnicas y capacitaciones en sitio.",
-      results: [
-        "Cumplimiento de auditorías internacionales",
-        "Reducción de contaminación cruzada",
-        "Estandarización con código de colores"
-      ],
-      testimonial: "Certificaciones mantenidas y cero rechazos por higiene",
-      clients: "Coopelesca, Ticofrut, Grupo VISA, Frutera La Paz, Fyffes, Industrias Charo, Coopebrisas, Pollos Pako"
-    },
-    {
-      company: "Lecherías y Derivados Lácteos",
-      industry: "Producción Láctea",
-      challenge: "Control estricto de bacterias y mantenimiento de inocuidad en todas las etapas de la producción láctea",
-      solution: "Herramientas El Castor especializadas para lecherías, químicos Kemical y Solquisa, toallas especializadas para secado de ubres y validaciones ATP periódicas.",
-      results: [
-        "Reducción de conteo bacteriano",
-        "Mayor vida útil de productos",
-        "Cumplimiento de regulaciones lácteas"
-      ],
-      testimonial: "Mejora en calidad del producto y reducción de pérdidas",
-      clients: "La Giralda, Rancho Tres Hermanos, Hacienda Pedregal, Hacienda La Paz"
-    },
-    {
-      company: "Retail y Comercio",
-      industry: "Supermercados y Comercio",
-      challenge: "Limpieza constante de áreas de alto tráfico y gestión eficiente de suministros con reposición oportuna",
-      solution: "Sistemas TORK en baños públicos, químicos para pisos y superficies, artículos de oficina y programas de reposición automática.",
-      results: [
-        "Reducción de costos de inventario",
-        "Espacios siempre impecables",
-        "Mayor satisfacción de clientes"
-      ],
-      testimonial: "Mejora en experiencia de compra y eficiencia operativa",
-      clients: "Economás, Carnicerías Matoro"
-    }
-  ];
-
-  const clientLogos = [
-    "El Establo", "La Paz Waterfall Gardens", "Arenal Springs", 
-    "Magic Mountain", "Santo Pecado", "Raúl Castaño", "Freddo Fresas",
-    "Coopelesca", "Ticofrut", "Grupo VISA", "Frutera La Paz", "Fyffes",
-    "Industrias Charo", "Coopebrisas", "Pollos Pako",
-    "La Giralda", "Rancho Tres Hermanos", "Hacienda Pedregal", "Hacienda La Paz",
-    "Economás", "Matoro"
-  ];
-
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Casos de Éxito"
-        description="Más de 500 clientes confían en VAROSA. Testimoniales de industria alimentaria, hoteles, restaurantes y manufactura en Costa Rica."
+        description="Más de 500 clientes en Costa Rica confían en VAROSA: hoteles, parques eco-turísticos, plantas alimentarias, lecherías y comercios. Conozca cómo transformamos sus operaciones de limpieza e higiene."
         path="/casos-exito"
-        keywords="testimoniales limpieza industrial, casos éxito higiene HORECA, clientes VAROSA Costa Rica"
+        keywords="clientes VAROSA Costa Rica, casos éxito limpieza industrial, testimoniales higiene HORECA, Mistico Park, Selvatura, Ticofrut, Hotel El Establo"
       />
       <Navigation />
-      
+
       <main id="main-content" className="flex-1">
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="py-20 bg-background relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-highlight/8 via-accent/5 to-transparent diagonal-section opacity-60" />
           <div className="absolute top-20 left-0 w-96 h-96 bg-highlight/5 rounded-full blur-3xl" />
-          
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
                 Casos de <span className="text-accent">Éxito</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
-                Descubra cómo nuestros clientes han transformado sus operaciones 
-                con nuestras soluciones especializadas
+                Desde hoteles boutique en Monteverde hasta plantas procesadoras en
+                Zona Norte — conozca cómo nuestros clientes transforman sus
+                operaciones con VAROSA
               </p>
             </div>
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* Stats */}
         <section className="py-16 bg-primary text-primary-foreground relative overflow-hidden border-y border-primary/20">
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
               <div>
-                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">500+</div>
-                <div className="text-xs sm:text-sm md:text-base text-white/90">Clientes Activos</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">
+                  500+
+                </div>
+                <div className="text-xs sm:text-sm md:text-base text-white/90">
+                  Clientes Activos
+                </div>
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">18+</div>
-                <div className="text-xs sm:text-sm md:text-base text-white/90">Años de Experiencia</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">
+                  18+
+                </div>
+                <div className="text-xs sm:text-sm md:text-base text-white/90">
+                  Años de Experiencia
+                </div>
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">95%</div>
-                <div className="text-xs sm:text-sm md:text-base text-white/90">Satisfacción Cliente</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">
+                  4
+                </div>
+                <div className="text-xs sm:text-sm md:text-base text-white/90">
+                  Regiones de Cobertura
+                </div>
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">3,000+</div>
-                <div className="text-xs sm:text-sm md:text-base text-white/90">Productos Disponibles</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">
+                  3,000+
+                </div>
+                <div className="text-xs sm:text-sm md:text-base text-white/90">
+                  Productos Disponibles
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Cases Section */}
+        {/* Cases */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 lg:px-10">
-            <div className="space-y-10">
-              {cases.map((caseStudy, index) => (
-                <Card key={index} className="border border-primary/10 hover:border-accent hover:shadow-accent transition-all duration-300 overflow-hidden bg-card">
-                  <div className="grid lg:grid-cols-2 gap-0">
-                    <CardHeader className="bg-highlight/5 p-8 border-r border-primary/10">
-                      <div className="inline-flex items-center gap-2 text-sm text-accent font-semibold mb-4">
-                        <Building2 className="h-4 w-4" />
-                        {caseStudy.industry}
-                      </div>
-                      <CardTitle className="text-2xl font-heading text-foreground mb-3">{caseStudy.company}</CardTitle>
-                      <p className="text-sm text-foreground/60 leading-relaxed">{caseStudy.clients}</p>
-                      
-                      <div className="space-y-4 mt-6">
-                        <div>
-                          <h4 className="font-semibold text-sm text-foreground/60 mb-2">Desafío</h4>
-                          <p className="text-foreground/80">{caseStudy.challenge}</p>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-sm text-foreground/60 mb-2">Solución</h4>
-                          <p className="text-foreground/80">{caseStudy.solution}</p>
-                        </div>
-                      </div>
-                    </CardHeader>
-
-                    <CardContent className="p-8 flex flex-col justify-between">
-                      <div className="space-y-6">
-                        <div>
-                          <div className="flex items-center gap-2 mb-4">
-                            <TrendingUp className="h-5 w-5 text-accent" />
-                            <h4 className="font-semibold text-foreground">Resultados</h4>
+            <div className="space-y-12">
+              {cases.map((c, index) => {
+                const Icon = c.icon;
+                return (
+                  <Card
+                    key={index}
+                    className="border border-primary/10 hover:border-accent/40 transition-all duration-300 overflow-hidden bg-card"
+                  >
+                    {/* Sector header */}
+                    <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-transparent px-6 sm:px-8 py-5 border-b border-primary/10">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                            <Icon className="h-5 w-5 text-accent" aria-hidden="true" />
                           </div>
-                          <ul className="space-y-3">
-                            {caseStudy.results.map((result, idx) => (
-                              <li key={idx} className="flex items-start gap-2">
-                                <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                                <span className="text-foreground/80">{result}</span>
-                              </li>
-                            ))}
-                          </ul>
+                          <h2 className="text-xl sm:text-2xl font-heading font-bold text-foreground">
+                            {c.sector}
+                          </h2>
                         </div>
-
-                        <div className="bg-highlight/5 border-l-4 border-highlight p-4 rounded">
-                          <Quote className="h-6 w-6 text-accent mb-2" />
-                          <p className="text-sm italic text-foreground/70">
-                            "{caseStudy.testimonial}"
-                          </p>
+                        <div className="flex items-center gap-1.5 text-sm text-foreground/50">
+                          <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                          {c.region}
                         </div>
                       </div>
-                    </CardContent>
-                  </div>
-                </Card>
-              ))}
+                      <p className="text-sm text-foreground/70 mt-2 max-w-3xl">
+                        {c.description}
+                      </p>
+                    </div>
+
+                    <div className="grid lg:grid-cols-2 gap-0">
+                      {/* Left: Desafío + Solución */}
+                      <CardHeader className="p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-primary/10">
+                        <div className="space-y-5">
+                          <div>
+                            <CardTitle className="text-sm font-semibold uppercase tracking-wider text-foreground/50 mb-2">
+                              Desafío
+                            </CardTitle>
+                            <p className="text-foreground/80 leading-relaxed">
+                              {c.challenge}
+                            </p>
+                          </div>
+                          <div>
+                            <CardTitle className="text-sm font-semibold uppercase tracking-wider text-foreground/50 mb-2">
+                              Solución VAROSA
+                            </CardTitle>
+                            <p className="text-foreground/80 leading-relaxed">
+                              {c.solution}
+                            </p>
+                          </div>
+
+                          {/* Clientes */}
+                          <div>
+                            <CardTitle className="text-sm font-semibold uppercase tracking-wider text-foreground/50 mb-3">
+                              Clientes en este sector
+                            </CardTitle>
+                            <div className="flex flex-wrap gap-2">
+                              {c.clients.map((client, i) => (
+                                <Badge
+                                  key={i}
+                                  variant="secondary"
+                                  className="bg-primary/5 text-foreground/70 border-primary/10 text-xs font-medium"
+                                >
+                                  {client}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </CardHeader>
+
+                      {/* Right: Resultados + Testimonio */}
+                      <CardContent className="p-6 sm:p-8 flex flex-col justify-between">
+                        <div className="space-y-6">
+                          <div>
+                            <div className="flex items-center gap-2 mb-4">
+                              <TrendingUp
+                                className="h-5 w-5 text-accent"
+                                aria-hidden="true"
+                              />
+                              <span className="text-sm font-semibold uppercase tracking-wider text-foreground/50">
+                                Resultados
+                              </span>
+                            </div>
+                            <ul className="space-y-3">
+                              {c.results.map((result, idx) => (
+                                <li key={idx} className="flex items-start gap-2.5">
+                                  <CheckCircle
+                                    className="h-5 w-5 text-accent shrink-0 mt-0.5"
+                                    aria-hidden="true"
+                                  />
+                                  <span className="text-foreground/80 text-sm leading-relaxed">
+                                    {result}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div className="bg-primary/[0.03] border-l-4 border-accent p-5 rounded-r-lg">
+                            <Quote
+                              className="h-5 w-5 text-accent/60 mb-2"
+                              aria-hidden="true"
+                            />
+                            <p className="text-sm italic text-foreground/70 leading-relaxed">
+                              "{c.testimonial}"
+                            </p>
+                            <p className="text-xs text-foreground/45 mt-3 font-medium">
+                              — {c.testimonialAuthor}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </div>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* Client Logos Section */}
+        {/* All Clients */}
         <section className="py-20 bg-background border-y border-primary/8">
           <div className="container mx-auto px-6 lg:px-10">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Clientes que Confían en Nosotros</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+                Clientes que Confían en Nosotros
+              </h2>
               <p className="text-lg text-foreground/75">
-                Empresas líderes en sus industrias eligen VAROSA
+                Empresas y operaciones de todas las industrias en Costa Rica
               </p>
             </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              {clientLogos.map((client, index) => (
-                <div 
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {allClients.map((client, index) => (
+                <div
                   key={index}
-                  className="flex items-center justify-center p-6 bg-card rounded-lg border border-primary/10 hover:border-accent hover:shadow-accent transition-all duration-300"
+                  className="flex items-center justify-center p-5 bg-card rounded-lg border border-primary/10 hover:border-accent hover:shadow-accent transition-all duration-300"
                 >
                   <span className="text-sm font-medium text-center text-foreground/70">
                     {client}
@@ -209,7 +383,7 @@ const CasosExito = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA */}
         <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
@@ -218,11 +392,33 @@ const CasosExito = () => {
                 ¿Listo para ser nuestro próximo caso de éxito?
               </h2>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">
-                Permítanos ayudarle a alcanzar sus objetivos de higiene y eficiencia operativa.
+                Permítanos diseñar una solución de limpieza e higiene a la medida
+                de su operación.
               </p>
-              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold shadow-varosa hover:shadow-[0_8px_28px_hsl(var(--primary)/0.35)] transition-all duration-300">
-                <NavLink to="/contacto">Comenzar Ahora</NavLink>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold shadow-lg transition-all duration-300"
+                >
+                  <a
+                    href="https://wa.me/50686703251?text=Hola%2C%20me%20interesa%20conocer%20las%20soluciones%20de%20VAROSA%20para%20mi%20operaci%C3%B3n"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" aria-hidden="true" />
+                    Cotizar por WhatsApp
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-white/30 text-white hover:bg-white/10 font-bold transition-all duration-300"
+                >
+                  <NavLink to="/contacto">Formulario de Contacto</NavLink>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
