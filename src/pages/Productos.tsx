@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -107,6 +108,12 @@ const Productos = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Catálogo de Productos"
+        description="Más de 3,000 productos profesionales: químicos Diversey, dispensadores TORK, cepillos El Castor, fibras 3M, y suministros de oficina. Solicite cotización por WhatsApp."
+        path="/productos"
+        keywords="Diversey Costa Rica, TORK dispensadores, El Castor FDA, 3M fibras, Kemical, Solquisa, suministros oficina, catálogo productos limpieza"
+      />
       <Navigation />
       <main id="main-content" className="flex-1">
         {/* Hero */}

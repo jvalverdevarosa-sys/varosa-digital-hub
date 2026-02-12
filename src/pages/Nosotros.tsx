@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
@@ -49,6 +50,12 @@ const Nosotros = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Nosotros"
+        description="Desde 2007, Comercializadora VARO S.A. distribuye productos de limpieza e higiene en Costa Rica. 500+ clientes activos, 30 colaboradores y flota propia. Venecia de San Carlos."
+        path="/nosotros"
+        keywords="Comercializadora VARO, VAROSA historia, distribuidora limpieza Costa Rica, Venecia San Carlos empresa"
+      />
       <Navigation />
       
       <main id="main-content" className="flex-1">

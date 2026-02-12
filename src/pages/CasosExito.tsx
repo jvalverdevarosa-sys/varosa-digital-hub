@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -72,6 +73,12 @@ const CasosExito = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Casos de Éxito"
+        description="Más de 500 clientes confían en VAROSA. Testimoniales de industria alimentaria, hoteles, restaurantes y manufactura en Costa Rica."
+        path="/casos-exito"
+        keywords="testimoniales limpieza industrial, casos éxito higiene HORECA, clientes VAROSA Costa Rica"
+      />
       <Navigation />
       
       <main id="main-content" className="flex-1">

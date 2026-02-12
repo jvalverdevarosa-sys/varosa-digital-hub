@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -70,6 +71,12 @@ const ServiciosTecnicos = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Servicios Técnicos"
+        description="Instalación de dispensadores, auditorías de higiene ATP, capacitaciones técnicas y acompañamiento continuo. Servicio profesional en Zona Norte, Caribe, Guanacaste y GAM."
+        path="/servicios-tecnicos"
+        keywords="instalación dispensadores Costa Rica, auditoría ATP higiene, capacitaciones limpieza industrial, servicio técnico TORK Diversey"
+      />
       <Navigation />
       
       <main id="main-content" className="flex-1">

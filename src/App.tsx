@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
@@ -25,24 +26,26 @@ const PageLoader = () => (
 );
 
 const App = () => (
-  <TooltipProvider>
-    <HashRouter>
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/soluciones" element={<Soluciones />} />
-          <Route path="/productos" element={<Productos />} />
-          <Route path="/casos-exito" element={<CasosExito />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/nosotros" element={<Nosotros />} />
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="/servicios-tecnicos" element={<ServiciosTecnicos />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
-      <WhatsAppButton />
-    </HashRouter>
-  </TooltipProvider>
+  <HelmetProvider>
+    <TooltipProvider>
+      <HashRouter>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/soluciones" element={<Soluciones />} />
+            <Route path="/productos" element={<Productos />} />
+            <Route path="/casos-exito" element={<CasosExito />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/nosotros" element={<Nosotros />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/servicios-tecnicos" element={<ServiciosTecnicos />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+        <WhatsAppButton />
+      </HashRouter>
+    </TooltipProvider>
+  </HelmetProvider>
 );
 
 export default App;

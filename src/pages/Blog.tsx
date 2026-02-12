@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -69,6 +70,12 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Blog"
+        description="Artículos sobre mejores prácticas en limpieza industrial, higiene alimentaria, normativas BPM y tendencias del sector HORECA en Costa Rica."
+        path="/blog"
+        keywords="blog limpieza industrial, mejores prácticas higiene, BPM Costa Rica, normativas HORECA"
+      />
       <Navigation />
       
       <main id="main-content" className="flex-1">

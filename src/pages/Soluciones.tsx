@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -63,6 +64,12 @@ const Soluciones = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Soluciones por Industria"
+        description="Soluciones especializadas de limpieza e higiene para industria alimentaria, HORECA, manufactura y lecherías en Costa Rica. Productos certificados y acompañamiento técnico."
+        path="/soluciones"
+        keywords="soluciones limpieza industria alimentaria, higiene HORECA Costa Rica, manufactura limpieza, lecherías higiene, limpieza industrial Zona Norte"
+      />
       <Navigation />
       
       <main id="main-content" className="flex-1">

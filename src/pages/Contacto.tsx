@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,6 +12,12 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 const Contacto = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Contacto"
+        description="Solicite cotización o agende una visita técnica. Teléfono: 4002-9365, WhatsApp: +506 8670-3251. Cobertura en Zona Norte, Caribe, Guanacaste y GAM."
+        path="/contacto"
+        keywords="contacto VAROSA, cotización productos limpieza, teléfono VAROSA, WhatsApp VAROSA Costa Rica"
+      />
       <Navigation />
       
       <main id="main-content" className="flex-1">

@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import SEO from "@/components/SEO";
+import SchemaOrg from "@/components/SchemaOrg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
@@ -54,6 +56,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Soluciones que inspiran confianza, transforman y crean impacto"
+        description="Comercializadora VARO S.A. — Distribuidores de Diversey, TORK, El Castor, Kemical y más. Productos de limpieza, higiene industrial, suministros de oficina y acompañamiento técnico en Costa Rica. Zona Norte, Caribe, Guanacaste y GAM."
+        path="/"
+        keywords="limpieza industrial Costa Rica, higiene HORECA, Diversey Costa Rica, TORK dispensadores, El Castor cepillos FDA, productos químicos industriales, suministros de oficina, Venecia San Carlos"
+      />
+      <SchemaOrg />
       <Navigation />
       
       <main id="main-content" className="flex-1">
