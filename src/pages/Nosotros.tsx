@@ -83,7 +83,7 @@ const Nosotros = () => {
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               <Card className="border-2 border-accent shadow-accent bg-card">
                 <CardContent className="p-8">
-                  <h2 className="text-3xl font-heading font-bold mb-4 text-highlight">Nuestra Historia</h2>
+                  <h2 className="text-3xl font-heading font-bold mb-4 text-highlight">Cómo Empezamos</h2>
                   <p className="text-lg text-foreground/75 leading-relaxed">
                     Fundada en 2007 con raíces en el sector agropecuario, VAROSA inició atendiendo lecherías y plantas de proceso. En 2014, con la incorporación de Jean Carlo, la empresa amplió su enfoque hacia industrias, hoteles, restaurantes y comercios especializados.
                   </p>
@@ -165,6 +165,39 @@ const Nosotros = () => {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Team & Numbers Section */}
+        <section className="py-20 bg-background border-b border-primary/8">
+          <div className="container mx-auto px-6 lg:px-10">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Nuestro Equipo</h2>
+              <p className="text-lg md:text-xl text-foreground/75 max-w-2xl mx-auto leading-relaxed">
+                Un equipo comprometido que hace posible nuestra promesa de servicio
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              {[
+                { number: "30", label: "Colaboradores", sublabel: "en todo el país" },
+                { number: "4", label: "Vendedores de Campo", sublabel: "visitas en sitio" },
+                { number: "4", label: "Vehículos Propios", sublabel: "flota de reparto" },
+                { number: "4", label: "Regiones", sublabel: "de cobertura" },
+              ].map((stat, index) => (
+                <div key={index} className="text-center p-6 rounded-xl bg-gradient-to-br from-accent/5 to-primary/3 border border-primary/8 hover:border-accent/30 transition-all duration-300">
+                  <div className="text-3xl sm:text-4xl font-black text-primary font-heading mb-1">{stat.number}</div>
+                  <div className="text-sm font-semibold text-foreground/70">{stat.label}</div>
+                  <div className="text-xs text-foreground/45 mt-0.5">{stat.sublabel}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="max-w-3xl mx-auto mt-10 text-center">
+              <p className="text-base text-foreground/65 leading-relaxed">
+                Nuestro equipo incluye personal administrativo, asesores comerciales de campo, técnicos de instalación y soporte, y un equipo de logística con flota propia que garantiza entregas puntuales en Zona Norte, Caribe, Guanacaste y el Gran Área Metropolitana.
+              </p>
             </div>
           </div>
         </section>

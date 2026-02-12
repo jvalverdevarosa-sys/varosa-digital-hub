@@ -69,12 +69,11 @@ const Index = () => {
         <Hero />
 
         {/* Brand Partners Strip */}
-        <section className="py-8 bg-gradient-to-r from-[hsl(var(--primary)/0.03)] via-[hsl(var(--accent)/0.04)] to-[hsl(var(--primary)/0.03)] border-y border-[hsl(var(--primary)/0.08)]">
+        <section className="py-6 bg-gradient-to-r from-[hsl(var(--primary)/0.03)] via-[hsl(var(--accent)/0.04)] to-[hsl(var(--primary)/0.03)] border-y border-[hsl(var(--primary)/0.08)]">
           <div className="container mx-auto px-6 lg:px-10">
-            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-              <span className="text-sm font-semibold text-foreground/40 uppercase tracking-wider">Socios comerciales:</span>
+            <div className="flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-10 gap-y-3">
               {["Diversey", "TORK", "3M", "Kemical", "Solquisa", "El Castor", "HP", "Epson", "Faber Castell"].map((brand) => (
-                <span key={brand} className="text-sm font-bold text-foreground/55 hover:text-primary transition-colors cursor-default">
+                <span key={brand} className="text-sm font-bold text-foreground/50 hover:text-primary transition-colors cursor-default tracking-wide">
                   {brand}
                 </span>
               ))}
@@ -88,7 +87,7 @@ const Index = () => {
             <div className="text-center mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary">Líneas de Productos</h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-                Socios comerciales: Diversey, TORK, 3M, Kemical, Solquisa, El Castor, HP, Epson, Faber Castell, Artline, Facela
+                Soluciones especializadas para cada necesidad operativa de su negocio
               </p>
             </div>
 
@@ -148,6 +147,68 @@ const Index = () => {
             <div className="text-center">
               <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold shadow-varosa">
                 <NavLink to="/soluciones">Ver Todas las Industrias</NavLink>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Social Proof / Clients Section */}
+        <section className="py-20" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #f5f8fd 50%, #f0f4fa 100%)' }}>
+          <div className="container mx-auto px-6 lg:px-10">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary">Confían en VAROSA</h2>
+              <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
+                Más de 500 clientes activos en 4 regiones de Costa Rica
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+              {[
+                {
+                  sector: "HORECA y Turismo",
+                  count: "12+",
+                  clients: ["Hotel El Establo", "La Paz Waterfall Gardens", "Arenal Springs", "Mistico Park", "Selvatura Park"],
+                  color: "accent"
+                },
+                {
+                  sector: "Industria Alimentaria",
+                  count: "8+",
+                  clients: ["Ticofrut", "Grupo VISA", "Fyffes", "Coopelesca", "Frutera La Paz"],
+                  color: "primary"
+                },
+                {
+                  sector: "Lecherías y Lácteos",
+                  count: "7+",
+                  clients: ["La Giralda", "Rancho Tres Hermanos", "Hacienda Pedregal", "Coopelecheros", "Lácteos H y R"],
+                  color: "secondary"
+                },
+                {
+                  sector: "Retail y Comercio",
+                  count: "2+",
+                  clients: ["Economás", "Carnicerías Matoro"],
+                  color: "highlight"
+                }
+              ].map((group, index) => (
+                <div key={index} className="bg-white rounded-xl border border-[hsl(var(--primary)/0.1)] p-6 hover:border-[hsl(var(--accent)/0.4)] hover:shadow-[0_4px_20px_hsl(var(--accent)/0.1)] transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className={`text-2xl font-black font-heading text-${group.color}`}>{group.count}</span>
+                    <span className="text-sm font-semibold text-foreground/70">{group.sector}</span>
+                  </div>
+                  <div className="space-y-1.5">
+                    {group.clients.map((client, idx) => (
+                      <p key={idx} className="text-sm text-foreground/55">{client}</p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Button asChild size="lg" variant="outline" className="border-2 border-primary/20 hover:border-primary text-primary hover:bg-primary/5 font-bold transition-all duration-300">
+                <NavLink to="/casos-exito">
+                  Ver Todos los Casos de Éxito
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </NavLink>
               </Button>
             </div>
           </div>
