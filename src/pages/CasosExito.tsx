@@ -32,6 +32,7 @@ import logoSweetWell from "@/assets/logos/clientes/sweet-well.png";
 
 const clientLogos: Record<string, string> = {
   "Hotel El Establo": logoHotelElEstablo,
+  "El Establo": logoHotelElEstablo,
   "La Paz Waterfall Gardens": logoLaPazWaterfall,
   "Arenal Springs": logoArenalSprings,
   "Santo Pecado": logoSantoPecado,
@@ -40,6 +41,7 @@ const clientLogos: Record<string, string> = {
   "Industrias Charo": logoIndustriasCharo,
   "Pollos Pako": logoPollosPako,
   "Carnicerías Matoro": logoCarniceriasMatoro,
+  "Matoro": logoCarniceriasMatoro,
   "Sweet Well": logoSweetWell,
 };
 
@@ -403,7 +405,7 @@ const CasosExito = () => {
             </ScrollReveal>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
               {allClients.map((client, index) => {
-                const logo = clientLogos[client] || clientLogos[client === "El Establo" ? "Hotel El Establo" : ""] || clientLogos[client === "Matoro" ? "Carnicerías Matoro" : ""];
+                const logo = clientLogos[client];
                 return (
                 <ScrollReveal key={index} delay={index * 40}>
                 <div
