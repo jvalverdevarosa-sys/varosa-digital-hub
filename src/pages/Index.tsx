@@ -32,7 +32,22 @@ import logoCoopelesca from "@/assets/logos/clientes/coopelesca.png";
 import logoIndustriasCharo from "@/assets/logos/clientes/industrias-charo.png";
 import logoPollosPako from "@/assets/logos/clientes/pollos-pako.png";
 import logoCarniceriasMatoro from "@/assets/logos/clientes/carnicerias-matoro.jpeg";
-import logoSweetWell from "@/assets/logos/clientes/sweet-well.png";
+import logoMagicMountain from "@/assets/logos/clientes/magic-mountain.jpeg";
+import logoMisticoPark from "@/assets/logos/clientes/mistico-park.png";
+import logoNammbu from "@/assets/logos/clientes/nammbu-beachfront-bungalows.png";
+import logoHotelPocoAPoco from "@/assets/logos/clientes/hotel-poco-a-poco.png";
+import logoSibu from "@/assets/logos/clientes/sibu-boutique-hotel.jpeg";
+import logoSelvatura from "@/assets/logos/clientes/selvatura-park.jpeg";
+import logoMonteverdeLodge from "@/assets/logos/clientes/monteverde-lodge.png";
+import logoGrupoVisa from "@/assets/logos/clientes/grupo-visa.jpeg";
+import logoFruteraLaPaz from "@/assets/logos/clientes/frutera-la-paz.png";
+import logoFyffes from "@/assets/logos/clientes/fyffes.png";
+import logoCoopebrisas from "@/assets/logos/clientes/coopebrisas.png";
+import logoLaGiralda from "@/assets/logos/clientes/la-giralda.jpeg";
+import logoCoopelecheros from "@/assets/logos/clientes/coopelecheros.png";
+import logoLacteosHyR from "@/assets/logos/clientes/lacteos-h-y-r.jpeg";
+import logoLacteosCeci from "@/assets/logos/clientes/lacteos-ceci.png";
+import logoEconomas from "@/assets/logos/clientes/economas.jpeg";
 
 const Index = () => {
   const productLines = [
@@ -242,13 +257,28 @@ const Index = () => {
                 { name: "Hotel El Establo", logo: logoHotelElEstablo },
                 { name: "La Paz Waterfall Gardens", logo: logoLaPazWaterfall },
                 { name: "Arenal Springs", logo: logoArenalSprings },
+                { name: "Magic Mountain", logo: logoMagicMountain },
+                { name: "Mistico Park", logo: logoMisticoPark },
+                { name: "Nammbú Beachfront Bungalows", logo: logoNammbu },
+                { name: "Hotel Poco a Poco", logo: logoHotelPocoAPoco },
+                { name: "Sibú Boutique Hotel", logo: logoSibu },
+                { name: "Selvatura Park", logo: logoSelvatura },
+                { name: "Monteverde Lodge", logo: logoMonteverdeLodge },
                 { name: "Santo Pecado", logo: logoSantoPecado },
                 { name: "Ticofrut", logo: logoTicofrut },
+                { name: "Grupo VISA", logo: logoGrupoVisa },
+                { name: "Frutera La Paz", logo: logoFruteraLaPaz },
+                { name: "Fyffes", logo: logoFyffes },
                 { name: "Coopelesca", logo: logoCoopelesca },
+                { name: "Coopebrisas", logo: logoCoopebrisas },
                 { name: "Industrias Charo", logo: logoIndustriasCharo },
                 { name: "Pollos Pako", logo: logoPollosPako },
+                { name: "La Giralda", logo: logoLaGiralda },
+                { name: "Coopelecheros", logo: logoCoopelecheros },
+                { name: "Lácteos H y R", logo: logoLacteosHyR },
+                { name: "Lácteos Ceci", logo: logoLacteosCeci },
+                { name: "Economás", logo: logoEconomas },
                 { name: "Carnicerías Matoro", logo: logoCarniceriasMatoro },
-                { name: "Sweet Well", logo: logoSweetWell },
               ].map((client) => (
                 <div key={client.name} className="flex flex-col items-center gap-2">
                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-card border border-[hsl(var(--primary)/0.1)] flex items-center justify-center p-2 hover:border-[hsl(var(--accent)/0.4)] hover:shadow-[0_4px_15px_hsl(var(--accent)/0.1)] transition-all duration-300">
@@ -287,8 +317,8 @@ const Index = () => {
                 },
                 {
                   sector: "Retail y Comercio",
-                  count: "3+",
-                  clients: ["Economás", "Carnicerías Matoro", "Sweet Well"],
+                  count: "2+",
+                  clients: ["Economás", "Carnicerías Matoro"],
                   color: "highlight"
                 }
               ].map((group, index) => (

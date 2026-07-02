@@ -28,7 +28,22 @@ import logoCoopelesca from "@/assets/logos/clientes/coopelesca.png";
 import logoIndustriasCharo from "@/assets/logos/clientes/industrias-charo.png";
 import logoPollosPako from "@/assets/logos/clientes/pollos-pako.png";
 import logoCarniceriasMatoro from "@/assets/logos/clientes/carnicerias-matoro.jpeg";
-import logoSweetWell from "@/assets/logos/clientes/sweet-well.png";
+import logoMagicMountain from "@/assets/logos/clientes/magic-mountain.jpeg";
+import logoMisticoPark from "@/assets/logos/clientes/mistico-park.png";
+import logoNammbu from "@/assets/logos/clientes/nammbu-beachfront-bungalows.png";
+import logoHotelPocoAPoco from "@/assets/logos/clientes/hotel-poco-a-poco.png";
+import logoSibu from "@/assets/logos/clientes/sibu-boutique-hotel.jpeg";
+import logoSelvatura from "@/assets/logos/clientes/selvatura-park.jpeg";
+import logoMonteverdeLodge from "@/assets/logos/clientes/monteverde-lodge.png";
+import logoGrupoVisa from "@/assets/logos/clientes/grupo-visa.jpeg";
+import logoFruteraLaPaz from "@/assets/logos/clientes/frutera-la-paz.png";
+import logoFyffes from "@/assets/logos/clientes/fyffes.png";
+import logoCoopebrisas from "@/assets/logos/clientes/coopebrisas.png";
+import logoLaGiralda from "@/assets/logos/clientes/la-giralda.jpeg";
+import logoCoopelecheros from "@/assets/logos/clientes/coopelecheros.png";
+import logoLacteosHyR from "@/assets/logos/clientes/lacteos-h-y-r.jpeg";
+import logoLacteosCeci from "@/assets/logos/clientes/lacteos-ceci.png";
+import logoEconomas from "@/assets/logos/clientes/economas.jpeg";
 
 const clientLogos: Record<string, string> = {
   "Hotel El Establo": logoHotelElEstablo,
@@ -42,7 +57,24 @@ const clientLogos: Record<string, string> = {
   "Pollos Pako": logoPollosPako,
   "Carnicerías Matoro": logoCarniceriasMatoro,
   "Matoro": logoCarniceriasMatoro,
-  "Sweet Well": logoSweetWell,
+  "Magic Mountain": logoMagicMountain,
+  "Mistico Park": logoMisticoPark,
+  "Nammbú Beachfront Bungalows": logoNammbu,
+  "Nammbú": logoNammbu,
+  "Hotel Poco a Poco": logoHotelPocoAPoco,
+  "Sibú Boutique Hotel": logoSibu,
+  "Sibú Hotel": logoSibu,
+  "Selvatura Park": logoSelvatura,
+  "Monteverde Lodge": logoMonteverdeLodge,
+  "Grupo VISA": logoGrupoVisa,
+  "Frutera La Paz": logoFruteraLaPaz,
+  "Fyffes": logoFyffes,
+  "Coopebrisas": logoCoopebrisas,
+  "La Giralda": logoLaGiralda,
+  "Coopelecheros": logoCoopelecheros,
+  "Lácteos H y R": logoLacteosHyR,
+  "Lácteos Ceci": logoLacteosCeci,
+  "Economás": logoEconomas,
 };
 
 const cases = [
@@ -76,7 +108,6 @@ const cases = [
       "Selvatura Park",
       "Monteverde Lodge",
       "Santo Pecado",
-      "Freddo Fresas",
     ],
     region: "Arenal, Monteverde, Guanacaste y Zona Norte",
   },
@@ -156,7 +187,7 @@ const cases = [
     testimonial:
       "VAROSA nos atiende con visitas regulares y siempre tiene disponibilidad. No tenemos que preocuparnos por quedarnos sin insumos.",
     testimonialAuthor: "Administración — Sector Comercio, Zona Norte",
-    clients: ["Economás", "Carnicerías Matoro", "Sweet Well"],
+    clients: ["Economás", "Carnicerías Matoro"],
     region: "Zona Norte",
   },
 ];
@@ -173,7 +204,6 @@ const allClients = [
   "Selvatura Park",
   "Monteverde Lodge",
   "Santo Pecado",
-  "Freddo Fresas",
   "Coopelesca",
   "Ticofrut",
   "Grupo VISA",
@@ -189,7 +219,6 @@ const allClients = [
   "Lácteos Ceci",
   "Economás",
   "Matoro",
-  "Sweet Well",
 ];
 
 const CasosExito = () => {
