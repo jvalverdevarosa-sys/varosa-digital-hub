@@ -299,7 +299,7 @@ const Index = () => {
               {[
                 {
                   sector: "HORECA y Turismo",
-                  count: "12+",
+                  count: "11+",
                   clients: ["Hotel El Establo", "La Paz Waterfall Gardens", "Arenal Springs", "Mistico Park", "Selvatura Park"],
                   color: "accent"
                 },
