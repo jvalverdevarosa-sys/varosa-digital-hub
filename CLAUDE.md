@@ -47,6 +47,8 @@ Vite + React 18 + TypeScript, styled with Tailwind and shadcn/ui (Radix primitiv
 
 **Assets** (`src/assets/`): client logos (`logos/clientes/`), brand logos (`logos/marcas/`), and product photos (`products/`, mostly `.webp`). Recent commit history is dominated by product-image fixes (white backgrounds, catalog photos) — image quality/consistency is an active, recurring workstream.
 
+**Favicons** (`public/`): ✅ **Completado (2026-07-02)** — favicon.ico (16/32/48), favicon-16x16.png, favicon-32x32.png, apple-touch-icon.png (180×180, fondo blanco), android-chrome-192/512.png usan el **isotipo oficial de VAROSA** (la "V" con gota de agua), recortado del logo vertical. Fondo transparente salvo apple-touch-icon (blanco). El `og-image.png` (1200×630) ya incluía el logo real, no requirió cambios.
+
 ## Reglas de negocio VAROSA
 
 Restricciones no negociables — respetarlas en todo cambio:
