@@ -32,11 +32,12 @@ import imgEscobas from "@/assets/products/escobas-recogedores.webp";
 import imgJaladores from "@/assets/products/jaladores-escurridores.webp";
 import imgMopas from "@/assets/products/mopas-trapeadores.webp";
 import imgFibras from "@/assets/products/fibras-esponjas-3m.webp";
+import imgPalasIndustriales from "@/assets/products/herramientas-industriales.webp";
 // Imágenes de productos — Oficina
 import imgPapeleria from "@/assets/products/papeleria-pritt.webp";
 import imgTintas from "@/assets/products/impresora-epson.webp";
 import imgOrganizacion from "@/assets/products/tijera-facela.webp";
-import imgEscritura from "@/assets/products/articulos-escritura.webp";
+import imgEscritura from "@/assets/products/articulos-escritura-fix.webp";
 import imgCalculadora from "@/assets/products/calculadora-casio.webp";
 import imgBaterias from "@/assets/products/baterias-philips.webp";
 
@@ -90,6 +91,7 @@ const categories = [
       { name: "Jaladores y Escurridores", description: "Jaladores de agua con hule natural, escurridores para áreas húmedas y pisos industriales.", brand: "El Castor", applications: ["Cocinas", "Áreas húmedas", "Plantas de proceso"], image: imgJaladores },
       { name: "Mopas y Trapeadores", description: "Sistemas de mopa húmeda y seca. Trapeadores industriales con cabezal intercambiable.", brand: "El Castor / 3M", applications: ["Pisos", "Oficinas", "Centros comerciales"], image: imgMopas },
       { name: "Fibras y Esponjas 3M", description: "Fibras abrasivas, esponjas profesionales y discos para limpieza de superficies delicadas e industriales.", brand: "3M", applications: ["Cocinas", "Superficies delicadas", "Limpieza industrial"], image: imgFibras },
+      { name: "Palas Industriales con Código de Colores", description: "Palas higiénicas de una sola pieza con sistema de código de colores para prevenir la contaminación cruzada en industria alimentaria. Certificación HACCP y garantía de 5 años.", brand: "El Castor", applications: ["Industria alimentaria", "Plantas de proceso", "Manipulación de alimentos"], image: imgPalasIndustriales },
     ],
   },
   {
@@ -235,12 +237,12 @@ const Productos = () => {
                 <ScrollReveal key={`${currentCategory.name}-${index}`} delay={index * 80}>
                 <Card className="border border-[hsl(var(--primary)/0.08)] hover:border-accent/30 hover:shadow-lg transition-all duration-300 group bg-card overflow-hidden">
                   {/* Product image or placeholder */}
-                  <div className="h-44 bg-white flex items-center justify-center relative overflow-hidden rounded-t-lg">
+                  <div className="h-44 bg-white dark:bg-[#e8e4d8] flex items-center justify-center relative overflow-hidden rounded-t-lg">
                     {product.image ? (
                       <img 
                         src={product.image} 
                         alt={product.name}
-                        className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                        className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-500 dark:brightness-[0.88]"
                         loading="lazy"
                       />
                     ) : (
