@@ -7,6 +7,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight, ChevronUp, MessageCircle } from "lucide-react";
+import demaSprayCleanCocina from "@/assets/blog/dema-spray-clean-cocina.webp";
+import diverseyDosificacionBodega from "@/assets/blog/diversey-dosificacion-bodega.webp";
+
+// El contenido de un artículo es una lista de bloques. Un string simple es un
+// párrafo (formato usado por los artículos originales); los objetos permiten
+// insertar subtítulos e imágenes de ambiente dentro del cuerpo.
+type ContentBlock =
+  | string
+  | { type: "heading"; text: string }
+  | { type: "image"; src: string; alt: string };
 
 interface Article {
   slug: string;
@@ -16,10 +26,67 @@ interface Article {
   date: string;
   readTime: string;
   featured: boolean;
-  content: string[];
+  content: ContentBlock[];
 }
 
 const articles: Article[] = [
+  {
+    slug: "dosificacion-quimicos-industria-alimentaria",
+    title:
+      "Dosificación correcta de químicos en la industria alimentaria: donde la inocuidad, el ahorro y la sostenibilidad se encuentran",
+    category: "Inocuidad alimentaria",
+    excerpt:
+      "Dosificar bien los químicos de limpieza protege la inocuidad alimentaria, reduce costos y es más sostenible. Cómo lograrlo en su planta o cocina.",
+    date: "3 Jul 2026",
+    readTime: "8 min",
+    featured: true,
+    content: [
+      "En una planta de alimentos, en una cocina industrial o en una lechería, la limpieza no es un tema de \"orden y presentación\": es una barrera sanitaria. Y dentro de esa barrera hay una decisión pequeña, casi invisible, que termina afectando tres cosas a la vez: qué tan seguro es su producto, cuánto gasta su operación en químicos y qué huella deja en el ambiente. Esa decisión es la dosificación.",
+      "Dosificar es, simplemente, usar la cantidad correcta de producto —en la concentración correcta— para cada tarea. Suena obvio, pero es uno de los puntos donde más dinero se pierde y donde más riesgo sanitario se acumula sin que nadie lo note.",
+      { type: "heading", text: "La limpieza y desinfección es un control crítico, no un trámite" },
+      "En cualquier sistema de inocuidad basado en HACCP, la limpieza y desinfección (L&D) es un programa prerrequisito: la base sobre la que se sostiene todo lo demás. Si la base falla, los controles posteriores trabajan en desventaja.",
+      "Hay dos ideas que conviene tener siempre presentes:",
+      "Limpiar y desinfectar son pasos distintos. Limpiar retira la suciedad y la materia orgánica; desinfectar reduce los microorganismos. Se limpia primero, porque la materia orgánica (grasa, residuos de alimento) inactiva a muchos desinfectantes. Desinfectar sobre una superficie sucia es, en la práctica, desinfectar a medias.",
+      "La concentración y el tiempo de contacto son parte de la fórmula. Cada desinfectante fue diseñado para actuar a una concentración y durante un tiempo determinados. Si se aplica más diluido de lo debido, puede no eliminar los microorganismos; si no se respeta el tiempo de contacto, tampoco.",
+      "Cuando la desinfección se queda corta de forma repetida, aparece el problema más silencioso de todos: los biofilms, capas donde los microorganismos se protegen y resisten mucho mejor a los químicos. Son especialmente delicados cuando se trata de patógenos ambientales como Listeria, habituales en entornos de planta.",
+      { type: "heading", text: "El costo oculto de dosificar \"a ojo\"" },
+      "El método más común —y más caro— es el \"chorrito\": echar producto de la garrafa según el criterio del momento. El problema es que ese criterio varía por persona, por turno y por día. Y varía en las dos direcciones, ambas costosas:",
+      "Quedarse corto compromete la eficacia: sobreviven microorganismos y se abre la puerta a reprocesos, rechazos y riesgo sanitario.",
+      "Pasarse desperdicia producto, deja residuos químicos que luego hay que enjuagar (más agua, más tiempo), puede corroer equipos y superficies, y suma un riesgo de seguridad para quien manipula el químico concentrado.",
+      "Dicho de otra forma: dosificar mal cuesta caro tanto si se usa de menos como si se usa de más. Y como el gasto se reparte gota a gota en el día a día, casi nunca se ve como una sola cifra grande… aunque lo sea al final del mes.",
+      { type: "heading", text: "Dosificar bien también es ahorrar" },
+      "Aquí está la parte que muchas operaciones subestiman. Cuando se dosifica con un sistema —una bomba dosificadora, una estación de dilución, un dosificador automático en el punto de uso— pasan varias cosas buenas al mismo tiempo:",
+      "La concentración deja de depender de la persona. El equipo entrega siempre la misma dilución, turno tras turno.",
+      "Se usa solo lo necesario. No más, no menos. Eso se traduce directamente en menos producto consumido.",
+      "Los resultados se vuelven repetibles, lo que hace la operación más fácil de auditar: si la concentración es constante y está documentada, sus registros de L&D para HACCP se sostienen solos.",
+      "Según las estimaciones de VAROSA con algunos de sus clientes, el ahorro en consumo de producto puede superar el 20% al pasar a un sistema de dosificación. Conviene tomarlo como un estimado, no como una garantía: la cifra real depende del tipo de industria, del sistema de dosificación y de los químicos que se utilicen.",
+      { type: "heading", text: "Y es más sostenible de lo que parece" },
+      "Usar la cantidad correcta no solo cuida el presupuesto: reduce la huella ambiental de la operación.",
+      "Menos químico usado significa menos envases, menos transporte y menos carga en las aguas residuales.",
+      "Los formatos concentrados (que se diluyen en sitio) reducen el empaque y el peso que se moviliza frente a los productos listos para usar.",
+      "Las formulaciones biodegradables se descomponen con mayor facilidad, lo que aligera el impacto sobre los cuerpos de agua.",
+      "Este punto no es menor en Costa Rica. El vertido y reúso de aguas residuales está regulado por el Decreto Ejecutivo N.º 33601-MINAE-S (2007), Reglamento de Vertido y Reúso de Aguas Residuales, de aplicación obligatoria en todo el país. La norma obliga a todo ente generador a tratar sus aguas residuales para cumplir con las disposiciones del reglamento y a presentar reportes operacionales periódicos ante el Ministerio de Salud. Para una planta de alimentos, dosificar de forma responsable —usar solo el químico necesario y apostar por formulaciones más amigables— reduce la carga que llega al efluente y ayuda a mantenerse del lado correcto de esa normativa.",
+      { type: "heading", text: "Cómo llevarlo a la práctica" },
+      "Pasar del \"chorrito\" a un sistema confiable se apoya en cuatro pilares:",
+      "1. El equipo adecuado para cada punto de uso. En VAROSA trabajamos con equipos de dosificación SEKO ProMax, además de espumadores y estaciones de dosificación DEMA, combinados con químicos concentrados de líneas líderes como Diversey.",
+      "2. Capacitación del personal, para que el sistema se use como fue diseñado.",
+      "3. Verificación objetiva, más allá de \"se ve limpio\". Aquí entran las auditorías por bioluminiscencia (ATP), que miden en segundos la carga residual sobre una superficie.",
+      "4. Documentación, que convierte todo lo anterior en evidencia para sus auditorías de inocuidad.",
+      {
+        type: "image",
+        src: demaSprayCleanCocina,
+        alt: "Estación de dosificación DEMA Spray Clean II instalada en una cocina industrial, con selección de detergente, sanitizante y enjuague.",
+      },
+      { type: "heading", text: "En VAROSA lo acompañamos de principio a fin" },
+      "En VAROSA no solo distribuimos los productos: ayudamos a que se usen bien. A través de nuestros Servicios Técnicos instalamos sistemas de dosificación, realizamos auditorías ATP para verificar la eficacia de la limpieza y capacitamos a los equipos de planta y cocina.",
+      {
+        type: "image",
+        src: diverseyDosificacionBodega,
+        alt: "Sistema de dosificación de químicos Diversey montado en pared en una bodega de alimentos, con fichas técnicas de producto a la vista.",
+      },
+      "Si quiere revisar cómo está dosificando hoy su operación —y dónde puede ganar en inocuidad, ahorro y sostenibilidad al mismo tiempo—, escríbanos por WhatsApp al +506 8670-3251 y con gusto lo orientamos.",
+    ],
+  },
   {
     slug: "codigo-colores-cepillos",
     title: "Código de Colores en Cepillos: Cómo Prevenir Contaminación Cruzada con El Castor",
@@ -189,7 +256,7 @@ const articles: Article[] = [
   },
 ];
 
-const categories = ["Todos", "Guía Técnica", "Ahorro y Eficiencia", "Tips de Ahorro", "Normativas", "Comparativo", "Servicios"];
+const categories = ["Todos", "Inocuidad alimentaria", "Guía Técnica", "Ahorro y Eficiencia", "Tips de Ahorro", "Normativas", "Comparativo", "Servicios"];
 
 const Blog = () => {
   const [expandedSlug, setExpandedSlug] = useState<string | null>(null);
@@ -428,11 +495,34 @@ function ArticleCard({
           }`}
         >
           <div className="border-t border-primary/10 pt-6 pb-4 space-y-4">
-            {article.content.map((paragraph, i) => (
-              <p key={i} className="text-sm sm:text-base text-foreground/80 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
+            {article.content.map((block, i) => {
+              if (typeof block === "string") {
+                return (
+                  <p key={i} className="text-sm sm:text-base text-foreground/80 leading-relaxed">
+                    {block}
+                  </p>
+                );
+              }
+              if (block.type === "heading") {
+                return (
+                  <h3
+                    key={i}
+                    className="text-lg sm:text-xl font-heading font-semibold text-foreground pt-2 leading-tight"
+                  >
+                    {block.text}
+                  </h3>
+                );
+              }
+              return (
+                <img
+                  key={i}
+                  src={block.src}
+                  alt={block.alt}
+                  loading="lazy"
+                  className="block mx-auto my-2 rounded-lg border border-primary/10 max-h-[520px] w-auto max-w-full"
+                />
+              );
+            })}
             <div className="pt-4 border-t border-primary/10">
               <Button
                 asChild
