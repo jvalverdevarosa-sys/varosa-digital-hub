@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { NavLink } from "./NavLink";
 import { ArrowRight, Phone, MessageCircle, Truck, ShieldCheck, Beaker, Award, Droplets } from "lucide-react";
+import { aniosExperiencia } from "@/lib/utils";
 
 const Hero = () => {
   return (
@@ -113,7 +114,7 @@ const Hero = () => {
                 <div className="text-[10px] sm:text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wider">Productos</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-accent">18+</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-accent">{aniosExperiencia()}+</div>
                 <div className="text-[10px] sm:text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wider">Años</div>
               </div>
             </div>

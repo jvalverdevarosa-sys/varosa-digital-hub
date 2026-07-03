@@ -17,6 +17,7 @@ import {
   MessageCircle,
   MapPin,
 } from "lucide-react";
+import { aniosExperiencia } from "@/lib/utils";
 
 // Logos de clientes
 import logoHotelElEstablo from "@/assets/logos/clientes/hotel-el-establo.jpeg";
@@ -266,7 +267,7 @@ const CasosExito = () => {
               </div>
               <div>
                 <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2 text-accent">
-                  18+
+                  {aniosExperiencia()}+
                 </div>
                 <div className="text-xs sm:text-sm md:text-base text-white/90">
                   Años de Experiencia

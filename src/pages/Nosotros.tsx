@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Users, Target, Heart, Shield, Zap } from "lucide-react";
+import { aniosExperiencia } from "@/lib/utils";
 
 const Nosotros = () => {
   const values = [
@@ -71,7 +72,7 @@ const Nosotros = () => {
                 Sobre <span className="text-accent">VAROSA</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
-                Más de 18 años proporcionando soluciones profesionales de limpieza 
+                Más de {aniosExperiencia()} años proporcionando soluciones profesionales de limpieza
                 e higiene en Costa Rica
               </p>
             </div>
@@ -89,7 +90,7 @@ const Nosotros = () => {
                     Fundada en 2007 con raíces en el sector agropecuario, VAROSA inició atendiendo lecherías y plantas de proceso. En 2014, con la incorporación de Jean Carlo, la empresa amplió su enfoque hacia industrias, hoteles, restaurantes y comercios especializados.
                   </p>
                   <p className="text-lg text-foreground/75 leading-relaxed mt-4">
-                    Hoy sumamos más de 18 años de experiencia con presencia en Zona Norte, Caribe, Guanacaste y el Gran Área Metropolitana. Nos hemos consolidado como un proveedor integral de soluciones técnicas, productos especializados y acompañamiento profesional.
+                    Hoy sumamos más de {aniosExperiencia()} años de experiencia con presencia en Zona Norte, Caribe, Guanacaste y el Gran Área Metropolitana. Nos hemos consolidado como un proveedor integral de soluciones técnicas, productos especializados y acompañamiento profesional.
                   </p>
                 </CardContent>
               </Card>
@@ -143,7 +144,7 @@ const Nosotros = () => {
             <div className="text-center mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Nuestra Historia</h2>
               <p className="text-lg md:text-xl text-foreground/75 max-w-2xl mx-auto leading-relaxed">
-                18 años de crecimiento y compromiso con nuestros clientes
+                {aniosExperiencia()} años de crecimiento y compromiso con nuestros clientes
               </p>
             </div>
 

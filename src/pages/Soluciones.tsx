@@ -16,6 +16,7 @@ import {
   MessageCircle,
   Star,
 } from "lucide-react";
+import { aniosExperiencia } from "@/lib/utils";
 
 // Logos de clientes
 import logoHotelElEstablo from "@/assets/logos/clientes/hotel-el-establo.jpeg";
@@ -282,7 +283,7 @@ const Soluciones = () => {
                 { num: "500+", label: "Clientes activos" },
                 { num: "3,000+", label: "Productos" },
                 { num: "4", label: "Regiones" },
-                { num: "18+", label: "Años" },
+                { num: `${aniosExperiencia()}+`, label: "Años" },
               ].map((m, i) => (
                 <ScrollReveal key={m.label} className="lg:col-span-1" delay={i * 75}>
                   <div className="flex h-full flex-col justify-center rounded-2xl border border-primary/10 bg-card p-5 text-center">
