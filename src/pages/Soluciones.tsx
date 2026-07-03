@@ -15,10 +15,6 @@ import {
   Check,
   MessageCircle,
   Star,
-  ShieldCheck,
-  Beaker,
-  Wrench,
-  Users,
 } from "lucide-react";
 
 // Logos de clientes
@@ -84,6 +80,7 @@ const prioritySectors = [
   {
     icon: Factory,
     title: "Industria Alimentaria",
+    anchor: "industria-alimentaria",
     badge: "Prioridad 2026",
     tagline: "Inocuidad sin compromisos: cumpla auditorías con confianza",
     problem:
@@ -107,6 +104,7 @@ const prioritySectors = [
   {
     icon: Utensils,
     title: "HORECA y Turismo",
+    anchor: "horeca-turismo",
     badge: "Prioridad 2026",
     tagline: "Higiene impecable para la experiencia de sus huéspedes",
     problem:
@@ -130,6 +128,7 @@ const prioritySectors = [
   {
     icon: Building2,
     title: "Manufactura y Plantas de Proceso",
+    anchor: "manufactura",
     badge: "Prioridad 2026",
     tagline: "Limpieza industrial que protege su inversión en equipos y personal",
     problem:
@@ -170,6 +169,12 @@ const secondarySectors = [
 ];
 
 const Soluciones = () => {
+  // HashRouter usa el hash como ruta, por eso NO usamos href="#ancla" (rompería el router).
+  // Desplazamiento suave manual al anclaje.
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
@@ -199,27 +204,140 @@ const Soluciones = () => {
           </div>
         </section>
 
-        {/* Differentiators */}
+        {/* Bento — índice visual de soluciones */}
         <section className="py-12 border-b border-primary/10 bg-background">
           <div className="container mx-auto px-6 lg:px-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              {[
-                { icon: Beaker, label: "Productos\ncertificados" },
-                { icon: Wrench, label: "Instalación y\nservicio técnico" },
-                { icon: Users, label: "Capacitación\nin situ" },
-                { icon: ShieldCheck, label: "Auditorías\nATP" },
-              ].map((d, i) => (
-                <ScrollReveal key={i} delay={i * 100}>
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                    <d.icon className="h-6 w-6 text-accent" aria-hidden="true" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[minmax(96px,auto)] gap-4">
+
+              {/* Celda destacada — Industria Alimentaria */}
+              <ScrollReveal className="sm:col-span-2 lg:col-span-2 lg:row-span-2" delay={0}>
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("industria-alimentaria")}
+                  className="group flex h-full w-full flex-col justify-between rounded-2xl border-2 border-highlight bg-gradient-to-br from-primary to-secondary p-6 text-left text-white shadow-varosa transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_hsl(var(--primary)/0.4)]"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/15">
+                        <Factory className="h-6 w-6 text-white" aria-hidden="true" />
+                      </div>
+                      <span className="inline-flex items-center gap-1 rounded-full bg-highlight px-3 py-1 text-xs font-bold text-[hsl(217_50%_14%)]">
+                        <Star className="h-3 w-3" aria-hidden="true" />
+                        Sector prioritario 2026
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-2xl md:text-3xl font-black">Industria Alimentaria</h3>
+                      <p className="mt-2 text-sm md:text-base text-white/85 leading-relaxed">
+                        Inocuidad sin compromisos: cumpla auditorías con confianza.
+                      </p>
+                    </div>
                   </div>
-                  <span className="text-sm font-semibold text-foreground/70 whitespace-pre-line text-center">
-                    {d.label}
-                  </span>
-                </div>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {["Diversey", "Kemical", "El Castor", "8 clientes de referencia"].map((chip) => (
+                      <span key={chip} className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white">
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                </button>
+              </ScrollReveal>
+
+              {/* HORECA y Turismo — celda ancha */}
+              <ScrollReveal className="sm:col-span-2 lg:col-span-2" delay={75}>
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("horeca-turismo")}
+                  className="group flex h-full w-full items-center gap-4 rounded-2xl border border-primary/10 bg-card p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_10px_30px_hsl(var(--accent)/0.15)]"
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10">
+                    <Utensils className="h-6 w-6 text-accent" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-lg font-bold text-foreground">HORECA y Turismo</h3>
+                    <p className="text-sm text-foreground/60">Hoteles, restaurantes y parques · 11 clientes de referencia</p>
+                  </div>
+                </button>
+              </ScrollReveal>
+
+              {/* Manufactura — celda ancha */}
+              <ScrollReveal className="sm:col-span-2 lg:col-span-2" delay={150}>
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("manufactura")}
+                  className="group flex h-full w-full items-center gap-4 rounded-2xl border border-primary/10 bg-card p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_10px_30px_hsl(var(--accent)/0.15)]"
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10">
+                    <Building2 className="h-6 w-6 text-accent" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-lg font-bold text-foreground">Manufactura y Plantas de Proceso</h3>
+                    <p className="text-sm text-foreground/60">Limpieza industrial con control de dilución</p>
+                  </div>
+                </button>
+              </ScrollReveal>
+
+              {/* Métricas */}
+              {[
+                { num: "500+", label: "Clientes activos" },
+                { num: "3,000+", label: "Productos" },
+                { num: "4", label: "Regiones" },
+                { num: "18+", label: "Años" },
+              ].map((m, i) => (
+                <ScrollReveal key={m.label} className="lg:col-span-1" delay={i * 75}>
+                  <div className="flex h-full flex-col justify-center rounded-2xl border border-primary/10 bg-card p-5 text-center">
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-foreground/45">{m.label}</span>
+                    <span className="mt-1 font-heading text-3xl md:text-4xl font-black text-primary dark:text-[hsl(216_60%_70%)]">{m.num}</span>
+                  </div>
                 </ScrollReveal>
               ))}
+
+              {/* Lecherías — celda pequeña */}
+              <ScrollReveal className="lg:col-span-1" delay={0}>
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("otros-sectores")}
+                  className="group flex h-full w-full flex-col justify-center gap-2 rounded-2xl border border-primary/10 bg-card p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_10px_30px_hsl(var(--accent)/0.15)]"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
+                    <Droplets className="h-5 w-5 text-accent" aria-hidden="true" />
+                  </div>
+                  <span className="font-heading text-sm font-bold text-foreground">Lecherías y Lácteos</span>
+                </button>
+              </ScrollReveal>
+
+              {/* Retail — celda pequeña */}
+              <ScrollReveal className="lg:col-span-1" delay={75}>
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("otros-sectores")}
+                  className="group flex h-full w-full flex-col justify-center gap-2 rounded-2xl border border-primary/10 bg-card p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_10px_30px_hsl(var(--accent)/0.15)]"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
+                    <ShoppingCart className="h-5 w-5 text-accent" aria-hidden="true" />
+                  </div>
+                  <span className="font-heading text-sm font-bold text-foreground">Retail y Comercio</span>
+                </button>
+              </ScrollReveal>
+
+              {/* CTA — celda ancha */}
+              <ScrollReveal className="sm:col-span-2 lg:col-span-2" delay={150}>
+                <a
+                  href={`https://wa.me/50686703251?text=${encodeURIComponent("Hola, mi industria no aparece en el sitio y me gustaría conversar sobre una solución de limpieza e higiene para mi operación.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex h-full items-center justify-between gap-4 rounded-2xl border border-accent/30 bg-accent/10 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:bg-accent/15 hover:shadow-[0_10px_30px_hsl(var(--accent)/0.2)]"
+                >
+                  <div>
+                    <h3 className="font-heading text-lg font-bold text-foreground">¿Su industria no está aquí?</h3>
+                    <p className="text-sm text-foreground/60">Conversemos y diseñamos una solución a su medida.</p>
+                  </div>
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white transition-transform duration-300 group-hover:scale-110">
+                    <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                </a>
+              </ScrollReveal>
+
             </div>
           </div>
         </section>
@@ -233,7 +351,8 @@ const Soluciones = () => {
                 return (
                   <ScrollReveal key={index} delay={index * 150}>
                   <Card
-                    className="border border-primary/10 hover:border-accent/40 transition-all duration-300 overflow-hidden bg-card"
+                    id={sector.anchor}
+                    className="scroll-mt-24 border border-primary/10 hover:border-accent/40 transition-all duration-300 overflow-hidden bg-card"
                   >
                     {/* Header */}
                     <div className="bg-gradient-to-r from-primary/[0.06] via-accent/[0.04] to-transparent px-6 sm:px-8 py-6 border-b border-primary/10">
@@ -359,7 +478,7 @@ const Soluciones = () => {
         </section>
 
         {/* Secondary Sectors */}
-        <section className="py-16 bg-primary/[0.03] border-y border-primary/10">
+        <section id="otros-sectores" className="scroll-mt-24 py-16 bg-primary/[0.03] border-y border-primary/10">
           <div className="container mx-auto px-6 lg:px-10">
             <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-8 text-center">
               También servimos

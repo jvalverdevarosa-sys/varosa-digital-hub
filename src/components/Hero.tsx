@@ -53,25 +53,30 @@ const Hero = () => {
                 Desde 2007 — Venecia de San Carlos
               </span>
             </div>
-            
-            {/* Headline */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[3.5rem] font-heading font-bold leading-[1.12] tracking-tight text-primary">
-              Soluciones que inspiran{" "}
-              <span className="relative inline-block">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-[hsl(var(--accent))]">
-                  confianza
+
+            {/* Headline gigante + línea de apoyo (jerarquía exagerada 2026) */}
+            <div className="space-y-3">
+              <h1 className="text-[2.6rem] sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-heading font-black leading-[1.02] tracking-[-0.02em] text-primary">
+                Soluciones que inspiran{" "}
+                <span className="relative inline-block">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-[hsl(var(--accent))]">
+                    confianza
+                  </span>
+                  <span className="absolute -bottom-1 left-0 w-full h-[5px] bg-gradient-to-r from-[hsl(var(--highlight))] to-[hsl(var(--highlight)/0.3)] rounded-full" />
                 </span>
-                <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-gradient-to-r from-[hsl(var(--highlight))] to-[hsl(var(--highlight)/0.3)] rounded-full" />
-              </span>
-              , transforman y crean{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--accent))] to-secondary">
-                impacto
-              </span>
-            </h1>
+              </h1>
+
+              <p className="text-xl md:text-2xl font-heading font-bold text-primary">
+                Transforman y crean{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--accent))] to-secondary">
+                  impacto
+                </span>.
+              </p>
+            </div>
 
             {/* Subheadline */}
             <p className="text-base md:text-lg text-foreground/65 leading-relaxed max-w-2xl">
-              Distribuimos marcas líderes como Diversey, TORK, El Castor, Kemical y Solquisa. 
+              Distribuimos marcas líderes como Diversey, TORK, El Castor, Kemical y Solquisa.
               Acompañamiento técnico, entregas con flota propia y cobertura en Zona Norte, Caribe, Guanacaste y GAM.
             </p>
 

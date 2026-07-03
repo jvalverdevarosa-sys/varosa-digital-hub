@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
@@ -140,6 +141,27 @@ const Productos = () => {
       p.brand.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // GEO: JSON-LD ItemList de productos. Regla de negocio: SIN offers, precios ni disponibilidad.
+  const origin = typeof window !== "undefined" ? window.location.origin : "https://varosacr.com";
+  const productListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Catálogo de productos profesionales VAROSA",
+    itemListElement: categories
+      .flatMap((cat) => cat.products)
+      .map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "Product",
+          name: p.name,
+          description: p.description,
+          brand: { "@type": "Brand", name: p.brand },
+          image: p.image.startsWith("http") ? p.image : `${origin}${p.image}`,
+        },
+      })),
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
@@ -148,6 +170,9 @@ const Productos = () => {
         path="/productos"
         keywords="Diversey Costa Rica, TORK dispensadores, El Castor FDA, 3M fibras, Kemical, Solquisa, suministros oficina, catálogo productos limpieza"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(productListSchema)}</script>
+      </Helmet>
       <Navigation />
       <main id="main-content" className="flex-1">
         {/* Hero */}
