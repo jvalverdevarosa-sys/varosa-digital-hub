@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -78,6 +79,7 @@ const ServiciosTecnicos = () => {
         path="/servicios-tecnicos"
         keywords="instalación dispensadores Costa Rica, auditoría ATP higiene, capacitaciones limpieza industrial, servicio técnico TORK Diversey"
       />
+      <BreadcrumbSchema name="Servicios Técnicos" path="/servicios-tecnicos" />
       <Navigation />
       
       <main id="main-content" className="flex-1">

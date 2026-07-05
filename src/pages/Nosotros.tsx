@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
@@ -58,6 +59,7 @@ const Nosotros = () => {
         path="/nosotros"
         keywords="Comercializadora VARO, VAROSA historia, distribuidora limpieza Costa Rica, Venecia San Carlos empresa"
       />
+      <BreadcrumbSchema name="Nosotros" path="/nosotros" />
       <Navigation />
       
       <main id="main-content" className="flex-1">

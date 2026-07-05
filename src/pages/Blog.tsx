@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -278,6 +280,46 @@ const Blog = () => {
   const featured = filteredArticles.filter((a) => a.featured);
   const regular = filteredArticles.filter((a) => !a.featured);
 
+  // BlogPosting (Schema.org) del artículo real "Dosificación correcta de químicos…".
+  // Todos los datos salen tal cual del objeto `articles`; la fecha "3 Jul 2026" se
+  // normaliza a ISO 8601 (2026-07-03). author/publisher = Organización VAROSA
+  // (mismo name y @id que SchemaOrg.tsx). No se inventan valores.
+  const origin =
+    typeof window !== "undefined" ? window.location.origin : "https://varosacr.com";
+  const articuloDestacado = articles.find(
+    (a) => a.slug === "dosificacion-quimicos-industria-alimentaria"
+  );
+  const articuloImagenes = articuloDestacado
+    ? articuloDestacado.content
+        .filter(
+          (b): b is { type: "image"; src: string; alt: string; width?: number; height?: number } =>
+            typeof b === "object" && b.type === "image"
+        )
+        .map((b) => (b.src.startsWith("http") ? b.src : `${origin}${b.src}`))
+    : [];
+  const blogPostingSchema = articuloDestacado && {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: articuloDestacado.title,
+    description: articuloDestacado.excerpt,
+    datePublished: "2026-07-03",
+    inLanguage: "es",
+    image: articuloImagenes,
+    articleSection: articuloDestacado.category,
+    mainEntityOfPage: { "@type": "WebPage", "@id": "https://varosacr.com/blog" },
+    author: {
+      "@type": "Organization",
+      "@id": "https://varosacr.com/#organization",
+      name: "Comercializadora VARO S.A.",
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": "https://varosacr.com/#organization",
+      name: "Comercializadora VARO S.A.",
+      logo: { "@type": "ImageObject", url: "https://varosacr.com/og-image.png" },
+    },
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
@@ -286,6 +328,12 @@ const Blog = () => {
         path="/blog"
         keywords="guía limpieza industrial, BPM Costa Rica, código colores cepillos FDA, ahorro papel TORK, dilución Diversey, auditoría ATP, limpieza CIP lecherías"
       />
+      <BreadcrumbSchema name="Blog" path="/blog" />
+      {blogPostingSchema && (
+        <Helmet>
+          <script type="application/ld+json">{JSON.stringify(blogPostingSchema)}</script>
+        </Helmet>
+      )}
       <Navigation />
 
       <main id="main-content" className="flex-1">

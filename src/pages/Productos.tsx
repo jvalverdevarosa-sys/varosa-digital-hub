@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Card, CardContent } from "@/components/ui/card";
@@ -168,6 +169,7 @@ const Productos = () => {
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(productListSchema)}</script>
       </Helmet>
+      <BreadcrumbSchema name="Productos" path="/productos" />
       <Navigation />
       <main id="main-content" className="flex-1">
         {/* Hero */}

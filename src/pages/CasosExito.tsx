@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -231,6 +232,7 @@ const CasosExito = () => {
         path="/casos-exito"
         keywords="clientes VAROSA Costa Rica, casos éxito limpieza industrial, testimoniales higiene HORECA, Mistico Park, Selvatura, Ticofrut, Hotel El Establo"
       />
+      <BreadcrumbSchema name="Casos de Éxito" path="/casos-exito" />
       <Navigation />
 
       <main id="main-content" className="flex-1">

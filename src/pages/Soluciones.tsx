@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -184,6 +185,7 @@ const Soluciones = () => {
         path="/soluciones"
         keywords="soluciones limpieza industria alimentaria Costa Rica, higiene HORECA hoteles restaurantes, manufactura limpieza industrial, lecherías CIP, Diversey TORK El Castor"
       />
+      <BreadcrumbSchema name="Soluciones" path="/soluciones" />
       <Navigation />
 
       <main id="main-content" className="flex-1">

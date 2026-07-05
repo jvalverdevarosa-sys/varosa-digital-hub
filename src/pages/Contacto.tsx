@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,7 @@ const Contacto = () => {
         path="/contacto"
         keywords="contacto VAROSA, cotización productos limpieza, teléfono VAROSA, WhatsApp VAROSA Costa Rica"
       />
+      <BreadcrumbSchema name="Contacto" path="/contacto" />
       <Navigation />
       
       <main id="main-content" className="flex-1">
