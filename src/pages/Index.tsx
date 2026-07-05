@@ -167,7 +167,7 @@ const Index = () => {
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <NavLink to="/productos" className="text-accent hover:text-primary font-semibold inline-flex items-center gap-2 text-sm group">
+                    <NavLink to="/productos" className="text-secondary hover:text-primary font-semibold inline-flex items-center gap-2 text-sm group">
                       Ver más
                       <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </NavLink>
@@ -182,7 +182,7 @@ const Index = () => {
               <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold shadow-varosa">
                 <NavLink to="/productos">Ver Catálogo por Categoría</NavLink>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-2 border-accent/30 hover:border-accent hover:bg-accent/5 text-accent font-bold transition-all duration-300">
+              <Button asChild size="lg" variant="outline" className="border-2 border-accent/30 hover:border-accent hover:bg-accent/5 text-secondary font-bold transition-all duration-300">
                 <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer">
                   <ShoppingBag className="mr-2 h-4 w-4" />
                   Tienda Online
@@ -219,7 +219,7 @@ const Index = () => {
                   </div>
                   <h3 className="text-2xl font-bold mb-3 text-foreground">{industry.title}</h3>
                   <p className="text-foreground/60 mb-4">{industry.description}</p>
-                  <NavLink to="/soluciones" className="text-accent hover:text-primary font-semibold inline-flex items-center gap-2 text-sm">
+                  <NavLink to="/soluciones" className="text-secondary hover:text-primary font-semibold inline-flex items-center gap-2 text-sm">
                     Ver soluciones
                     <ArrowRight className="h-4 w-4" />
                   </NavLink>

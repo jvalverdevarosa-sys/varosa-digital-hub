@@ -69,7 +69,7 @@ const Nosotros = () => {
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
-                Sobre <span className="text-accent">VAROSA</span>
+                Sobre <span className="text-secondary">VAROSA</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
                 Más de {aniosExperiencia()} años proporcionando soluciones profesionales de limpieza
@@ -85,7 +85,7 @@ const Nosotros = () => {
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               <Card className="border-2 border-accent shadow-accent bg-card">
                 <CardContent className="p-8">
-                  <h2 className="text-3xl font-heading font-bold mb-4 text-highlight">Cómo Empezamos</h2>
+                  <h2 className="text-3xl font-heading font-bold mb-4 text-secondary">Cómo Empezamos</h2>
                   <p className="text-lg text-foreground/75 leading-relaxed">
                     Fundada en 2007 con raíces en el sector agropecuario, VAROSA inició atendiendo lecherías y plantas de proceso. En 2014, con la incorporación de Jean Carlo, la empresa amplió su enfoque hacia industrias, hoteles, restaurantes y comercios especializados.
                   </p>
@@ -97,7 +97,7 @@ const Nosotros = () => {
 
               <Card className="border-2 border-accent shadow-accent bg-card">
                 <CardContent className="p-8">
-                  <h2 className="text-3xl font-heading font-bold mb-4 text-accent">Nuestro Propósito</h2>
+                  <h2 className="text-3xl font-heading font-bold mb-4 text-secondary">Nuestro Propósito</h2>
                   <p className="text-xl text-foreground/80 leading-relaxed font-semibold italic mb-4">
                     "Soluciones que inspiran confianza, transforman y crean impacto."
                   </p>
@@ -155,7 +155,7 @@ const Nosotros = () => {
                   <div className="flex gap-6 items-start group">
                     <div className="flex flex-col items-center">
                   <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 group-hover:scale-110 transition-all border-2 border-accent/20">
-                    <span className="text-highlight font-bold text-sm">{item.year}</span>
+                    <span className="text-primary font-bold text-sm">{item.year}</span>
                   </div>
                   {index < timeline.length - 1 && (
                     <div className="w-0.5 h-16 bg-accent/20 my-2" />
@@ -217,7 +217,7 @@ const Nosotros = () => {
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-3">
-                  <h3 className="text-xl md:text-2xl font-heading font-semibold text-highlight">Ahorro en Costo en Uso</h3>
+                  <h3 className="text-xl md:text-2xl font-heading font-semibold text-white">Ahorro en Costo en Uso</h3>
                   <p className="text-base md:text-lg text-white/90 leading-relaxed">
                     Productos concentrados y sistemas dosificadores que optimizan el rendimiento 
                     y reducen significativamente los costos operativos.
@@ -225,7 +225,7 @@ const Nosotros = () => {
                 </div>
                 
                 <div className="space-y-3">
-                  <h3 className="text-xl md:text-2xl font-heading font-semibold text-highlight">Protocolos Estandarizados</h3>
+                  <h3 className="text-xl md:text-2xl font-heading font-semibold text-white">Protocolos Estandarizados</h3>
                   <p className="text-base md:text-lg text-white/90 leading-relaxed">
                     Metodologías probadas y personalizadas para cada industria que garantizan 
                     resultados consistentes y cumplimiento normativo.
@@ -233,7 +233,7 @@ const Nosotros = () => {
                 </div>
                 
                 <div className="space-y-3">
-                  <h3 className="text-xl md:text-2xl font-heading font-semibold text-highlight">Capacitación y Acompañamiento Técnico</h3>
+                  <h3 className="text-xl md:text-2xl font-heading font-semibold text-white">Capacitación y Acompañamiento Técnico</h3>
                   <p className="text-base md:text-lg text-white/90 leading-relaxed">
                     Instalación de equipos, validaciones ATP, auditorías en sitio y 
                     capacitaciones continuas para su personal operativo.
@@ -241,7 +241,7 @@ const Nosotros = () => {
                 </div>
                 
                 <div className="space-y-3">
-                  <h3 className="text-xl md:text-2xl font-heading font-semibold text-highlight">Entregas Confiables con Flota Propia</h3>
+                  <h3 className="text-xl md:text-2xl font-heading font-semibold text-white">Entregas Confiables con Flota Propia</h3>
                   <p className="text-base md:text-lg text-white/90 leading-relaxed">
                     Cobertura en Zona Norte, Caribe, Guanacaste y GAM. Entregas puntuales 
                     y seguimiento personalizado de cada pedido.

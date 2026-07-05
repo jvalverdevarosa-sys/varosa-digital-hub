@@ -194,7 +194,7 @@ const Soluciones = () => {
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
-                Soluciones por <span className="text-accent">Industria</span>
+                Soluciones por <span className="text-secondary">Industria</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
                 No vendemos productos sueltos — diseñamos soluciones completas de
@@ -366,7 +366,7 @@ const Soluciones = () => {
                             {sector.title}
                           </h2>
                         </div>
-                        <Badge className="w-fit bg-highlight/15 text-highlight border-highlight/20 font-semibold">
+                        <Badge className="w-fit bg-highlight/15 text-primary border-highlight/20 font-semibold">
                           <Star className="h-3 w-3 mr-1" aria-hidden="true" />
                           {sector.badge}
                         </Badge>

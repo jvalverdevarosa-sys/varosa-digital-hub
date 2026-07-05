@@ -183,12 +183,12 @@ const Productos = () => {
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-5">
               <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-black text-primary">
-                Catálogo de <span className="text-accent">Productos</span>
+                Catálogo de <span className="text-secondary">Productos</span>
               </h1>
               <p className="text-lg text-foreground/65 leading-relaxed">
                 Más de 3,000 productos organizados por categoría de uso. Marcas líderes: Diversey, TORK, El Castor, 3M, Kemical, Solquisa y más.
               </p>
-              <Button asChild size="lg" className="bg-gradient-to-r from-accent to-[hsl(189,82%,39%)] hover:from-[hsl(189,82%,39%)] hover:to-accent text-white font-bold shadow-lg transition-all duration-300">
+              <Button asChild size="lg" className="bg-gradient-to-r from-accent to-[hsl(189,82%,39%)] hover:from-[hsl(189,82%,39%)] hover:to-accent text-white font-bold shadow-lg transition-all duration-300 whitespace-normal h-auto min-h-11 py-3">
                 <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer">
                   <ShoppingBag className="mr-2 h-5 w-5" />
                   Ver Catálogo Completo en Tienda Online
@@ -280,7 +280,7 @@ const Productos = () => {
                   </div>
                   <CardContent className="p-5 space-y-3">
                     <h3 className="font-heading font-bold text-foreground text-lg leading-tight group-hover:text-primary transition-colors">{product.name}</h3>
-                    <p className="text-sm text-foreground/55 leading-relaxed">{product.description}</p>
+                    <p className="text-sm text-foreground/90 leading-relaxed">{product.description}</p>
                     <div className="flex flex-wrap gap-1.5">
                       {product.applications.map((app) => (
                         <span key={app} className="px-2 py-0.5 rounded-md bg-[hsl(var(--primary)/0.04)] text-[10px] font-medium text-foreground/50">{app}</span>
@@ -302,7 +302,7 @@ const Productos = () => {
               <div className="text-center py-12">
                 <Search className="h-12 w-12 text-foreground/20 mx-auto mb-4" />
                 <p className="text-foreground/50 font-medium">No se encontraron productos para &quot;{searchTerm}&quot;</p>
-                <button onClick={() => setSearchTerm("")} className="text-accent font-semibold text-sm mt-2 hover:underline">Limpiar búsqueda</button>
+                <button onClick={() => setSearchTerm("")} className="text-secondary font-semibold text-sm mt-2 hover:underline">Limpiar búsqueda</button>
               </div>
             )}
           </div>

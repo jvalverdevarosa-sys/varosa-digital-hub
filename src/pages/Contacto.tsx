@@ -26,7 +26,7 @@ const Contacto = () => {
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
-                <span className="text-accent">Contáctenos</span>
+                <span className="text-secondary">Contáctenos</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
                 Solicite cotización o agende una visita técnica. Cobertura: Zona Norte, Caribe, Guanacaste y GAM.
@@ -88,7 +88,7 @@ const Contacto = () => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">Teléfono</h3>
-                          <a href="tel:+50640029365" className="text-sm text-highlight hover:underline">
+                          <a href="tel:+50640029365" className="text-sm text-primary hover:underline">
                             4002-9365
                           </a>
                         </div>
@@ -100,7 +100,7 @@ const Contacto = () => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                          <a href="mailto:info@varosacr.com" className="text-sm text-highlight hover:underline">
+                          <a href="mailto:info@varosacr.com" className="text-sm text-primary hover:underline">
                             info@varosacr.com
                           </a>
                         </div>
@@ -165,7 +165,7 @@ const Contacto = () => {
               />
             </div>
             <p className="text-xs text-foreground/40 mt-3 text-center">
-              📍 Si necesita indicaciones exactas, contáctenos al 4002-9365 o por WhatsApp al +506 8670-3251
+              <MapPin className="inline-block h-3.5 w-3.5 mr-1 -mt-0.5 text-secondary" aria-hidden="true" /> Si necesita indicaciones exactas, contáctenos al 4002-9365 o por WhatsApp al +506 8670-3251
             </p>
             </ScrollReveal>
           </div>

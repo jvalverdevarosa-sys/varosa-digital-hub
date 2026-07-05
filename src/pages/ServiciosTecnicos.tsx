@@ -89,7 +89,7 @@ const ServiciosTecnicos = () => {
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
-                Servicios <span className="text-highlight">Técnicos Especializados</span>
+                Servicios <span className="text-secondary">Técnicos Especializados</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
                 Acompañamiento técnico continuo: instalaciones, auditorías, capacitaciones y validaciones ATP que generan valor real

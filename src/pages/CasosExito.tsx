@@ -241,7 +241,7 @@ const CasosExito = () => {
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
-                Casos de <span className="text-accent">Éxito</span>
+                Casos de <span className="text-secondary">Éxito</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
                 Desde hoteles boutique en Monteverde hasta plantas procesadoras en

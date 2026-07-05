@@ -32,7 +32,7 @@ const Navigation = () => {
           <div className="flex h-20 sm:h-22 lg:h-24 items-center justify-between">
             {/* Logo */}
             <NavLink to="/" className="flex items-center py-3 pl-4 sm:pl-6 pr-6 sm:pr-8">
-              <img src={varosaSogo} alt="VAROSA — Ir al inicio" className="h-[65px] sm:h-[75px] lg:h-[85px] w-auto" />
+              <img src={varosaSogo} alt="VAROSA — Ir al inicio" width={1920} height={1519} className="h-[65px] sm:h-[75px] lg:h-[85px] w-auto" />
             </NavLink>
 
             {/* Desktop Navigation */}
@@ -41,8 +41,8 @@ const Navigation = () => {
                 <NavLink
                   key={item.to}
                   to={item.to}
-                  className="px-4 py-2.5 text-[15px] font-semibold text-foreground hover:text-highlight transition-all duration-200 relative group"
-                  activeClassName="text-highlight"
+                  className="px-4 py-2.5 text-[15px] font-semibold text-foreground transition-all duration-200 relative group rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  activeClassName="text-primary [&>span]:w-full"
                 >
                   {item.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-highlight to-accent group-hover:w-full transition-all duration-300" aria-hidden="true" />
@@ -60,7 +60,7 @@ const Navigation = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2"
+              className="lg:hidden min-h-11 min-w-11 inline-flex items-center justify-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
               aria-expanded={isOpen}
@@ -77,8 +77,8 @@ const Navigation = () => {
                 <NavLink
                   key={item.to}
                   to={item.to}
-                  className="block px-6 py-3 text-base font-semibold text-foreground hover:text-highlight hover:bg-highlight/5 rounded-md transition-all"
-                  activeClassName="text-highlight bg-highlight/10"
+                  className="block px-6 py-3 text-base font-semibold text-foreground hover:text-primary hover:bg-highlight/5 rounded-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  activeClassName="text-primary bg-highlight/10"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

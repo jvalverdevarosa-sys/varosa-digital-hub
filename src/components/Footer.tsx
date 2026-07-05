@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-5">
-            <img src={varosaSogo} alt="VAROSA — Comercializadora VARO S.A." className="h-14 w-auto brightness-0 invert" />
+            <img src={varosaSogo} alt="VAROSA — Comercializadora VARO S.A." width={1920} height={1519} className="h-14 w-auto brightness-0 invert" />
             <p className="text-sm opacity-80 leading-relaxed">
               Soluciones que inspiran confianza, transforman y crean impacto.
             </p>
@@ -17,16 +17,16 @@ const Footer = () => {
               Productos especializados de limpieza, higiene y suministros para industria y HORECA en Costa Rica desde 2007.
             </p>
             <div className="flex gap-3">
-              <a href="https://www.facebook.com/varosacr" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Facebook de VAROSA">
+              <a href="https://www.facebook.com/varosacr" target="_blank" rel="noopener noreferrer" className="min-h-11 min-w-11 inline-flex items-center justify-center hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-md" aria-label="Facebook de VAROSA">
                 <Facebook className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="https://www.instagram.com/varosacr" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Instagram de VAROSA">
+              <a href="https://www.instagram.com/varosacr" target="_blank" rel="noopener noreferrer" className="min-h-11 min-w-11 inline-flex items-center justify-center hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-md" aria-label="Instagram de VAROSA">
                 <Instagram className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="https://www.linkedin.com/company/varosacr" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="LinkedIn de VAROSA">
+              <a href="https://www.linkedin.com/company/varosacr" target="_blank" rel="noopener noreferrer" className="min-h-11 min-w-11 inline-flex items-center justify-center hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-md" aria-label="LinkedIn de VAROSA">
                 <Linkedin className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="https://wa.me/50686703251" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="WhatsApp de VAROSA">
+              <a href="https://wa.me/50686703251" target="_blank" rel="noopener noreferrer" className="min-h-11 min-w-11 inline-flex items-center justify-center hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-md" aria-label="WhatsApp de VAROSA">
                 <MessageCircle className="h-5 w-5" aria-hidden="true" />
               </a>
             </div>
@@ -37,42 +37,42 @@ const Footer = () => {
             <h3 className="font-bold mb-5 text-xl tracking-tight">Navegación</h3>
             <ul className="space-y-2">
               <li>
-                <NavLink to="/soluciones" className="text-sm opacity-90 hover:text-accent transition-colors">
+                <NavLink to="/soluciones" className="text-sm opacity-90 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   Soluciones por Industria
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/productos" className="text-sm opacity-90 hover:text-accent transition-colors">
+                <NavLink to="/productos" className="text-sm opacity-90 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   Líneas de Productos
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/servicios-tecnicos" className="text-sm opacity-90 hover:text-accent transition-colors">
+                <NavLink to="/servicios-tecnicos" className="text-sm opacity-90 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   Servicios Técnicos
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/casos-exito" className="text-sm opacity-90 hover:text-accent transition-colors">
+                <NavLink to="/casos-exito" className="text-sm opacity-90 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   Casos de Éxito
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/nosotros" className="text-sm opacity-90 hover:text-accent transition-colors">
+                <NavLink to="/nosotros" className="text-sm opacity-90 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   Nosotros
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/blog" className="text-sm opacity-90 hover:text-accent transition-colors">
+                <NavLink to="/blog" className="text-sm opacity-90 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   Blog y Recursos
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/contacto" className="text-sm opacity-90 hover:text-accent transition-colors">
+                <NavLink to="/contacto" className="text-sm opacity-90 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   Contacto
                 </NavLink>
               </li>
               <li>
-                <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer" className="text-sm opacity-90 hover:text-accent transition-colors inline-flex items-center gap-1.5">
+                <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer" className="text-sm opacity-90 hover:text-accent transition-colors inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   <ShoppingBag className="h-3.5 w-3.5" />
                   Tienda Online
                 </a>
@@ -102,19 +102,19 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-sm opacity-90">
                 <Phone className="h-5 w-5 shrink-0" />
-                <a href="tel:+50640029365" className="hover:text-accent transition-colors">
+                <a href="tel:+50640029365" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   4002-9365
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm opacity-90">
                 <MessageCircle className="h-5 w-5 shrink-0" />
-                <a href="https://wa.me/50686703251" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <a href="https://wa.me/50686703251" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   +506 8670-3251
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm opacity-90">
                 <Mail className="h-5 w-5 shrink-0" />
-                <a href="mailto:info@varosacr.com" className="hover:text-accent transition-colors">
+                <a href="mailto:info@varosacr.com" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   info@varosacr.com
                 </a>
               </li>

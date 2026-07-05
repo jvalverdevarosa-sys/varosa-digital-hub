@@ -7,7 +7,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggle}
-      className="p-2 rounded-lg border border-primary/10 hover:border-accent/40 bg-background/80 backdrop-blur-sm hover:bg-accent/10 transition-all duration-300"
+      className="min-h-11 min-w-11 inline-flex items-center justify-center rounded-lg border border-primary/10 hover:border-accent/40 bg-background/80 backdrop-blur-sm hover:bg-accent/10 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
       aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
       title={isDark ? "Modo claro" : "Modo oscuro"}
     >

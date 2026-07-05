@@ -76,7 +76,7 @@ const Hero = () => {
             </div>
 
             {/* Subheadline */}
-            <p className="text-base md:text-lg text-foreground/65 leading-relaxed max-w-2xl">
+            <p className="text-base md:text-lg text-foreground/90 leading-relaxed max-w-2xl">
               Distribuimos marcas líderes como Diversey, TORK, El Castor, Kemical y Solquisa.
               Acompañamiento técnico, entregas con flota propia y cobertura en Zona Norte, Caribe, Guanacaste y GAM.
             </p>
@@ -107,15 +107,15 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-8 border-t border-[hsl(var(--primary)/0.1)]">
               <div>
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-primary font-heading">500+</div>
-                <div className="text-[10px] sm:text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wider">Clientes Activos</div>
+                <div className="text-[10px] sm:text-xs font-semibold text-foreground mt-1 uppercase tracking-wider">Clientes Activos</div>
               </div>
               <div>
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-secondary dark:text-[hsl(216_60%_70%)] font-heading">3,000+</div>
-                <div className="text-[10px] sm:text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wider">Productos</div>
+                <div className="text-[10px] sm:text-xs font-semibold text-foreground mt-1 uppercase tracking-wider">Productos</div>
               </div>
               <div>
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-accent">{aniosExperiencia()}+</div>
-                <div className="text-[10px] sm:text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wider">Años</div>
+                <div className="text-[10px] sm:text-xs font-semibold text-foreground mt-1 uppercase tracking-wider">Años</div>
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-foreground text-base mb-1">Marcas Líderes</h3>
-                    <p className="text-sm text-foreground/55 leading-relaxed">Diversey, TORK, 3M, Kemical, Solquisa, El Castor — productos certificados para cada industria.</p>
+                    <p className="text-sm text-foreground/90 leading-relaxed">Diversey, TORK, 3M, Kemical, Solquisa, El Castor — productos certificados para cada industria.</p>
                   </div>
                 </div>
               </div>
@@ -144,7 +144,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-foreground text-base mb-1">Acompañamiento Técnico</h3>
-                    <p className="text-sm text-foreground/55 leading-relaxed">Instalación de equipos, validaciones ATP, auditorías y capacitaciones en sitio.</p>
+                    <p className="text-sm text-foreground/90 leading-relaxed">Instalación de equipos, validaciones ATP, auditorías y capacitaciones en sitio.</p>
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-foreground text-base mb-1">Entregas con Flota Propia</h3>
-                    <p className="text-sm text-foreground/55 leading-relaxed">Cobertura en Zona Norte, Caribe, Guanacaste y GAM con entregas puntuales.</p>
+                    <p className="text-sm text-foreground/90 leading-relaxed">Cobertura en Zona Norte, Caribe, Guanacaste y GAM con entregas puntuales.</p>
                   </div>
                 </div>
               </div>
@@ -170,7 +170,7 @@ const Hero = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-foreground text-base mb-1">Ahorro en Costo en Uso</h3>
-                    <p className="text-sm text-foreground/55 leading-relaxed">Productos concentrados y dosificadores que optimizan rendimiento y reducen costos.</p>
+                    <p className="text-sm text-foreground/90 leading-relaxed">Productos concentrados y dosificadores que optimizan rendimiento y reducen costos.</p>
                   </div>
                 </div>
               </div>

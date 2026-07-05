@@ -16,7 +16,7 @@ import diverseyDosificacionBodega from "@/assets/blog/diversey-dosificacion-bode
 type ContentBlock =
   | string
   | { type: "heading"; text: string }
-  | { type: "image"; src: string; alt: string };
+  | { type: "image"; src: string; alt: string; width?: number; height?: number };
 
 interface Article {
   slug: string;
@@ -76,6 +76,8 @@ const articles: Article[] = [
         type: "image",
         src: demaSprayCleanCocina,
         alt: "Estación de dosificación DEMA Spray Clean II instalada en una cocina industrial, con selección de detergente, sanitizante y enjuague.",
+        width: 960,
+        height: 1280,
       },
       { type: "heading", text: "En VAROSA lo acompañamos de principio a fin" },
       "En VAROSA no solo distribuimos los productos: ayudamos a que se usen bien. A través de nuestros Servicios Técnicos instalamos sistemas de dosificación, realizamos auditorías ATP para verificar la eficacia de la limpieza y capacitamos a los equipos de planta y cocina.",
@@ -83,6 +85,8 @@ const articles: Article[] = [
         type: "image",
         src: diverseyDosificacionBodega,
         alt: "Sistema de dosificación de químicos Diversey montado en pared en una bodega de alimentos, con fichas técnicas de producto a la vista.",
+        width: 1280,
+        height: 536,
       },
       "Si quiere revisar cómo está dosificando hoy su operación —y dónde puede ganar en inocuidad, ahorro y sostenibilidad al mismo tiempo—, escríbanos por WhatsApp al +506 8670-3251 y con gusto lo orientamos.",
     ],
@@ -292,7 +296,7 @@ const Blog = () => {
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
-                Blog y <span className="text-accent">Recursos</span>
+                Blog y <span className="text-secondary">Recursos</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
                 Guías técnicas, tips de ahorro y normativas para sacar el máximo
@@ -448,8 +452,8 @@ function ArticleCard({
             variant="secondary"
             className={
               isFeatured
-                ? "bg-highlight/15 text-highlight border-highlight/20 font-medium"
-                : "text-xs bg-accent/10 text-accent border-accent/20"
+                ? "bg-highlight/15 text-primary border-highlight/20 font-medium"
+                : "text-xs bg-accent/10 text-primary border-accent/20"
             }
           >
             {article.category}
@@ -518,6 +522,8 @@ function ArticleCard({
                   key={i}
                   src={block.src}
                   alt={block.alt}
+                  width={block.width}
+                  height={block.height}
                   loading="lazy"
                   className="block mx-auto my-2 rounded-lg border border-primary/10 max-h-[520px] w-auto max-w-full"
                 />
