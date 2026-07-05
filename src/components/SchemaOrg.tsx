@@ -30,15 +30,16 @@ const SchemaOrg = () => {
     email: "info@varosacr.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Venecia de San Carlos",
-      addressLocality: "San Carlos",
+      streetAddress: "75 sur del Templo Católico, Los Alpes",
+      addressLocality: "Venecia",
       addressRegion: "Alajuela",
+      postalCode: "21005",
       addressCountry: "CR",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 10.335,
-      longitude: -84.286,
+      latitude: 10.350861,
+      longitude: -84.293858,
     },
     areaServed: [
       { "@type": "AdministrativeArea", name: "Zona Norte, Costa Rica" },
@@ -125,15 +126,16 @@ const SchemaOrg = () => {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Venecia de San Carlos",
-      addressLocality: "San Carlos",
+      streetAddress: "75 sur del Templo Católico, Los Alpes",
+      addressLocality: "Venecia",
       addressRegion: "Alajuela",
+      postalCode: "21005",
       addressCountry: "CR",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 10.335,
-      longitude: -84.286,
+      latitude: 10.350861,
+      longitude: -84.293858,
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
