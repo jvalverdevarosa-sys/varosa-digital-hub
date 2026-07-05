@@ -72,7 +72,7 @@ const Footer = () => {
                 </NavLink>
               </li>
               <li>
-                <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer" className="text-sm opacity-90 hover:text-accent transition-colors inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
+                <a href="https://tienda.varosacr.com" target="_blank" rel="noopener noreferrer" className="text-sm opacity-90 hover:text-accent transition-colors inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   <ShoppingBag className="h-3.5 w-3.5" />
                   Tienda Online
                 </a>

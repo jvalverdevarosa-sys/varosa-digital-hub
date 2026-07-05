@@ -183,7 +183,7 @@ const Index = () => {
                 <NavLink to="/productos">Ver Catálogo por Categoría</NavLink>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-2 border-accent/30 hover:border-accent hover:bg-accent/5 text-secondary font-bold transition-all duration-300">
-                <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://tienda.varosacr.com" target="_blank" rel="noopener noreferrer">
                   <ShoppingBag className="mr-2 h-4 w-4" />
                   Tienda Online
                   <ExternalLink className="ml-2 h-3.5 w-3.5" />
@@ -368,7 +368,7 @@ const Index = () => {
                   <NavLink to="/contacto">Solicitar Cotización</NavLink>
                 </Button>
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold shadow-lg">
-                  <a href="https://tiendavarosa.myshopify.com/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://tienda.varosacr.com" target="_blank" rel="noopener noreferrer">
                     <ShoppingBag className="mr-2 h-4 w-4" />
                     Tienda Online
                   </a>

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Marketing/catalog website for **VAROSA (Comercializadora VARO S.A.)**, a Costa Rican B2B distributor of cleaning products, industrial hygiene, office supplies, and technical services. It is a static single-page app (no backend); the online store lives separately on Shopify and is linked out to. Content and UI copy are in **Spanish (es-CR)**.
+Marketing/catalog website for **VAROSA (Comercializadora VARO S.A.)**, a Costa Rican B2B distributor of cleaning products, industrial hygiene, office supplies, and technical services. It is a static single-page app (no backend); the transactional online store lives separately on **Zoho Commerce** (`https://tienda.varosacr.com`) and is linked out to. Content and UI copy are in **Spanish (es-CR)**.
 
 The project was scaffolded/edited via [Lovable](https://lovable.dev); changes pushed to `main` sync back to Lovable and vice versa.
 
@@ -27,6 +27,7 @@ Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and depl
 - `vite.config.ts` sets `base: "/varosa-digital-hub/"` — the Pages subpath. Static asset URLs in `index.html` and `public/` are hardcoded with this prefix.
 - **The site currently lives ONLY on GitHub Pages at `https://<user>.github.io/varosa-digital-hub/`.** The custom domain `varosacr.com` is **not connected yet** — migration is planned but pending.
 - SEO/canonical/OG URLs in components (`SEO.tsx`, `SchemaOrg.tsx`, `index.html`) already point at the future `https://varosacr.com`. This is intentional pre-wiring for the migration, but note those URLs do **not** resolve to the live site today. Don't "fix" them to the Pages URL — leave them pointing at the target domain.
+- El workflow tiene además un **cron diario** (`schedule: "0 8 * * *"`, 02:00 CR) que reconstruye y redespliega para refrescar el catálogo dinámico desde Zoho (ver "Catálogo dinámico build-time" abajo).
 
 ## Architecture
 
@@ -44,6 +45,13 @@ Vite + React 18 + TypeScript, styled with Tailwind and shadcn/ui (Radix primitiv
 **Analytics**: Google Tag Manager (`GTM-T2VFDS36`) is injected in `index.html`. Because it's a hash-routed SPA, `GTMPageTracker` in `App.tsx` manually pushes a `page_view` to `dataLayer` on every route change — real navigations don't fire page loads.
 
 **Theming**: light/dark via a `class` on `<html>`, toggled by `useTheme` (`src/hooks/useTheme.ts`) and `ThemeToggle`. Colors are CSS variables (`hsl(var(--...))`) defined in `src/index.css` and mapped to semantic Tailwind names in `tailwind.config.ts` (`primary`, `accent`, `highlight`, etc.). **Use the semantic tokens, not raw hex/colors**, so both themes stay correct. Brand fonts: `font-heading` (Bw Mitga) and `font-body` (Montserrat), self-hosted in `src/assets/fonts/`.
+
+**Catálogo dinámico build-time** (página `Productos`): la vitrina **no** está hardcoded. Se genera en cada build desde la colección **"Destacados"** de Zoho Commerce (API pública de storefront, sin token):
+- `scripts/generar-catalogo.mjs` — baja `collections/{id}` (header `domain-name: tienda.varosacr.com`, seguir 301), saca los productos de `payload.collection.products[]`, **sanea las descripciones HTML** con `sanitize-html` (lista blanca `p, br, strong, b, em, ul, ol, li, span`; sin atributos), absolutiza las URLs de imagen (`https://tienda.varosacr.com` + ruta relativa; descarta placeholders `no-preview-image`), decodifica entidades en el nombre, y escribe `src/data/destacados.json`. **Omite precios y stock a propósito** (regla de negocio). La descripción viene completa en el endpoint de colección, así que **no** hace falta pegarle al endpoint de detalle por producto.
+- Corre en `prebuild` (antes de `npm run build`), así que `.github/workflows/deploy.yml` lo ejecuta en cada deploy. Un **cron diario** (08:00 UTC) en ese mismo workflow refresca la vitrina sin tocar código.
+- **Fallback:** si la descarga falla, el script conserva el `destacados.json` ya commiteado (no rompe el build ni publica vacío). Por eso el JSON se commitea: es el respaldo.
+- `src/data/destacados.json` está **generado** — no editarlo a mano; se administra desde el admin de Zoho (colección Destacados, más marca/tags por producto). `sanitize-html` es **devDependency** (solo build); no entra al bundle. `Productos.tsx` renderiza la descripción ya saneada con `dangerouslySetInnerHTML` y oculta marca/tags/descripción cuando vienen vacías. La tarjeta **nunca** muestra precio ni stock (se omiten en el JSON), y **no** filtra agotados: los 26 destacados se muestran siempre.
+- **Shopify retirado:** ya no hay enlaces a `tiendavarosa.myshopify.com` (0 enlaces). Todos los "Tienda Online"/"Ver catálogo" apuntan a `https://tienda.varosacr.com` (home de la tienda Zoho). **Pendiente (requiere criterio de Jeank):** los deep-links por categoría del §8 del encargo — mapear los 4 buckets de la web a categorías Zoho — no se implementaron porque las categorías que referencian los productos son subcategorías que no calzan 1:1 con los buckets; por ahora todo va al home de la tienda.
 
 **Assets** (`src/assets/`): client logos (`logos/clientes/`), brand logos (`logos/marcas/`), and product photos (`products/`, mostly `.webp`). Recent commit history is dominated by product-image fixes (white backgrounds, catalog photos) — image quality/consistency is an active, recurring workstream.
 
