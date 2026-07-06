@@ -156,7 +156,7 @@ const Contacto = () => {
             </div>
             <div className="rounded-2xl overflow-hidden border border-primary/10 shadow-varosa">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d-84.29388441767271!3d10.350939902357094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDIxJzAzLjQiTiA4NMKwMTcnMzguMCJX!5e0!3m2!1ses!2scr!4v1707000000000!5m2!1ses!2scr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.4605176842631!2d-84.29431220596491!3d10.350508756470687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0639eee5060fd%3A0x9a1faf2db39f4816!2sVAROSA!5e0!3m2!1ses!2scr!4v1783299614130!5m2!1ses!2scr"
                 width="100%"
                 className="h-[300px] sm:h-[400px] lg:h-[450px]"
                 style={{ border: 0 }}
