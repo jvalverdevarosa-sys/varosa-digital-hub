@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import WhatsAppButton from "./components/WhatsAppButton";
 
@@ -25,7 +25,8 @@ const PageLoader = () => (
   </div>
 );
 
-// Envía page_view a GTM/GA4 en cada cambio de ruta (necesario para SPA con HashRouter)
+// Envía page_view a GTM/GA4 en cada cambio de ruta (necesario para SPA: las
+// navegaciones de cliente no disparan carga de página)
 const GTMPageTracker = () => {
   const location = useLocation();
   useEffect(() => {
@@ -40,11 +41,23 @@ const GTMPageTracker = () => {
   return null;
 };
 
+// Con BrowserRouter la navegación de cliente NO reposiciona el scroll; al cambiar
+// de ruta volvemos al inicio (no afecta el scroll suave in-page de Soluciones,
+// que usa scrollIntoView y no cambia el pathname).
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
 const App = () => (
   <HelmetProvider>
     <TooltipProvider>
-      <HashRouter>
+      <BrowserRouter>
         <GTMPageTracker />
+        <ScrollToTop />
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -59,7 +72,7 @@ const App = () => (
           </Routes>
         </Suspense>
         <WhatsAppButton />
-      </HashRouter>
+      </BrowserRouter>
     </TooltipProvider>
   </HelmetProvider>
 );

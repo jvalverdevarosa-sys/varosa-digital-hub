@@ -1,0 +1,77 @@
+# ============================================================
+# VAROSA — Comercializadora VARO S.A.
+# Configuración Apache para hosting en Bluehost (SPA React + Vite).
+# Este archivo se copia tal cual a la raíz del sitio en el build.
+# ============================================================
+
+# ------------------------------------------------------------
+# 1) Reescritura SPA
+#    Cualquier ruta que NO sea un archivo o carpeta real se sirve
+#    con index.html, para que React Router resuelva la ruta del
+#    lado del cliente (necesario tras migrar a BrowserRouter).
+# ------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Si el request apunta a un archivo o directorio existente, servirlo tal cual.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Cualquier otra ruta -> index.html (la SPA la resuelve).
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# ------------------------------------------------------------
+# 2) Cabeceras de seguridad
+# ------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Evita que el navegador "adivine" (sniff) el MIME type de una respuesta.
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Limita cuánta información de referer se envía a otros orígenes.
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Impide que el sitio sea embebido en frames de otros orígenes (anti-clickjacking).
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Restringe APIs sensibles del navegador:
+  #  - camera y microphone: deshabilitadas por completo (el sitio no las usa).
+  #  - geolocation: permitida SOLO para el propio sitio y el formulario de Zoho
+  #    (el iframe de forms.zohopublic.com en Contacto tiene geolocalización
+  #    habilitada; bloquearla del todo rompería esa función del formulario).
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self \"https://forms.zohopublic.com\")"
+
+  # HSTS: fuerza HTTPS durante 1 año. Se deja SIN includeSubDomains/preload
+  #  por ahora, para no forzar HTTPS en subdominios durante la fase de pruebas;
+  #  al pasar a producción raíz se puede endurecer.
+  Header always set Strict-Transport-Security "max-age=31536000"
+
+  # ----------------------------------------------------------
+  # 3) Content-Security-Policy — modo REPORT-ONLY
+  #    NO bloquea nada: solo reporta violaciones (consola / endpoint)
+  #    para afinar la política antes de activarla en modo enforce.
+  #    Directivas (cada origen externo está justificado):
+  #      default-src 'self'          -> por defecto, solo el propio origen.
+  #      script-src                  -> scripts propios + 'unsafe-inline' (snippet
+  #                                     inline de GTM) + GTM + Google Analytics.
+  #      style-src                   -> estilos propios + 'unsafe-inline'
+  #                                     (estilos inline de Tailwind/Radix/React).
+  #      img-src                     -> imágenes propias + data: (favicons/inline)
+  #                                     + tienda.varosacr.com (fotos de producto)
+  #                                     + tiles/recursos de Google Maps
+  #                                     + pixeles de GTM/Analytics.
+  #      font-src 'self'             -> fuentes self-hosted (Bw Mitga, Montserrat).
+  #      connect-src                 -> beacons de GA4 (google-analytics /
+  #                                     region1.google-analytics) y GTM.
+  #      frame-src                   -> iframes embebidos: formulario Zoho,
+  #                                     Google Maps y el noscript de GTM.
+  #      object-src 'none'           -> sin plugins/objetos embebidos.
+  #      base-uri 'self'             -> no permite reescribir <base>.
+  #      form-action 'self'          -> envíos de formularios solo al propio origen
+  #                                     (el form de cotización vive dentro del iframe Zoho).
+  #      frame-ancestors 'self'      -> equivalente a X-Frame-Options (anti-clickjacking).
+  # ----------------------------------------------------------
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://tienda.varosacr.com https://maps.gstatic.com https://www.google.com https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com; font-src 'self'; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com; frame-src https://forms.zohopublic.com https://www.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+</IfModule>
