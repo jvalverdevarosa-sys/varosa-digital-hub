@@ -1,0 +1,57 @@
+# Deploy VAROSA Digital Hub a Bluehost vía FTP
+# Reemplaza al antiguo deploy a GitHub Pages. Producción = varosacr.com.
+name: Deploy to Bluehost (FTP)
+
+on:
+  push:
+    branches: ["main"]
+  # Rebuild diario: el paso `build` corre `prebuild`, que baja la colección
+  # Destacados de Zoho, así los cambios del catálogo se publican sin tocar código.
+  # 08:00 UTC = 02:00 en Costa Rica (UTC-6).
+  schedule:
+    - cron: "0 8 * * *"
+  # Permite lanzar el deploy a mano desde la pestaña Actions.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Evita que un push y el cron (o dos pushes seguidos) deployen a la vez
+# y se pisen el state file del FTP.
+concurrency:
+  group: "bluehost-ftp"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy dist/ a Bluehost vía FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Bluehost normalmente soporta FTPS explícito. Si el deploy falla
+          # con error de conexión/certificado, cambiá esta línea a: ftp
+          protocol: ftps
+          # La raíz del FTP YA es public_html, así que subimos dist/ a "./".
+          local-dir: ./dist/
+          server-dir: ./
+          # Modo sincronización normal: usa .ftp-deploy-sync-state.json en el
+          # servidor para subir solo lo que cambió. SIN dangerous-clean-slate.
