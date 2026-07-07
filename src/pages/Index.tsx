@@ -110,22 +110,22 @@ const Index = () => {
         <Hero />
 
         {/* Brand Partners Strip */}
-        <section className="py-8 sm:py-10 bg-background border-y border-[hsl(var(--primary)/0.08)]">
+        <section className="py-10 sm:py-12 bg-background border-y border-[hsl(var(--primary)/0.08)]">
           <div className="container mx-auto px-6 lg:px-10">
             <p className="text-[11px] font-semibold text-foreground/35 uppercase tracking-[0.2em] text-center mb-5">Distribuidor autorizado</p>
             <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-3">
               {[
-                { name: "Diversey", logo: logoDiversey, height: "h-7 sm:h-8" },
-                { name: "TORK", logo: logoTork, height: "h-7 sm:h-8" },
-                { name: "3M", logo: logo3m, height: "h-7 sm:h-8" },
-                { name: "Kemical", logo: logoKemical, height: "h-6 sm:h-7" },
-                { name: "Solquisa", logo: logoSolquisa, height: "h-6 sm:h-7" },
-                { name: "El Castor", logo: logoElCastor, height: "h-6 sm:h-7" },
-                { name: "HP", logo: logoHp, height: "h-7 sm:h-8" },
-                { name: "Epson", logo: logoEpson, height: "h-6 sm:h-7" },
-                { name: "Faber Castell", logo: logoFaberCastell, height: "h-6 sm:h-7" },
-                { name: "Artline", logo: logoArtline, height: "h-6 sm:h-7" },
-                { name: "Facela", logo: logoFacela, height: "h-7 sm:h-8 rounded" },
+                { name: "Diversey", logo: logoDiversey, height: "h-9 sm:h-11" },
+                { name: "TORK", logo: logoTork, height: "h-9 sm:h-11" },
+                { name: "3M", logo: logo3m, height: "h-9 sm:h-11" },
+                { name: "Kemical", logo: logoKemical, height: "h-8 sm:h-10" },
+                { name: "Solquisa", logo: logoSolquisa, height: "h-8 sm:h-10" },
+                { name: "El Castor", logo: logoElCastor, height: "h-8 sm:h-10" },
+                { name: "HP", logo: logoHp, height: "h-9 sm:h-11" },
+                { name: "Epson", logo: logoEpson, height: "h-8 sm:h-10" },
+                { name: "Faber Castell", logo: logoFaberCastell, height: "h-8 sm:h-10" },
+                { name: "Artline", logo: logoArtline, height: "h-8 sm:h-10" },
+                { name: "Facela", logo: logoFacela, height: "h-9 sm:h-11 rounded" },
               ].map((brand) => (
                 <div
                   key={brand.name}
@@ -134,7 +134,7 @@ const Index = () => {
                   <img
                     src={brand.logo}
                     alt={`Logo ${brand.name}`}
-                    className={`${brand.height} w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 dark:opacity-90 dark:hover:opacity-100`}
+                    className={`${brand.height} w-auto object-contain`}
                     loading="lazy"
                   />
                 </div>
