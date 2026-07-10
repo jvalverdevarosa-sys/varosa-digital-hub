@@ -7,7 +7,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
-import { Droplets, Shield, Sparkles, Building2, Utensils, Factory, ArrowRight, ShoppingBag, ExternalLink } from "lucide-react";
+import { Droplets, Shield, Sparkles, Building2, ArrowRight, ShoppingBag, ExternalLink } from "lucide-react";
 
 // Logos de marcas
 import logo3m from "@/assets/logos/marcas/3m.png";
@@ -49,6 +49,14 @@ import logoLacteosHyR from "@/assets/logos/clientes/lacteos-h-y-r.jpeg";
 import logoLacteosCeci from "@/assets/logos/clientes/lacteos-ceci.png";
 import logoEconomas from "@/assets/logos/clientes/economas.jpeg";
 
+// Fotos de "Mercados que atendemos" — PLACEHOLDERS.
+// Reemplazar cada archivo por una foto real (ver resumen de imágenes al final del encargo).
+import mercadoIndustria from "@/assets/mercados/industria.svg";
+import mercadoAlimentaria from "@/assets/mercados/alimentaria.svg";
+import mercadoHoreca from "@/assets/mercados/horeca.svg";
+import mercadoInstitucional from "@/assets/mercados/institucional.svg";
+import mercadoLecheria from "@/assets/mercados/lecheria.svg";
+
 const Index = () => {
   const productLines = [
     {
@@ -77,21 +85,37 @@ const Index = () => {
     }
   ];
 
-  const industries = [
+  // Mercados que atendemos — tarjetas con foto (placeholders reemplazables por VAROSA)
+  const markets = [
     {
-      icon: Factory,
+      img: mercadoIndustria,
+      title: "Industria",
+      description: "Limpieza y desinfección industrial, programas y validaciones ATP.",
+      alt: "Operación en planta industrial atendida por VAROSA"
+    },
+    {
+      img: mercadoAlimentaria,
       title: "Industria Alimentaria",
-      description: "Químicos especializados, herramientas FDA, protocolos y auditorías"
+      description: "Químicos especializados y herramientas grado alimentario (FDA).",
+      alt: "Higiene en planta de proceso de alimentos con productos VAROSA"
     },
     {
-      icon: Utensils,
-      title: "HORECA",
-      description: "Soluciones integrales para hoteles, restaurantes y catering"
+      img: mercadoHoreca,
+      title: "Hotelería / HORECA",
+      description: "Soluciones integrales para hoteles, restaurantes y catering.",
+      alt: "Limpieza profesional en hotel y restaurante del sector HORECA"
     },
     {
-      icon: Building2,
-      title: "Manufactura y Lecherías",
-      description: "Programas de limpieza industrial y validaciones ATP"
+      img: mercadoInstitucional,
+      title: "Hogar e Institucional",
+      description: "Higiene y suministros para oficinas, comercios e instituciones.",
+      alt: "Higiene institucional en oficinas e instituciones atendidas por VAROSA"
+    },
+    {
+      img: mercadoLecheria,
+      title: "Lechería",
+      description: "Higiene y sanitización especializada para el sector lácteo.",
+      alt: "Sanitización en planta de lechería con soluciones VAROSA"
     }
   ];
 
@@ -194,36 +218,48 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Industries Section */}
+        {/* Mercados que atendemos — tarjetas con foto */}
         <section className="py-20 relative overflow-hidden bg-background">
           <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent)/0.03)] via-transparent to-[hsl(var(--primary)/0.03)]" />
-          
+
           <div className="container mx-auto px-6 lg:px-10 relative z-10">
             <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary">Industrias que Servimos</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary">Mercados que Atendemos</h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Soluciones especializadas adaptadas a las necesidades únicas de cada sector
               </p>
             </div>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {industries.map((industry, index) => (
-                <ScrollReveal key={index} delay={index * 150}>
-                <div 
-                  className="bg-card p-8 rounded-2xl border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.1)] group"
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {markets.map((market, index) => (
+                <ScrollReveal key={index} delay={index * 120}>
+                <NavLink
+                  to="/soluciones"
+                  aria-label={`${market.title} — ver soluciones`}
+                  className="group relative block rounded-2xl overflow-hidden border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] shadow-sm hover:shadow-[0_8px_30px_hsl(var(--primary)/0.15)] transition-all duration-300"
                 >
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[hsl(var(--accent)/0.12)] to-[hsl(var(--primary)/0.06)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <industry.icon className="h-8 w-8 text-accent" />
+                  <div className="aspect-[4/3] overflow-hidden bg-muted">
+                    <img
+                      src={market.img}
+                      alt={market.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-foreground">{industry.title}</h3>
-                  <p className="text-foreground/60 mb-4">{industry.description}</p>
-                  <NavLink to="/soluciones" className="text-secondary hover:text-primary font-semibold inline-flex items-center gap-2 text-sm">
-                    Ver soluciones
-                    <ArrowRight className="h-4 w-4" />
-                  </NavLink>
-                </div>
+                  {/* Overlay azul de marca para legibilidad del texto sobre la foto */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--varosa-blue-dark)/0.9)] via-[hsl(var(--varosa-blue-dark)/0.3)] to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                    <h3 className="text-xl font-heading font-bold text-white mb-1">{market.title}</h3>
+                    <p className="text-sm text-white/85 mb-3 leading-snug">{market.description}</p>
+                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-white">
+                      Ver soluciones
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </NavLink>
                 </ScrollReveal>
               ))}
             </div>
@@ -231,7 +267,7 @@ const Index = () => {
             <ScrollReveal>
             <div className="text-center">
               <Button asChild size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold shadow-varosa">
-                <NavLink to="/soluciones">Ver Todas las Industrias</NavLink>
+                <NavLink to="/soluciones">Ver Todas las Soluciones</NavLink>
               </Button>
             </div>
             </ScrollReveal>
