@@ -13,6 +13,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const Nosotros = lazy(() => import("./pages/Nosotros"));
 const Contacto = lazy(() => import("./pages/Contacto"));
 const ServiciosTecnicos = lazy(() => import("./pages/ServiciosTecnicos"));
+const Gracias = lazy(() => import("./pages/Gracias"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Loading spinner con colores de marca
@@ -68,6 +69,7 @@ const App = () => (
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/servicios-tecnicos" element={<ServiciosTecnicos />} />
+            <Route path="/gracias" element={<Gracias />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

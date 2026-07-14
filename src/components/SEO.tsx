@@ -6,13 +6,15 @@ interface SEOProps {
   path?: string;
   keywords?: string;
   type?: string;
+  /** Cuando es true, la página se excluye de la indexación (noindex, nofollow). */
+  noindex?: boolean;
 }
 
 const SITE_NAME = "VAROSA";
 const BASE_URL = "https://varosacr.com";
 const OG_IMAGE = `${BASE_URL}/og-image.png`;
 
-const SEO = ({ title, description, path = "/", keywords, type = "website" }: SEOProps) => {
+const SEO = ({ title, description, path = "/", keywords, type = "website", noindex = false }: SEOProps) => {
   const fullTitle = path === "/" ? `${SITE_NAME} | ${title}` : `${title} | ${SITE_NAME}`;
   const url = `${BASE_URL}${path}`;
 
@@ -21,6 +23,7 @@ const SEO = ({ title, description, path = "/", keywords, type = "website" }: SEO
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={url} />
 
       {/* Open Graph */}
