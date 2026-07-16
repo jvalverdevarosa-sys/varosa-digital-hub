@@ -99,7 +99,7 @@ const Index = () => {
     },
     {
       icon: Building2,
-      title: "Hogar e Institucional",
+      title: "Institucional y Oficinas",
       description: "Higiene y suministros para oficinas, comercios e instituciones.",
       tone: "highlight"
     },
