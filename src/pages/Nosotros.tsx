@@ -6,8 +6,20 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Card, CardContent } from "@/components/ui/card";
-import { Award, Users, Target, Heart, Shield, Zap } from "lucide-react";
+import { Award, Users, Target, Heart, Shield, Zap, Leaf } from "lucide-react";
 import { aniosExperiencia } from "@/lib/utils";
+// Fotos reales (WebP optimizadas). Fotos de ambiente: NO llevan el override
+// de fondo cálido de dark mode (ese es solo para producto sobre blanco).
+import fundadorJeank from "@/assets/nosotros/fundador-jeank.webp";
+import fundadorArmando from "@/assets/nosotros/fundador-armando.webp";
+import equipoVarosa from "@/assets/nosotros/equipo-varosa.webp";
+import bodegaAereaLogo from "@/assets/nosotros/bodega-aerea-logo.webp";
+import bodegaCostado from "@/assets/nosotros/bodega-costado.webp";
+import bodegaVarosa from "@/assets/nosotros/bodega-varosa.webp";
+import camionVarosa from "@/assets/nosotros/camion-varosa.webp";
+import flotaComercial from "@/assets/nosotros/flota-comercial.webp";
+import carroElectrico from "@/assets/nosotros/carro-electrico.webp";
+import visitaMisticoPark from "@/assets/nosotros/visita-mistico-park.webp";
 
 const Nosotros = () => {
   const values = [
@@ -177,6 +189,114 @@ const Nosotros = () => {
           </div>
         </section>
 
+        {/* Fundadores */}
+        <section className="py-20 bg-background border-t border-primary/8">
+          <div className="container mx-auto px-6 lg:px-10">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Nuestros Fundadores</h2>
+              <p className="text-lg md:text-xl text-foreground/75 max-w-2xl mx-auto leading-relaxed">
+                Las personas que dieron origen a VAROSA y hoy la dirigen
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {[
+                {
+                  img: fundadorJeank,
+                  w: 853,
+                  h: 1280,
+                  name: "Jean Carlo Valverde Rodríguez",
+                  role: "Socio fundador · Gerente General",
+                  alt: "Jean Carlo Valverde, socio fundador de VAROSA",
+                },
+                {
+                  img: fundadorArmando,
+                  w: 1021,
+                  h: 1280,
+                  name: "Luis Armando Valverde Rodríguez",
+                  role: "Socio fundador · Gerente Comercial",
+                  alt: "Luis Armando Valverde, socio fundador de VAROSA",
+                },
+              ].map((f) => (
+                <ScrollReveal key={f.name}>
+                <Card className="overflow-hidden border border-primary/10 hover:border-accent hover:shadow-accent transition-all duration-300 bg-card">
+                  <div className="aspect-[3/4] overflow-hidden bg-muted">
+                    <img
+                      src={f.img}
+                      alt={f.alt}
+                      width={f.w}
+                      height={f.h}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <CardContent className="p-6 text-center">
+                    <h3 className="text-lg font-heading font-bold text-foreground">{f.name}</h3>
+                    <p className="text-sm font-semibold text-secondary mt-1">{f.role}</p>
+                  </CardContent>
+                </Card>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Instalaciones */}
+        <section className="py-20 bg-background border-t border-primary/8">
+          <div className="container mx-auto px-6 lg:px-10">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Nuestras Instalaciones</h2>
+              <p className="text-lg md:text-xl text-foreground/75 max-w-2xl mx-auto leading-relaxed">
+                Bodega y centro de distribución en Venecia de San Carlos
+              </p>
+            </div>
+
+            <ScrollReveal>
+            <div className="max-w-3xl mx-auto mb-8">
+              <img
+                src={bodegaAereaLogo}
+                alt="Vista aérea de las instalaciones de VAROSA"
+                width={1149}
+                height={1035}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-auto rounded-2xl border border-primary/10 shadow-varosa"
+              />
+            </div>
+            </ScrollReveal>
+
+            <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <ScrollReveal>
+              <div className="aspect-[16/10] overflow-hidden rounded-xl border border-primary/10 shadow-varosa">
+                <img
+                  src={bodegaCostado}
+                  alt="Vista lateral de la bodega de VAROSA"
+                  width={1600}
+                  height={902}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              </ScrollReveal>
+              <ScrollReveal delay={120}>
+              <div className="aspect-[16/10] overflow-hidden rounded-xl border border-primary/10 shadow-varosa">
+                <img
+                  src={bodegaVarosa}
+                  alt="Instalaciones de VAROSA en Venecia de San Carlos"
+                  width={1024}
+                  height={768}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
         {/* Team & Numbers Section */}
         <section className="py-20 bg-background border-b border-primary/8">
           <div className="container mx-auto px-6 lg:px-10">
@@ -186,6 +306,20 @@ const Nosotros = () => {
                 Un equipo comprometido que hace posible nuestra promesa de servicio
               </p>
             </div>
+
+            <ScrollReveal>
+            <div className="max-w-4xl mx-auto mb-12 rounded-2xl overflow-hidden border border-primary/10 shadow-varosa">
+              <img
+                src={equipoVarosa}
+                alt="Equipo completo de VAROSA frente a la bodega en Venecia de San Carlos"
+                width={1600}
+                height={902}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-auto"
+              />
+            </div>
+            </ScrollReveal>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
               {[
@@ -207,6 +341,119 @@ const Nosotros = () => {
                 Nuestro equipo incluye personal administrativo, asesores comerciales de campo, técnicos de instalación y soporte, y un equipo de logística con flota propia que garantiza entregas puntuales en Zona Norte, Caribe, Guanacaste y el Gran Área Metropolitana.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Flota Propia */}
+        <section className="py-20 bg-background border-t border-primary/8">
+          <div className="container mx-auto px-6 lg:px-10">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Flota Propia</h2>
+              <p className="text-lg md:text-xl text-foreground/75 max-w-2xl mx-auto leading-relaxed">
+                Reparto directo a Zona Norte, Caribe, Guanacaste y GAM
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto items-center">
+              <ScrollReveal direction="left">
+              <div className="aspect-[3/4] overflow-hidden rounded-2xl border border-primary/10 shadow-varosa max-w-[340px] mx-auto">
+                <img
+                  src={camionVarosa}
+                  alt="Camión de reparto de VAROSA con rotulación TORK"
+                  width={1400}
+                  height={1867}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              </ScrollReveal>
+              <ScrollReveal direction="right" delay={120}>
+              <div className="space-y-6">
+                <div className="aspect-[16/9] overflow-hidden rounded-2xl border border-primary/10 shadow-varosa">
+                  <img
+                    src={flotaComercial}
+                    alt="Flota de vehículos rotulados del equipo comercial de VAROSA"
+                    width={1400}
+                    height={790}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
+                  Contamos con flota propia para el reparto de nuestros productos a Zona Norte,
+                  Caribe, Guanacaste y el Gran Área Metropolitana, garantizando entregas
+                  puntuales y seguimiento de cada pedido.
+                </p>
+              </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Compromiso Ambiental */}
+        <section className="py-20 bg-background border-t border-primary/8">
+          <div className="container mx-auto px-6 lg:px-10">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto items-center">
+              <ScrollReveal direction="left">
+              <div className="aspect-[16/9] overflow-hidden rounded-2xl border border-primary/10 shadow-varosa">
+                <img
+                  src={carroElectrico}
+                  alt="Vehículo eléctrico rotulado de VAROSA"
+                  width={1400}
+                  height={790}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              </ScrollReveal>
+              <ScrollReveal direction="right" delay={120}>
+              <div className="space-y-4">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-accent/10">
+                  <Leaf className="h-7 w-7 text-accent" aria-hidden="true" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground">Compromiso Ambiental</h2>
+                <p className="text-lg text-foreground/75 leading-relaxed">
+                  Contamos con una política de tratamiento y manejo de residuos y de gestión
+                  ambiental. Desde 2023 incorporamos un vehículo eléctrico a nuestra flota,
+                  reduciendo las emisiones de nuestra operación comercial.
+                </p>
+              </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Cultura y Equipo Humano */}
+        <section className="py-20 bg-background border-t border-primary/8">
+          <div className="container mx-auto px-6 lg:px-10">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Cultura y Equipo Humano</h2>
+              <p className="text-lg md:text-xl text-foreground/75 max-w-2xl mx-auto leading-relaxed">
+                El compromiso de las personas detrás de VAROSA
+              </p>
+            </div>
+
+            <ScrollReveal>
+            <figure className="max-w-4xl mx-auto">
+              <div className="rounded-2xl overflow-hidden border border-primary/10 shadow-varosa">
+                <img
+                  src={visitaMisticoPark}
+                  alt="Equipo de VAROSA en actividad de integración en Místico Park"
+                  width={1600}
+                  height={1200}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto"
+                />
+              </div>
+              <figcaption className="text-center text-sm text-foreground/60 mt-4">
+                Actividad de integración del equipo VAROSA en Místico Park, cliente referente.
+              </figcaption>
+            </figure>
+            </ScrollReveal>
           </div>
         </section>
 

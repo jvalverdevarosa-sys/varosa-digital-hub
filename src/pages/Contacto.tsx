@@ -6,6 +6,9 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+// Foto humana discreta junto a los datos de contacto (documentos del fondo
+// ya vienen difuminados en el archivo; foto de ambiente, sin override de dark mode).
+import atencionAngie from "@/assets/contacto/atencion-angie.webp";
 
 const Contacto = () => {
   return (
@@ -68,6 +71,18 @@ const Contacto = () => {
               {/* Contact Info */}
               <ScrollReveal direction="right" delay={200}>
               <div className="space-y-6">
+                <div className="rounded-2xl overflow-hidden border border-primary/10 shadow-varosa aspect-[4/5] max-w-sm mx-auto lg:max-w-none">
+                  <img
+                    src={atencionAngie}
+                    alt="Colaboradora de VAROSA atendiendo consultas de clientes"
+                    width={1000}
+                    height={1333}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+
                 <Card className="border-2 border-accent shadow-accent bg-card">
                   <CardContent className="p-6 space-y-6">
                     <div className="space-y-5">
