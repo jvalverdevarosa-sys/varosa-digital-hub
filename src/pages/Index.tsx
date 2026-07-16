@@ -7,7 +7,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
-import { Droplets, Shield, Sparkles, Building2, ArrowRight, ShoppingBag, ExternalLink } from "lucide-react";
+import { Droplets, Shield, Sparkles, Building2, Factory, ConciergeBell, Milk, ArrowRight, ShoppingBag, ExternalLink } from "lucide-react";
 
 // Logos de marcas
 import logo3m from "@/assets/logos/marcas/3m.png";
@@ -49,14 +49,6 @@ import logoLacteosHyR from "@/assets/logos/clientes/lacteos-h-y-r.jpeg";
 import logoLacteosCeci from "@/assets/logos/clientes/lacteos-ceci.png";
 import logoEconomas from "@/assets/logos/clientes/economas.jpeg";
 
-// Fotos de "Mercados que atendemos" — PLACEHOLDERS.
-// Reemplazar cada archivo por una foto real (ver resumen de imágenes al final del encargo).
-import mercadoIndustria from "@/assets/mercados/industria.svg";
-import mercadoAlimentaria from "@/assets/mercados/alimentaria.svg";
-import mercadoHoreca from "@/assets/mercados/horeca.svg";
-import mercadoInstitucional from "@/assets/mercados/institucional.svg";
-import mercadoLecheria from "@/assets/mercados/lecheria.svg";
-
 const Index = () => {
   const productLines = [
     {
@@ -85,39 +77,51 @@ const Index = () => {
     }
   ];
 
-  // Mercados que atendemos — tarjetas con foto (placeholders reemplazables por VAROSA)
+  // Mercados que atendemos — tarjetas con íconos de marca (tone define el color del tile)
   const markets = [
     {
-      img: mercadoIndustria,
+      icon: Factory,
       title: "Industria",
       description: "Limpieza y desinfección industrial, programas y validaciones ATP.",
-      alt: "Operación en planta industrial atendida por VAROSA"
+      tone: "accent"
     },
     {
-      img: mercadoAlimentaria,
+      icon: Droplets,
       title: "Industria Alimentaria",
       description: "Químicos especializados y herramientas grado alimentario (FDA).",
-      alt: "Higiene en planta de proceso de alimentos con productos VAROSA"
+      tone: "accent"
     },
     {
-      img: mercadoHoreca,
+      icon: ConciergeBell,
       title: "Hotelería / HORECA",
       description: "Soluciones integrales para hoteles, restaurantes y catering.",
-      alt: "Limpieza profesional en hotel y restaurante del sector HORECA"
+      tone: "accent"
     },
     {
-      img: mercadoInstitucional,
+      icon: Building2,
       title: "Hogar e Institucional",
       description: "Higiene y suministros para oficinas, comercios e instituciones.",
-      alt: "Higiene institucional en oficinas e instituciones atendidas por VAROSA"
+      tone: "highlight"
     },
     {
-      img: mercadoLecheria,
+      icon: Milk,
       title: "Lechería",
       description: "Higiene y sanitización especializada para el sector lácteo.",
-      alt: "Sanitización en planta de lechería con soluciones VAROSA"
+      tone: "accent"
     }
   ];
+
+  // Estilos del tile de ícono por tono (clases literales para que Tailwind las conserve)
+  const marketTileStyles: Record<string, { tile: string; icon: string }> = {
+    accent: {
+      tile: "bg-gradient-to-br from-[hsl(var(--accent)/0.12)] to-[hsl(var(--primary)/0.06)]",
+      icon: "text-accent"
+    },
+    highlight: {
+      tile: "bg-gradient-to-br from-[hsl(var(--highlight)/0.16)] to-[hsl(var(--primary)/0.06)]",
+      icon: "text-highlight"
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -233,35 +237,28 @@ const Index = () => {
             </ScrollReveal>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {markets.map((market, index) => (
-                <ScrollReveal key={index} delay={index * 120}>
-                <NavLink
-                  to="/soluciones"
-                  aria-label={`${market.title} — ver soluciones`}
-                  className="group relative block rounded-2xl overflow-hidden border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] shadow-sm hover:shadow-[0_8px_30px_hsl(var(--primary)/0.15)] transition-all duration-300"
-                >
-                  <div className="aspect-[4/3] overflow-hidden bg-muted">
-                    <img
-                      src={market.img}
-                      alt={market.alt}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+              {markets.map((market, index) => {
+                const tone = marketTileStyles[market.tone] ?? marketTileStyles.accent;
+                return (
+                <ScrollReveal key={index} delay={index * 120} className="h-full">
+                <div className="group h-full bg-card p-6 sm:p-8 rounded-2xl border border-[hsl(var(--primary)/0.1)] hover:border-[hsl(var(--accent)/0.4)] hover:shadow-[0_8px_30px_hsl(var(--primary)/0.1)] transition-all duration-300">
+                  <div className={`w-16 h-16 rounded-xl ${tone.tile} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                    <market.icon className={`h-8 w-8 ${tone.icon}`} aria-hidden="true" />
                   </div>
-                  {/* Overlay azul de marca para legibilidad del texto sobre la foto */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--varosa-blue-dark)/0.9)] via-[hsl(var(--varosa-blue-dark)/0.3)] to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-                    <h3 className="text-xl font-heading font-bold text-white mb-1">{market.title}</h3>
-                    <p className="text-sm text-white/85 mb-3 leading-snug">{market.description}</p>
-                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-white">
-                      Ver soluciones
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </div>
-                </NavLink>
+                  <h3 className="text-xl sm:text-2xl font-heading font-bold mb-3 text-foreground">{market.title}</h3>
+                  <p className="text-foreground/60 mb-4 leading-relaxed">{market.description}</p>
+                  <NavLink
+                    to="/soluciones"
+                    aria-label={`${market.title} — ver soluciones`}
+                    className="text-secondary hover:text-primary font-semibold inline-flex items-center gap-2 text-sm"
+                  >
+                    Ver soluciones
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </NavLink>
+                </div>
                 </ScrollReveal>
-              ))}
+                );
+              })}
             </div>
 
             <ScrollReveal>
