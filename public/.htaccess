@@ -5,10 +5,9 @@
 # ============================================================
 
 # ------------------------------------------------------------
-# 1) Reescritura SPA
-#    Cualquier ruta que NO sea un archivo o carpeta real se sirve
-#    con index.html, para que React Router resuelva la ruta del
-#    lado del cliente (necesario tras migrar a BrowserRouter).
+# 0) Limpieza de URLs viejas de WordPress + 1) Reescritura SPA
+#    Las redirecciones 301/410 VAN ANTES del catch-all SPA; si no,
+#    index.html se sirve primero y la redirección nunca se ejecuta.
 # ------------------------------------------------------------
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -43,6 +42,9 @@
 
   # ------------------------------------------------------------
   # 1) Reescritura SPA (idéntica a la original)
+  #    Cualquier ruta que NO sea un archivo o carpeta real se sirve
+  #    con index.html, para que React Router resuelva la ruta del
+  #    lado del cliente (necesario tras migrar a BrowserRouter).
   # ------------------------------------------------------------
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
