@@ -41,6 +41,24 @@
   RewriteRule ^author(/|$)   / [R=301,L]
 
   # ------------------------------------------------------------
+  # 0.5) Prerender: servir /ruta/index.html ante /ruta SIN barra final
+  #    Las 9 rutas prerenderizadas son directorios reales
+  #    (dist/productos/index.html -> public_html/productos/index.html). Por
+  #    defecto mod_dir haría un 301 de /productos -> /productos/ (barra final).
+  #    Desactivamos ese redirect y servimos el index.html internamente, para que
+  #    la URL SIN barra responda 200 directo, alineada con canonical / og:url /
+  #    sitemap / enlaces internos (que usan la forma sin barra).
+  #    Solo aplica cuando existe <ruta>/index.html; las rutas NO prerenderizadas
+  #    (p. ej. /gracias) caen al catch-all SPA de abajo sin cambios.
+  # ------------------------------------------------------------
+  <IfModule mod_dir.c>
+    DirectorySlash Off
+  </IfModule>
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+  # ------------------------------------------------------------
   # 1) Reescritura SPA (idéntica a la original)
   #    Cualquier ruta que NO sea un archivo o carpeta real se sirve
   #    con index.html, para que React Router resuelva la ruta del
