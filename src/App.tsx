@@ -55,7 +55,28 @@ const ScrollToTop = () => {
   return null;
 };
 
-const App = () => (
+const App = () => {
+  // Señal para @prerenderer/rollup-plugin (renderAfterDocumentEvent: 'app-rendered').
+  // Las páginas son lazy: esperamos a que #main-content exista en el DOM (el
+  // fallback <Suspense> no lo renderiza) y disparamos un frame después, para que
+  // react-helmet-async ya haya volcado <title>/description/OG al <head>.
+  // En uso normal es un evento inocuo que nadie escucha.
+  useEffect(() => {
+    let frame: number;
+    const signalWhenReady = () => {
+      if (document.getElementById("main-content")) {
+        frame = requestAnimationFrame(() =>
+          document.dispatchEvent(new Event("app-rendered"))
+        );
+      } else {
+        frame = requestAnimationFrame(signalWhenReady);
+      }
+    };
+    frame = requestAnimationFrame(signalWhenReady);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  return (
   <HelmetProvider>
     <TooltipProvider>
       <BrowserRouter>
@@ -81,6 +102,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </HelmetProvider>
-);
+  );
+};
 
 export default App;

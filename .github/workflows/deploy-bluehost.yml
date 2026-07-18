@@ -38,6 +38,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Puppeteer (prerender de rutas indexables) necesita un Chromium. Se cachea
+      # entre builds: el cron diario reusa el navegador ya descargado.
+      - name: Cache Puppeteer browser
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: puppeteer-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Chromium para Puppeteer
+        run: npx puppeteer browsers install chrome
+
       - name: Build
         run: npm run build
 
