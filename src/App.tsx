@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import WhatsAppButton from "./components/WhatsAppButton";
+import CookieConsent from "./components/CookieConsent";
 
 // Lazy load — páginas se descargan solo cuando el usuario navega a ellas
 const Soluciones = lazy(() => import("./pages/Soluciones"));
@@ -14,6 +15,7 @@ const Nosotros = lazy(() => import("./pages/Nosotros"));
 const Contacto = lazy(() => import("./pages/Contacto"));
 const ServiciosTecnicos = lazy(() => import("./pages/ServiciosTecnicos"));
 const Gracias = lazy(() => import("./pages/Gracias"));
+const PoliticaDePrivacidad = lazy(() => import("./pages/PoliticaDePrivacidad"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Loading spinner con colores de marca
@@ -70,10 +72,12 @@ const App = () => (
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/servicios-tecnicos" element={<ServiciosTecnicos />} />
             <Route path="/gracias" element={<Gracias />} />
+            <Route path="/politica-de-privacidad" element={<PoliticaDePrivacidad />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
         <WhatsAppButton />
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </HelmetProvider>

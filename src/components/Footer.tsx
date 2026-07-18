@@ -122,8 +122,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm opacity-75">
+        <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center text-sm opacity-75">
           <p>&copy; {new Date().getFullYear()} Comercializadora VARO S.A. Todos los derechos reservados.</p>
+          <span className="hidden sm:inline opacity-50" aria-hidden="true">|</span>
+          <NavLink to="/politica-de-privacidad" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
+            Política de Privacidad
+          </NavLink>
         </div>
       </div>
     </footer>
