@@ -32,7 +32,7 @@
   RewriteRule ^feed(/|$)          - [G,L]
   RewriteRule ^comments/feed(/|$) - [G,L]
 
-  # C) Categoría "Destacado" -> Productos (301). Destino pendiente de tu confirmación.
+  # C) Categoría "Destacado" -> Productos (301). Destino confirmado.
   RewriteRule ^category/destacado/?$ /productos [R=301,L]
 
   # D) Otras categorías/etiquetas/autores viejos -> Home (301)
