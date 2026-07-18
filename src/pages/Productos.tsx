@@ -162,7 +162,7 @@ const Productos = () => {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Catálogo de Productos"
-        description="Productos profesionales destacados: químicos Diversey, dispensadores y papel TORK, cepillos, fibras 3M y suministros de oficina. Solicite cotización por WhatsApp."
+        description="Catálogo de limpieza, higiene y sanitización profesional: químicos Diversey, sistemas TORK, herramientas y más. Cotice por WhatsApp con VAROSA en Costa Rica."
         path="/productos"
         keywords="Diversey Costa Rica, TORK dispensadores, El Castor FDA, 3M fibras, Kemical, Solquisa, suministros oficina, catálogo productos limpieza"
       />

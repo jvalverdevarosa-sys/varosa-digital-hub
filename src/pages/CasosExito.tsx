@@ -228,7 +228,7 @@ const CasosExito = () => {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Casos de Éxito"
-        description="Más de 500 clientes en Costa Rica confían en VAROSA: hoteles, parques eco-turísticos, plantas alimentarias, lecherías y comercios. Conozca cómo transformamos sus operaciones de limpieza e higiene."
+        description="Casos de éxito de VAROSA en hotelería, industria alimentaria, lecherías y comercio. Empresas de Costa Rica que confían en nuestras soluciones de higiene."
         path="/casos-exito"
         keywords="clientes VAROSA Costa Rica, casos éxito limpieza industrial, testimoniales higiene HORECA, Mistico Park, Selvatura, Ticofrut, Hotel El Establo"
       />

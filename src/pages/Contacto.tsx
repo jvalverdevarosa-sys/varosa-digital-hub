@@ -15,7 +15,7 @@ const Contacto = () => {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Contacto"
-        description="Solicite cotización o agende una visita técnica. Teléfono: 4002-9365, WhatsApp: +506 8670-3251. Cobertura en Zona Norte, Caribe, Guanacaste y GAM."
+        description="Contacte a VAROSA para cotizaciones y asesoría en limpieza e higiene profesional. WhatsApp, teléfono 4002-9365 y formulario. Cobertura en Costa Rica."
         path="/contacto"
         keywords="contacto VAROSA, cotización productos limpieza, teléfono VAROSA, WhatsApp VAROSA Costa Rica"
       />

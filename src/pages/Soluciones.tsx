@@ -181,7 +181,7 @@ const Soluciones = () => {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Soluciones por Industria"
-        description="Soluciones especializadas de limpieza e higiene para industria alimentaria, HORECA, manufactura y lecherías en Costa Rica. Productos Diversey, TORK, El Castor, 3M con acompañamiento técnico."
+        description="Soluciones de limpieza, higiene y sanitización por industria: alimentaria, HORECA, lecherías y manufactura. Acompañamiento técnico VAROSA en Costa Rica."
         path="/soluciones"
         keywords="soluciones limpieza industria alimentaria Costa Rica, higiene HORECA hoteles restaurantes, manufactura limpieza industrial, lecherías CIP, Diversey TORK El Castor"
       />

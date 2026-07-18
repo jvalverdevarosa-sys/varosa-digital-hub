@@ -67,7 +67,7 @@ const Nosotros = () => {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Nosotros"
-        description="Desde 2007, Comercializadora VARO S.A. distribuye productos de limpieza e higiene en Costa Rica. 500+ clientes activos, 30 colaboradores y flota propia. Venecia de San Carlos."
+        description="Conozca a VAROSA: distribuidor costarricense de limpieza e higiene profesional desde 2007, con flota propia y cobertura en Zona Norte, Caribe, Guanacaste y GAM."
         path="/nosotros"
         keywords="Comercializadora VARO, VAROSA historia, distribuidora limpieza Costa Rica, Venecia San Carlos empresa"
       />

@@ -324,7 +324,7 @@ const Blog = () => {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Blog"
-        description="Guías técnicas, tips de ahorro y normativas para limpieza industrial, higiene alimentaria y sector HORECA en Costa Rica. Contenido práctico por VAROSA."
+        description="Blog de VAROSA: guías y recursos sobre limpieza, higiene, sanitización e inocuidad para industria alimentaria, HORECA y lecherías en Costa Rica."
         path="/blog"
         keywords="guía limpieza industrial, BPM Costa Rica, código colores cepillos FDA, ahorro papel TORK, dilución Diversey, auditoría ATP, limpieza CIP lecherías"
       />

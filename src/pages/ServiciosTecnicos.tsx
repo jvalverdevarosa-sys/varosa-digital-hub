@@ -75,7 +75,7 @@ const ServiciosTecnicos = () => {
     <div className="min-h-screen flex flex-col">
       <SEO
         title="Servicios Técnicos"
-        description="Instalación de dispensadores, auditorías de higiene ATP, capacitaciones técnicas y acompañamiento continuo. Servicio profesional en Zona Norte, Caribe, Guanacaste y GAM."
+        description="Servicios técnicos VAROSA: instalación de dosificadores, auditorías y validaciones ATP, y capacitaciones para su operación en Costa Rica."
         path="/servicios-tecnicos"
         keywords="instalación dispensadores Costa Rica, auditoría ATP higiene, capacitaciones limpieza industrial, servicio técnico TORK Diversey"
       />
