@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import WhatsAppButton from "./components/WhatsAppButton";
 import CookieConsent from "./components/CookieConsent";
+import { capturarFuente } from "@/lib/whatsapp";
 
 // Lazy load — páginas se descargan solo cuando el usuario navega a ellas
 const Soluciones = lazy(() => import("./pages/Soluciones"));
@@ -56,6 +57,11 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
+  // Guarda de dónde llegó el visitante (anuncio, orgánico, social, directo) para
+  // poder marcar el origen en los enlaces de WhatsApp. Una sola vez por sesión.
+  useEffect(() => {
+    capturarFuente();
+  }, []);
   // Señal para @prerenderer/rollup-plugin (renderAfterDocumentEvent: 'app-rendered').
   // Las páginas son lazy: esperamos a que #main-content exista en el DOM (el
   // fallback <Suspense> no lo renderiza) y disparamos un frame después, para que
