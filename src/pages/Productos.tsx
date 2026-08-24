@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import destacados from "@/data/destacados.json";
+import { enlaceWhatsApp } from "@/lib/whatsapp";
 
 // Catálogo generado en build-time desde la colección "Destacados" de Zoho Commerce
 // (scripts/generar-catalogo.mjs → src/data/destacados.json). Regla de negocio:
@@ -36,7 +37,7 @@ const soloTexto = (html: string | null) =>
 
 const mensajeWhatsApp = (p: Producto) => {
   const detalle = p.brand ? `${p.name} (${p.brand})` : p.name;
-  return `https://wa.me/50686703251?text=${encodeURIComponent(`Hola, me interesa cotizar: ${detalle}`)}`;
+  return enlaceWhatsApp(`Hola, me interesa cotizar: ${detalle}`, "productos");
 };
 
 function ProductCard({ product }: { product: Producto }) {
