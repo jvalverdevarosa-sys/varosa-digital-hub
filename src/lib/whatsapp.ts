@@ -87,7 +87,9 @@ function fuenteActual(): string {
 /** Código corto de la página actual, derivado de la ruta. */
 function paginaActual(): string {
   try {
-    const ruta = window.location.pathname.replace(/^\/+|\/+$/g, "");
+    const ruta = window.location.pathname
+      .replace(/\/index\.html?$/i, "/")
+      .replace(/^\/+|\/+$/g, "");
     return ruta ? normalizar(ruta) : "inicio";
   } catch {
     return "inicio";
@@ -106,6 +108,10 @@ function paginaActual(): string {
  *   // → https://wa.me/50686703251?text=Hola%2C%20me%20interesa...%5Bref%3A%20productos-ads%5D
  */
 export function enlaceWhatsApp(mensaje: string, pagina?: string): string {
+  // Se captura aquí y no solo en un efecto de React: los efectos corren DESPUÉS
+  // del primer render, y para entonces el enlace ya se construyó. capturarFuente
+  // es idempotente, así que llamarla en cada enlace no cuesta nada.
+  capturarFuente();
   const ref = `${pagina ?? paginaActual()}-${fuenteActual()}`;
   const texto = `${mensaje}\n\n[ref: ${ref}]`;
   return `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`;
