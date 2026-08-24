@@ -4,6 +4,7 @@ import { ArrowRight, Phone, MessageCircle, Truck, ShieldCheck, Beaker, Award, Dr
 import { aniosExperiencia } from "@/lib/utils";
 // Foto de fondo del hero — bodega real de VAROSA (WebP optimizada, calidad 80).
 import heroFondo from "@/assets/hero/hero-fondo.webp";
+import { enlaceWhatsApp } from "@/lib/whatsapp";
 
 const Hero = () => {
   return (
@@ -89,7 +90,7 @@ const Hero = () => {
                 </NavLink>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-2 border-white/40 hover:border-white bg-white/5 hover:bg-white/10 text-white font-semibold rounded-lg px-8 py-6 text-base transition-all duration-300">
-                <a href="https://wa.me/50686703251?text=Hola%2C%20me%20interesa%20una%20cotización" target="_blank" rel="noopener noreferrer">
+                <a href={enlaceWhatsApp("Hola, me interesa una cotización", "inicio-hero")} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-4 w-4" />
                   WhatsApp
                 </a>
