@@ -14,6 +14,26 @@
   RewriteBase /
 
   # ------------------------------------------------------------
+  # 0.0) Canonicalización de host: www -> sin www (301 permanente)
+  #    VA PRIMERO, antes de las 301/410 de WordPress y del catch-all SPA:
+  #    si no, index.html se sirve primero y la redirección nunca corre.
+  #    Motivo: el tráfico se estaba partiendo entre www.varosacr.com y
+  #    varosacr.com (GA4 los contaba como visitas separadas) y los enlaces
+  #    entrantes repartían autoridad SEO entre dos hosts. El canonical de
+  #    SEO.tsx / SchemaOrg.tsx / sitemap.xml ya apunta a varosacr.com sin
+  #    www, así que este es el host bueno.
+  #    - %{REQUEST_URI} preserva la ruta; el query string se reanexa solo
+  #      (la sustitución no lleva "?", así que no hace falta QSA).
+  #    - El destino es https:// para resolver www+http en un solo salto.
+  #    - La condición ancla el host exacto: no afecta a localhost, al
+  #      dev server ni a ningún otro dominio.
+  #    - [L] corta aquí; el resto de las reglas no llega a evaluarse en
+  #      la petición redirigida, que vuelve limpia al host canónico.
+  # ------------------------------------------------------------
+  RewriteCond %{HTTP_HOST} ^www\.varosacr\.com$ [NC]
+  RewriteRule ^ https://varosacr.com%{REQUEST_URI} [R=301,L]
+
+  # ------------------------------------------------------------
   # 0) Limpieza de URLs viejas de WordPress
   #    VAN ANTES del catch-all SPA. Si no, index.html se sirve
   #    primero y la redirección nunca se ejecuta.

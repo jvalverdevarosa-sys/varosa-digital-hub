@@ -51,30 +51,37 @@ import logoEconomas from "@/assets/logos/clientes/economas.jpeg";
 import { enlaceWhatsApp } from "@/lib/whatsapp";
 
 const Index = () => {
+  // `enlaceTienda`: categoría equivalente en la tienda Zoho. El formato
+  // /categories/<slug>/<id> está verificado contra tráfico real de GA4 —
+  // no cambiar los slugs ni los IDs sin volver a validarlos.
   const productLines = [
     {
       icon: Droplets,
       title: "Químicos Especializados",
       description: "Diversey, Kemical y Solquisa: soluciones de limpieza y desinfección profesional.",
-      color: "text-accent"
+      color: "text-accent",
+      enlaceTienda: "https://tienda.varosacr.com/categories/limpieza-e-higiene/6074712000051708163"
     },
     {
       icon: Shield,
       title: "Sistemas de Higiene TORK",
       description: "Dispensadores, papel, toallas, jabón y sanitizantes para mantener los más altos estándares.",
-      color: "text-secondary"
+      color: "text-secondary",
+      enlaceTienda: "https://tienda.varosacr.com/categories/dispensadores/6074712000051707564"
     },
     {
       icon: Sparkles,
       title: "Herramientas Grado Alimentario",
       description: "El Castor: cepillos, escobas, jaladores y bastones con certificación FDA.",
-      color: "text-primary"
+      color: "text-primary",
+      enlaceTienda: "https://tienda.varosacr.com/categories/escobas-palos-bastones-y-cepillos/6074712000051708202"
     },
     {
       icon: Building2,
       title: "Accesorios y Oficina",
       description: "3M, HP, Epson, Faber Castell, Facela, Artline: todo para su operación.",
-      color: "text-highlight"
+      color: "text-highlight",
+      enlaceTienda: "https://tienda.varosacr.com/categories/oficina-y-escritura/6074712000051708157"
     }
   ];
 
@@ -195,11 +202,22 @@ const Index = () => {
                     <CardTitle className="text-lg">{product.title}</CardTitle>
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex flex-col items-start gap-3">
                     <NavLink to="/productos" className="text-secondary hover:text-primary font-semibold inline-flex items-center gap-2 text-sm group">
                       Ver más
                       <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </NavLink>
+                    {/* Enlace directo a la categoría equivalente en la tienda Zoho */}
+                    <a
+                      href={product.enlaceTienda}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Ver ${product.title} en la tienda online`}
+                      className="text-accent hover:text-primary font-semibold inline-flex items-center gap-2 text-sm transition-colors"
+                    >
+                      Ver en la tienda
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
                   </CardContent>
                 </Card>
                 </ScrollReveal>
