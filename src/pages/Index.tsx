@@ -48,6 +48,7 @@ import logoCoopelecheros from "@/assets/logos/clientes/coopelecheros.png";
 import logoLacteosHyR from "@/assets/logos/clientes/lacteos-h-y-r.jpeg";
 import logoLacteosCeci from "@/assets/logos/clientes/lacteos-ceci.png";
 import logoEconomas from "@/assets/logos/clientes/economas.jpeg";
+import { enlaceWhatsApp } from "@/lib/whatsapp";
 
 const Index = () => {
   const productLines = [
@@ -407,7 +408,7 @@ const Index = () => {
                   </a>
                 </Button>
                 <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold shadow-lg">
-                  <a href="https://wa.me/50686703251?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20los%20productos%20y%20servicios%20de%20VAROSA" target="_blank" rel="noopener noreferrer">
+                  <a href={enlaceWhatsApp("Hola, me interesa conocer más sobre los productos y servicios de VAROSA")} target="_blank" rel="noopener noreferrer">
                     WhatsApp: +506 8670-3251
                   </a>
                 </Button>

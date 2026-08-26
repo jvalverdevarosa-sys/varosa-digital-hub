@@ -9,6 +9,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 // Foto humana discreta junto a los datos de contacto (documentos del fondo
 // ya vienen difuminados en el archivo; foto de ambiente, sin override de dark mode).
 import atencionAngie from "@/assets/contacto/atencion-angie.webp";
+import { enlaceWhatsApp } from "@/lib/whatsapp";
 
 const Contacto = () => {
   return (
@@ -148,7 +149,7 @@ const Contacto = () => {
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <Button asChild className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold transition-all duration-300">
-                      <a href="https://wa.me/50686703251" target="_blank" rel="noopener noreferrer">WhatsApp: +506 8670-3251</a>
+                      <a href={enlaceWhatsApp("Hola, me interesa contactar a VAROSA")} target="_blank" rel="noopener noreferrer">WhatsApp: +506 8670-3251</a>
                     </Button>
                     <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-300">
                       <a href="tel:+50640029365">Llamar: 4002-9365</a>

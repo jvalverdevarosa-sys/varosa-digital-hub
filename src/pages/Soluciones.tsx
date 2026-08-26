@@ -45,6 +45,7 @@ import logoCoopelecheros from "@/assets/logos/clientes/coopelecheros.png";
 import logoLacteosHyR from "@/assets/logos/clientes/lacteos-h-y-r.jpeg";
 import logoLacteosCeci from "@/assets/logos/clientes/lacteos-ceci.png";
 import logoEconomas from "@/assets/logos/clientes/economas.jpeg";
+import { enlaceWhatsApp } from "@/lib/whatsapp";
 
 const clientLogos: Record<string, string> = {
   "Hotel El Establo": logoHotelElEstablo,
@@ -326,7 +327,7 @@ const Soluciones = () => {
               {/* CTA — celda ancha */}
               <ScrollReveal className="sm:col-span-2 lg:col-span-2" delay={150}>
                 <a
-                  href={`https://wa.me/50686703251?text=${encodeURIComponent("Hola, mi industria no aparece en el sitio y me gustaría conversar sobre una solución de limpieza e higiene para mi operación.")}`}
+                  href={enlaceWhatsApp("Hola, mi industria no aparece en el sitio y me gustaría conversar sobre una solución de limpieza e higiene para mi operación.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex h-full items-center justify-between gap-4 rounded-2xl border border-accent/30 bg-accent/10 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:bg-accent/15 hover:shadow-[0_10px_30px_hsl(var(--accent)/0.2)]"
@@ -462,7 +463,7 @@ const Soluciones = () => {
                           className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold shadow-lg transition-all duration-300"
                         >
                           <a
-                            href={`https://wa.me/50686703251?text=Hola%2C%20me%20interesa%20la%20soluci%C3%B3n%20para%20${encodeURIComponent(sector.title)}`}
+                            href={enlaceWhatsApp(`Hola, me interesa la solución para ${sector.title}`)}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -550,7 +551,7 @@ const Soluciones = () => {
                   className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold shadow-lg transition-all duration-300"
                 >
                   <a
-                    href="https://wa.me/50686703251?text=Hola%2C%20necesito%20una%20soluci%C3%B3n%20de%20limpieza%20para%20mi%20operaci%C3%B3n"
+                    href={enlaceWhatsApp("Hola, necesito una solución de limpieza para mi operación")}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

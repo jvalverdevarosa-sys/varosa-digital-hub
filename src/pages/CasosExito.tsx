@@ -46,6 +46,7 @@ import logoCoopelecheros from "@/assets/logos/clientes/coopelecheros.png";
 import logoLacteosHyR from "@/assets/logos/clientes/lacteos-h-y-r.jpeg";
 import logoLacteosCeci from "@/assets/logos/clientes/lacteos-ceci.png";
 import logoEconomas from "@/assets/logos/clientes/economas.jpeg";
+import { enlaceWhatsApp } from "@/lib/whatsapp";
 
 const clientLogos: Record<string, string> = {
   "Hotel El Establo": logoHotelElEstablo,
@@ -476,7 +477,7 @@ const CasosExito = () => {
                   className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold shadow-lg transition-all duration-300"
                 >
                   <a
-                    href="https://wa.me/50686703251?text=Hola%2C%20me%20interesa%20conocer%20las%20soluciones%20de%20VAROSA%20para%20mi%20operaci%C3%B3n"
+                    href={enlaceWhatsApp("Hola, me interesa conocer las soluciones de VAROSA para mi operación")}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

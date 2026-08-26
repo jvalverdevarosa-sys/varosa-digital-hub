@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Home, MessageCircle } from "lucide-react";
+import { enlaceWhatsApp } from "@/lib/whatsapp";
 
 const Gracias = () => {
   return (
@@ -57,7 +58,7 @@ const Gracias = () => {
                     className="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold transition-all duration-300"
                   >
                     <a
-                      href="https://wa.me/50686703251"
+                      href={enlaceWhatsApp("Hola, acabo de enviar el formulario en el sitio web")}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

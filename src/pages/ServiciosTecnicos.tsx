@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Wrench, ClipboardCheck, GraduationCap, FileText, Settings, ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
+import { enlaceWhatsApp } from "@/lib/whatsapp";
 
 const ServiciosTecnicos = () => {
   const services = [
@@ -202,7 +203,7 @@ const ServiciosTecnicos = () => {
                 📋 Recursos técnicos disponibles bajo solicitud
               </p>
               <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold shadow-lg transition-all duration-300">
-                <a href="https://wa.me/50686703251?text=Hola%2C%20me%20interesa%20recibir%20material%20técnico%20y%20fichas%20de%20productos%20VAROSA" target="_blank" rel="noopener noreferrer">
+                <a href={enlaceWhatsApp("Hola, me interesa recibir material técnico y fichas de productos VAROSA")} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Solicitar Material Técnico
                 </a>
@@ -230,7 +231,7 @@ const ServiciosTecnicos = () => {
                   </NavLink>
                 </Button>
                 <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold shadow-lg transition-all duration-300">
-                  <a href="https://wa.me/50686703251?text=Hola%2C%20me%20interesa%20agendar%20una%20visita%20técnica%20de%20VAROSA" target="_blank" rel="noopener noreferrer">
+                  <a href={enlaceWhatsApp("Hola, me interesa agendar una visita técnica de VAROSA")} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="ml-2 h-5 w-5" />
                     WhatsApp: +506 8670-3251
                   </a>

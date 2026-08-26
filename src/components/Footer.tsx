@@ -1,6 +1,7 @@
 import { NavLink } from "./NavLink";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, MessageCircle, ShoppingBag } from "lucide-react";
 import varosaSogo from "@/assets/varosa-logo.webp";
+import { enlaceWhatsApp } from "@/lib/whatsapp";
 
 const Footer = () => {
   return (
@@ -26,7 +27,7 @@ const Footer = () => {
               <a href="https://www.linkedin.com/company/varosacr" target="_blank" rel="noopener noreferrer" className="min-h-11 min-w-11 inline-flex items-center justify-center hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-md" aria-label="LinkedIn de VAROSA">
                 <Linkedin className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="https://wa.me/50686703251" target="_blank" rel="noopener noreferrer" className="min-h-11 min-w-11 inline-flex items-center justify-center hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-md" aria-label="WhatsApp de VAROSA">
+              <a href={enlaceWhatsApp("Hola, me interesa conocer más sobre VAROSA", "footer")} target="_blank" rel="noopener noreferrer" className="min-h-11 min-w-11 inline-flex items-center justify-center hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-md" aria-label="WhatsApp de VAROSA">
                 <MessageCircle className="h-5 w-5" aria-hidden="true" />
               </a>
             </div>
@@ -108,7 +109,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-sm opacity-90">
                 <MessageCircle className="h-5 w-5 shrink-0" />
-                <a href="https://wa.me/50686703251" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
+                <a href={enlaceWhatsApp("Hola, me interesa conocer más sobre VAROSA", "footer")} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   +506 8670-3251
                 </a>
               </li>

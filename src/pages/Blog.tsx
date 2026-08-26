@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight, ChevronUp, MessageCircle } from "lucide-react";
 import demaSprayCleanCocina from "@/assets/blog/dema-spray-clean-cocina.webp";
 import diverseyDosificacionBodega from "@/assets/blog/diversey-dosificacion-bodega.webp";
+import { enlaceWhatsApp } from "@/lib/whatsapp";
 
 // El contenido de un artículo es una lista de bloques. Un string simple es un
 // párrafo (formato usado por los artículos originales); los objetos permiten
@@ -448,7 +449,7 @@ const Blog = () => {
                 className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold shadow-lg transition-all duration-300"
               >
                 <a
-                  href="https://wa.me/50686703251?text=Hola%2C%20tengo%20una%20consulta%20t%C3%A9cnica%20sobre%20productos%20de%20limpieza"
+                  href={enlaceWhatsApp("Hola, tengo una consulta técnica sobre productos de limpieza")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -583,7 +584,7 @@ function ArticleCard({
                 className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold shadow-lg transition-all duration-300"
               >
                 <a
-                  href={`https://wa.me/50686703251?text=Hola%2C%20le%C3%AD%20el%20art%C3%ADculo%20%22${encodeURIComponent(article.title)}%22%20y%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n`}
+                  href={enlaceWhatsApp(`Hola, leí el artículo "${article.title}" y me gustaría más información`)}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

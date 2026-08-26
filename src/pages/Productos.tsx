@@ -268,7 +268,7 @@ const Productos = () => {
                   </a>
                 </Button>
                 <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold transition-all duration-300">
-                  <a href="https://wa.me/50686703251?text=Hola%2C%20me%20interesa%20recibir%20el%20cat%C3%A1logo%20completo%20de%20productos" target="_blank" rel="noopener noreferrer">
+                  <a href={enlaceWhatsApp("Hola, me interesa recibir el catálogo completo de productos", "productos-catalogo")} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 h-4 w-4" />WhatsApp Directo
                   </a>
                 </Button>
