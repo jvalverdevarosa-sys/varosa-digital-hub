@@ -24,7 +24,7 @@
  * que WhatsApp rechace el enlace.
  */
 
-const NUMERO_WHATSAPP = "50686703251";
+const NUMERO_WHATSAPP = "50685012040";
 const CLAVE_FUENTE = "varosa_fuente";
 
 /** Deja solo minúsculas, números y guiones. Corta a 20 caracteres. */
@@ -105,7 +105,7 @@ function paginaActual(): string {
  *
  * @example
  *   enlaceWhatsApp("Hola, me interesa cotizar: Papel Toalla TORK")
- *   // → https://wa.me/50686703251?text=Hola%2C%20me%20interesa...%5Bref%3A%20productos-ads%5D
+ *   // → https://wa.me/50685012040?text=Hola%2C%20me%20interesa...%5Bref%3A%20productos-ads%5D
  */
 export function enlaceWhatsApp(mensaje: string, pagina?: string): string {
   // Se captura aquí y no solo en un efecto de React: los efectos corren DESPUÉS

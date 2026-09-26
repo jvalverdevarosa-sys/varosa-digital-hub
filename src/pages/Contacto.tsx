@@ -149,7 +149,7 @@ const Contacto = () => {
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <Button asChild className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold transition-all duration-300">
-                      <a href={enlaceWhatsApp("Hola, me interesa contactar a VAROSA")} target="_blank" rel="noopener noreferrer">WhatsApp: +506 8670-3251</a>
+                      <a href={enlaceWhatsApp("Hola, me interesa contactar a VAROSA")} target="_blank" rel="noopener noreferrer">WhatsApp: +506 8501-2040</a>
                     </Button>
                     <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-300">
                       <a href="tel:+50640029365">Llamar: 4002-9365</a>
@@ -183,7 +183,7 @@ const Contacto = () => {
               />
             </div>
             <p className="text-xs text-foreground/40 mt-3 text-center">
-              <MapPin className="inline-block h-3.5 w-3.5 mr-1 -mt-0.5 text-secondary" aria-hidden="true" /> Si necesita indicaciones exactas, contáctenos al 4002-9365 o por WhatsApp al +506 8670-3251
+              <MapPin className="inline-block h-3.5 w-3.5 mr-1 -mt-0.5 text-secondary" aria-hidden="true" /> Si necesita indicaciones exactas, contáctenos al 4002-9365 o por WhatsApp al +506 8501-2040
             </p>
             </ScrollReveal>
           </div>

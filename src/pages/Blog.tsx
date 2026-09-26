@@ -91,7 +91,7 @@ const articles: Article[] = [
         width: 1280,
         height: 536,
       },
-      "Si quiere revisar cómo está dosificando hoy su operación —y dónde puede ganar en inocuidad, ahorro y sostenibilidad al mismo tiempo—, escríbanos por WhatsApp al +506 8670-3251 y con gusto lo orientamos.",
+      "Si quiere revisar cómo está dosificando hoy su operación —y dónde puede ganar en inocuidad, ahorro y sostenibilidad al mismo tiempo—, escríbanos por WhatsApp al +506 8501-2040 y con gusto lo orientamos.",
     ],
   },
   {

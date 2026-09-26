@@ -427,7 +427,7 @@ const Index = () => {
                 </Button>
                 <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold shadow-lg">
                   <a href={enlaceWhatsApp("Hola, me interesa conocer más sobre los productos y servicios de VAROSA")} target="_blank" rel="noopener noreferrer">
-                    WhatsApp: +506 8670-3251
+                    WhatsApp: +506 8501-2040
                   </a>
                 </Button>
               </div>

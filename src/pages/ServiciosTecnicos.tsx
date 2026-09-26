@@ -233,7 +233,7 @@ const ServiciosTecnicos = () => {
                 <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold shadow-lg transition-all duration-300">
                   <a href={enlaceWhatsApp("Hola, me interesa agendar una visita técnica de VAROSA")} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="ml-2 h-5 w-5" />
-                    WhatsApp: +506 8670-3251
+                    WhatsApp: +506 8501-2040
                   </a>
                 </Button>
               </div>

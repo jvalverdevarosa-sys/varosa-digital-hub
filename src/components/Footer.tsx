@@ -110,7 +110,7 @@ const Footer = () => {
               <li className="flex items-center gap-2 text-sm opacity-90">
                 <MessageCircle className="h-5 w-5 shrink-0" />
                 <a href={enlaceWhatsApp("Hola, me interesa conocer más sobre VAROSA", "footer")} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
-                  +506 8670-3251
+                  +506 8501-2040
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm opacity-90">

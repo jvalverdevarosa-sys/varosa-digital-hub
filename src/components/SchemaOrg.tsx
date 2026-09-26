@@ -56,10 +56,10 @@ const SchemaOrg = () => {
       },
       {
         "@type": "ContactPoint",
-        telephone: "+506-8670-3251",
+        telephone: "+506-8501-2040",
         contactType: "customer service",
         availableLanguage: "Spanish",
-        contactOption: "https://wa.me/50686703251",
+        contactOption: "https://wa.me/50685012040",
       },
     ],
     sameAs: [

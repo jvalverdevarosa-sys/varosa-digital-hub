@@ -62,7 +62,7 @@ Vite + React 18 + TypeScript, styled with Tailwind and shadcn/ui (Radix primitiv
 
 Restricciones no negociables — respetarlas en todo cambio:
 
-1. **Nunca mostrar precios en la web.** La cotización es siempre por WhatsApp **+506 8670-3251** (`https://wa.me/50686703251`). Cualquier CTA de compra/consulta apunta ahí, no a un precio ni a un carrito.
+1. **Nunca mostrar precios en la web.** La cotización es siempre por WhatsApp **+506 8501-2040** (`https://wa.me/50685012040`). Cualquier CTA de compra/consulta apunta ahí, no a un precio ni a un carrito.
 2. **Colores de marca obligatorios** — Primary `#325895`, Secondary `#4672B1`, Accent `#15C9E4`, Highlight `#FFAD00`. Se usan vía los tokens semánticos de Tailwind (`primary`, `secondary`, `accent`, `highlight`), no como hex sueltos.
 3. **Tipografías** — `font-heading` (**Bw Mitga**) para títulos, `font-body` (**Montserrat**) para cuerpo. No introducir otras fuentes.
 4. **Menú principal**: exactamente **6 ítems + CTA**. **Blog va solo en el Footer**, nunca en la navegación principal.

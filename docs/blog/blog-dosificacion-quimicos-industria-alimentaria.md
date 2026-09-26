@@ -61,7 +61,7 @@ En VAROSA no solo distribuimos los productos: ayudamos a que se usen bien. A tra
 
 <!-- IMAGEN 2 — foto real de una instalación de dosificación con químicos Diversey en una bodega de alimentos (con fichas técnicas a la vista). Alt sugerido: "Sistema de dosificación de químicos Diversey montado en pared en una bodega de alimentos, con fichas técnicas de producto a la vista." Archivo: src/assets/blog/diversey-dosificacion-bodega.jpg -->
 
-Si quiere revisar cómo está dosificando hoy su operación —y dónde puede ganar en inocuidad, ahorro y sostenibilidad al mismo tiempo—, escríbanos por WhatsApp al **+506 8670-3251** y con gusto lo orientamos.
+Si quiere revisar cómo está dosificando hoy su operación —y dónde puede ganar en inocuidad, ahorro y sostenibilidad al mismo tiempo—, escríbanos por WhatsApp al **+506 8501-2040** y con gusto lo orientamos.
 
 ---
 
@@ -73,7 +73,7 @@ Si quiere revisar cómo está dosificando hoy su operación —y dónde puede ga
 - **Categoría:** Inocuidad alimentaria / Buenas prácticas
 - **Keywords:** dosificación de químicos, limpieza y desinfección, inocuidad alimentaria, HACCP, sostenibilidad, biodegradable, auditoría ATP
 - **Imágenes sugeridas (pendientes de conseguir reales):** una estación de dilución o bomba dosificadora en uso; una superficie de acero inoxidable de planta recién sanitizada; una medición ATP con luminómetro.
-- **CTA:** WhatsApp comercial +506 8670-3251 → enlazar también a la página de Servicios Técnicos.
+- **CTA:** WhatsApp comercial +506 8501-2040 → enlazar también a la página de Servicios Técnicos.
 
 ## Nota de fuentes (para trazabilidad interna — no publicar)
 
