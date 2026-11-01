@@ -18,6 +18,7 @@ const PRERENDER_ROUTES = [
   "/blog",
   "/contacto",
   "/politica-de-privacidad",
+  "/preguntas-frecuentes",
   ...blogSlugs.map((slug: string) => `/blog/${slug}`),
 ];
 

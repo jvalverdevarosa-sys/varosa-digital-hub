@@ -68,6 +68,11 @@ const Footer = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/preguntas-frecuentes" className="text-sm opacity-90 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
+                  Preguntas Frecuentes
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/contacto" className="text-sm opacity-90 hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">
                   Contacto
                 </NavLink>
