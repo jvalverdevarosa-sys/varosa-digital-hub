@@ -1,7 +1,7 @@
 // Páginas de marca ("Distribuidor <Marca> en Costa Rica"). Fuente única: lo usan
 // la página /marcas/:slug y su FAQPage de Schema.org. Al agregar una marca, sumar
 // también su slug en src/data/marca-slugs.json (lo lee vite.config.ts para el
-// prerender) y en public/sitemap.xml.
+// prerender), en public/sitemap.xml y en public/llms.txt.
 //
 // REGLA: todo el texto sale de datos ya publicados en el sitio (Inicio, Nosotros,
 // Preguntas Frecuentes, Servicios Técnicos, artículos del blog). No agregar

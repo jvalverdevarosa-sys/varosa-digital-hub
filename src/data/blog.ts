@@ -1,7 +1,7 @@
 // Contenido del blog de VAROSA. Fuente única: lo usan la página /blog (listado)
 // y /blog/:slug (artículo completo). Al agregar un artículo, sumar también su
 // slug en src/data/blog-slugs.json (lo lee vite.config.ts para el prerender) y
-// en public/sitemap.xml.
+// en public/sitemap.xml y public/llms.txt.
 import demaSprayCleanCocina from "@/assets/blog/dema-spray-clean-cocina.webp";
 import diverseyDosificacionBodega from "@/assets/blog/diversey-dosificacion-bodega.webp";
 
