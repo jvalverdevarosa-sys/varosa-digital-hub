@@ -55,6 +55,10 @@
   # C) Categoría "Destacado" -> Productos (301). Destino confirmado.
   RewriteRule ^category/destacado/?$ /productos [R=301,L]
 
+  # C2) /products (en inglés) -> /productos (301). Copilot citaba
+  #     varosacr.com/products, que no existe y mostraba la página de error.
+  RewriteRule ^products/?$ /productos [R=301,L]
+
   # D) Otras categorías/etiquetas/autores viejos -> Home (301)
   RewriteRule ^category(/|$) / [R=301,L]
   RewriteRule ^tag(/|$)      / [R=301,L]
