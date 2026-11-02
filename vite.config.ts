@@ -4,10 +4,11 @@ import path from "path";
 import prerender from "@prerenderer/rollup-plugin";
 import { parse } from "node-html-parser";
 import blogSlugs from "./src/data/blog-slugs.json";
+import marcaSlugs from "./src/data/marca-slugs.json";
 
-// Rutas indexables a prerenderizar. La única ruta dinámica es /blog/:slug
-// (ver App.tsx); sus slugs salen de src/data/blog-slugs.json, así que la lista
-// sigue siendo finita y explícita. Se excluyen /gracias (noindex) y * (NotFound).
+// Rutas indexables a prerenderizar. Las rutas dinámicas son /blog/:slug y
+// /marcas/:slug (ver App.tsx); sus slugs salen de src/data/blog-slugs.json y
+// src/data/marca-slugs.json, así que la lista sigue siendo finita y explícita. Se excluyen /gracias (noindex) y * (NotFound).
 const PRERENDER_ROUTES = [
   "/",
   "/productos",
@@ -20,6 +21,7 @@ const PRERENDER_ROUTES = [
   "/politica-de-privacidad",
   "/preguntas-frecuentes",
   ...blogSlugs.map((slug: string) => `/blog/${slug}`),
+  ...marcaSlugs.map((slug: string) => `/marcas/${slug}`),
 ];
 
 // https://vitejs.dev/config/

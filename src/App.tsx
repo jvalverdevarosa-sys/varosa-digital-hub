@@ -13,6 +13,7 @@ const Productos = lazy(() => import("./pages/Productos"));
 const CasosExito = lazy(() => import("./pages/CasosExito"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticulo = lazy(() => import("./pages/BlogArticulo"));
+const MarcaDistribuidor = lazy(() => import("./pages/MarcaDistribuidor"));
 const PreguntasFrecuentes = lazy(() => import("./pages/PreguntasFrecuentes"));
 const Nosotros = lazy(() => import("./pages/Nosotros"));
 const Contacto = lazy(() => import("./pages/Contacto"));
@@ -98,6 +99,7 @@ const App = () => {
             <Route path="/casos-exito" element={<CasosExito />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogArticulo />} />
+            <Route path="/marcas/:slug" element={<MarcaDistribuidor />} />
             <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/contacto" element={<Contacto />} />

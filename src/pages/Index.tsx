@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -151,8 +152,8 @@ const Index = () => {
             <p className="text-[11px] font-semibold text-foreground/35 uppercase tracking-[0.2em] text-center mb-5">Distribuidor autorizado</p>
             <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-3">
               {[
-                { name: "Diversey", logo: logoDiversey, height: "h-9 sm:h-11" },
-                { name: "TORK", logo: logoTork, height: "h-9 sm:h-11" },
+                { name: "Diversey", logo: logoDiversey, height: "h-9 sm:h-11", to: "/marcas/diversey" },
+                { name: "TORK", logo: logoTork, height: "h-9 sm:h-11", to: "/marcas/tork" },
                 { name: "3M", logo: logo3m, height: "h-9 sm:h-11" },
                 { name: "Kemical", logo: logoKemical, height: "h-8 sm:h-10" },
                 { name: "Solquisa", logo: logoSolquisa, height: "h-8 sm:h-10" },
@@ -162,19 +163,27 @@ const Index = () => {
                 { name: "Faber Castell", logo: logoFaberCastell, height: "h-8 sm:h-10" },
                 { name: "Artline", logo: logoArtline, height: "h-8 sm:h-10" },
                 { name: "Facela", logo: logoFacela, height: "h-9 sm:h-11 rounded" },
-              ].map((brand) => (
-                <div
-                  key={brand.name}
-                  className="flex items-center justify-center px-3 py-2 rounded-lg dark:bg-white/10 dark:backdrop-blur-sm hover:opacity-100 transition-all duration-300"
-                >
+              ].map((brand: { name: string; logo: string; height: string; to?: string }) => {
+                const clase = "flex items-center justify-center px-3 py-2 rounded-lg dark:bg-white/10 dark:backdrop-blur-sm hover:opacity-100 transition-all duration-300";
+                const logo = (
                   <img
                     src={brand.logo}
                     alt={`Logo ${brand.name}`}
                     className={`${brand.height} w-auto object-contain`}
                     loading="lazy"
                   />
-                </div>
-              ))}
+                );
+                // TORK y Diversey enlazan a su página "Distribuidor <Marca> en Costa Rica".
+                return brand.to ? (
+                  <Link key={brand.name} to={brand.to} className={clase} aria-label={`Distribuidor ${brand.name} en Costa Rica`}>
+                    {logo}
+                  </Link>
+                ) : (
+                  <div key={brand.name} className={clase}>
+                    {logo}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
