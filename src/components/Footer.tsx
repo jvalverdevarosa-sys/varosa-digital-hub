@@ -90,8 +90,8 @@ const Footer = () => {
           <div>
             <h3 className="font-bold mb-5 text-xl tracking-tight">Productos Destacados</h3>
             <ul className="space-y-2 text-base opacity-95 font-medium">
-              <li>Productos Químicos Diversey</li>
-              <li>Sistemas de Higiene TORK</li>
+              <li><NavLink to="/marcas/diversey" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">Productos Químicos Diversey</NavLink></li>
+              <li><NavLink to="/marcas/tork" className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground rounded-sm">Sistemas de Higiene TORK</NavLink></li>
               <li>Cepillería El Castor</li>
               <li>Químicos Kemical y Solquisa</li>
               <li>Artículos de Oficina y Suministros</li>
